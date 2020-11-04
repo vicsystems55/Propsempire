@@ -31,6 +31,7 @@
 </head>
 <body class="maxw1600 m0a">
 <div class="wrapper">
+<div class="preloader"></div>
 	
 
 	<!-- Main Header Nav -->

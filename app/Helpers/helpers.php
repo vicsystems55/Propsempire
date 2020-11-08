@@ -18,7 +18,7 @@ class Helper
           'navbarType' => 'fixed',          
           'isMenuCollapsed' => false,
           'footerType' => 'static',
-          'templateTitle' => '',
+          'templateTitle' => 'Propsempire',
           'isCustomizer' => true,
           'isCardShadow' => true,
           'isScrollTop' => true,

@@ -2,11 +2,11 @@
   "menu": [
     {
       "url": "index",
-      "name": "Dashboard",
+      "name": "Dashboardjj",
       "i18n": "Dashboard",
       "slug": "dashboard",
       "icon": "bx bx-home-alt",
-      "tag": "2",
+      "tag": "3",
       "tagcustom": "badge badge-light-danger badge-pill badge-round float-right mr-2",
       "submenu": [
         {

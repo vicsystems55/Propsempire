@@ -2,7 +2,7 @@
   "menu": [
     {
       "url": "index",
-      "name": "Dashboard",
+      "name": "Dashboardl",
       "i18n": "Dashboard",
       "slug": "dashboard",
       "id":"#ico",

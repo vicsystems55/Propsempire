@@ -29,4 +29,35 @@ Route::get('/access-control', 'AccessController@index');
 Route::get('/access-control/{roles}', 'AccessController@roles');
 Route::get('/ecommerce', 'AccessController@home')->middleware('role:Admin');
 
+Route::get('/choose', 'ChooseRoleController@index');
+
+Route::group(['middleware' => ['auth','admin'], 'prefix' => 'admin'], function(){
+
+    Route::get('/', 'AdminPageController@index')->name('admin');
+	
+});
+
+Route::group(['middleware' => ['auth','vendor'], 'prefix' => 'vendor'], function(){
+
+    Route::get('/', 'VendorPageController@index')->name('vendor');
+	
+});
+
+Route::group(['middleware' => ['auth','agency'], 'prefix' => 'agency'], function(){
+
+    Route::get('/', 'AgencyPageController@index')->name('agency');
+	
+});
+
+Route::group(['middleware' => ['auth','agent'], 'prefix' => 'agent'], function(){
+
+    Route::get('/', 'AgentPageController@index')->name('agent');
+    Route::get('/add-prop', 'AgentPageController@add_prop')->name('agent.add_prop');
+
+	
+});
+
+Route::get('/logout', 'RoutingController@logout')->name('logout');
+
 Auth::routes();
+

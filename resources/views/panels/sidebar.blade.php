@@ -96,25 +96,25 @@
           <div class="main-menu-content">
           <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation" data-icon-style="lines">
           
-                  <li class="nav-item">
+                  <li class="nav-item {{ (request()->is('agent')) ? 'active' : '' }}">
                         <a href="">
                           <i class="menu-livicon livicon-evo-holder" data-icon="desktop">
                           </i> 
                           <span class="menu-title">Dashboard</span>
-                          <span class="badge badge-light-danger badge-pill badge-round float-right mr-2">2</span>
+                          <span class="badge badge-light-danger badge-pill badge-round float-right mr-2"></span>
                         </a>
                     </li>
 
-                    <li class="nav-item">
+                    <li class="nav-item active {{ (request()->is('agent/add_prop')) ? 'active' : '' }}">
                         <a href="{{route('agent.add_prop')}}">
                           <i class="menu-livicon livicon-evo-holder" data-icon="desktop">
                           </i> 
                           <span class="menu-title">Add Property</span>
-                          <span class="badge badge-light-danger badge-pill badge-round float-right mr-2">2</span>
+                          <span class="badge badge-light-danger badge-pill badge-round float-right mr-2"></span>
                         </a>
                     </li>
 
-                  <li class="nav-item has-sub">
+                  <li class="nav-item {{ (request()->is('agent/listings','/agent/listing/*' )) ? 'active' : '' }} has-sub">
                     <a href="#">
                     <i class="bx bxs-grid"></i>
                     <span class="menu-title" data-i18n="">Listings</span>

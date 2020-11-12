@@ -20,7 +20,7 @@ class AgentPageController extends Controller
             //Pageheader set true for breadcrumbs
             $pageConfigs = ['pageHeader' => true];
 
-            return view('pages.dashboard-ecommerce',[
+            return view('agents.dashboard',[
                 'pageConfigs' => $pageConfigs,
                 'breadcrumbs' => $breadcrumbs
             ]);

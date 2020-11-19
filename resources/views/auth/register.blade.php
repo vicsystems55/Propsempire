@@ -38,6 +38,38 @@
                       </span>
                     @enderror
                   </div>
+
+                 <div class="form-group mt-2">
+                 <label class="text-bold-600" for="name">Select Account Type</label>
+                  <ul class="list-unstyled mb-0">
+                      <li class="d-inline-block mr-2 mb-1">
+                        <fieldset>
+                          <div class="radio radio-shadow">
+                              <input type="radio" id="radioshadow1" name="role" value="agent" checked>
+                              <label for="radioshadow1">Agent</label>
+                          </div>
+                        </fieldset>
+                      </li>
+                      <li class="d-inline-block mr-2 mb-1">
+                        <fieldset>
+                          <div class="radio radio-shadow">
+                              <input type="radio" id="radioshadow2" name="role" value="vendor">
+                              <label for="radioshadow2">Vendor</label>
+                          </div>
+                        </fieldset>
+                      </li>
+
+                      <li class="d-inline-block mr-2 mb-1">
+                        <fieldset>
+                          <div class="radio radio-shadow">
+                              <input type="radio" id="radioshadow3" name="role" value="agency">
+                              <label for="radioshadow3">Agency</label>
+                          </div>
+                        </fieldset>
+                      </li>
+                    </ul>
+                 </div>
+
                   <div class="form-group mb-50">
                     <label class="text-bold-600" for="email">Email address</label>
                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email address">

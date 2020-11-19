@@ -23,12 +23,13 @@
         <form action="#" class="wizard-vertical">
           <!-- step 1 -->
           <h3>
-            <span class="fonticon-wrap mr-1">
-              <i class="livicon-evo" data-options="name:gear.svg; size: 50px; style:lines; strokeColor:#adb5bd;"></i>
-            </span>
+                    <div class="fonticon-wrap">
+                        <i class="bx bx-home-circle"></i>
+                    </div>
+            
             <span class="icon-title">
-              <span class="d-block">Users Details</span>
-              <small class="text-muted">Setup your account details here.</small>
+              <span class="d-block">Property Details</span>
+              <small class="text-muted"></small>
             </span>
           </h3>
           <!-- step 1 end-->

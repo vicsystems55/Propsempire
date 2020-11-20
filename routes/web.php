@@ -53,6 +53,7 @@ Route::group(['middleware' => ['auth','agent'], 'prefix' => 'agent'], function()
 
     Route::get('/', 'AgentPageController@index')->name('agent');
     Route::get('/add-prop', 'AgentPageController@add_prop')->name('agent.add_prop');
+    Route::get('/all_listings', 'AgentPageController@all_listings')->name('agent.all_listings');
 
 	
 });

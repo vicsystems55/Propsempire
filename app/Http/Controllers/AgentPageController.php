@@ -26,6 +26,21 @@ class AgentPageController extends Controller
             ]);
     }
 
+    public function all_listings()
+    {
+        //
+        $breadcrumbs = [
+            ['link' => "/", 'name' => "Home"], ['link' => "#", 'name' => "Dashboard"], ['name' => "Home"],
+            ];
+            //Pageheader set true for breadcrumbs
+            $pageConfigs = ['pageHeader' => true];
+
+            return view('agents.all_listings',[
+                'pageConfigs' => $pageConfigs,
+                'breadcrumbs' => $breadcrumbs
+            ]);
+    }
+
     public function add_prop()
     {
         //

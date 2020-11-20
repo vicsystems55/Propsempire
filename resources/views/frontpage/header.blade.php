@@ -228,9 +228,9 @@
 				</li>
 				
 				<li><a href="page-contact.html">Contact</a></li>
-				<li><a href="page-login.html"><span class="flaticon-user"></span> Login</a></li>
-				<li><a href="page-register.html"><span class="flaticon-edit"></span> Register</a></li>
-				<li class="cl_btn"><a class="btn btn-block btn-lg btn-thm circle" href="#"><span class="flaticon-plus"></span> Create Listing</a></li>
+				<li><a href="{{route('login')}}"><span class="flaticon-user"></span> Login</a></li>
+				<li><a href="{{route('register')}}"><span class="flaticon-edit"></span> Register</a></li>
+				<li class="cl_btn"><a class="btn btn-block btn-lg btn-thm circle" href="{{route('agent.add_prop')}}"><span class="flaticon-plus"></span> Create Listing</a></li>
 			</ul>
 		</nav>
 	</div>

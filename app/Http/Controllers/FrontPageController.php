@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Listing;
+
 class FrontPageController extends Controller
 {
     //
@@ -12,6 +14,10 @@ class FrontPageController extends Controller
     {
         # code...
 
-        return view('frontpage.pages.home');
+        $listings = Listing::with('users')->where('status', 'active');
+
+        return view('frontpage.pages.home',[
+            'listings' => $listings
+        ]);
     }
 }

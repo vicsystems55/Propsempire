@@ -97,7 +97,7 @@
           <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation" data-icon-style="lines">
           
                   <li class="nav-item {{ (request()->is('agent')) ? 'active' : '' }}">
-                        <a href="">
+                        <a href="/agent">
                           <i class="menu-livicon livicon-evo-holder" data-icon="desktop">
                           </i> 
                           <span class="menu-title">Dashboard</span>
@@ -105,7 +105,7 @@
                         </a>
                     </li>
 
-                    <li class="nav-item active {{ (request()->is('agent/add_prop')) ? 'active' : '' }}">
+                    <li class="nav-item  {{ (request()->is('agent/add_prop')) ? 'active' : '' }}">
                         <a href="{{route('agent.add_prop')}}">
                           <i class="menu-livicon livicon-evo-holder" data-icon="desktop">
                           </i> 
@@ -115,24 +115,26 @@
                     </li>
 
                   <li class="nav-item {{ (request()->is('agent/listings','/agent/listing/*' )) ? 'active' : '' }} has-sub">
-                    <a href="#">
+                    <a href="">
                     <i class="bx bxs-grid"></i>
                     <span class="menu-title" data-i18n="">Listings</span>
                     </a>
                     <ul class="menu-content" style="">
-                      <li class=""><a class="menu-item" href="documentation-card.html">Free Listings</a>
+                    <li class=""><a class="menu-item" href="{{route('agent.all_listings')}}">All Listings</a>
                       </li>
-                      <li class=""><a class="menu-item" href="documentation-colors.html">Premium Listings</a>
+                      <li class=""><a class="menu-item" href="">Free Listings</a>
                       </li>
-                      <li class=""><a class="menu-item" href="documentation-icons.html">Published</a>
+                      <li class=""><a class="menu-item" href="">Premium Listings</a>
                       </li>
-                      <li class=""><a class="menu-item" href="documentation-widgets.html">Unpublished</a>
+                      <li class=""><a class="menu-item" href="">Published</a>
                       </li>
-                      <li class=""><a class="menu-item" href="documentation-widgets.html">Expired Listings</a>
+                      <li class=""><a class="menu-item" href="">Unpublished</a>
                       </li>
-                      <li class=""><a class="menu-item" href="documentation-widgets.html">Inactive Listings</a>
+                      <li class=""><a class="menu-item" href="">Expired Listings</a>
                       </li>
-                      <li class=""><a class="menu-item" href="documentation-widgets.html">Favourites</a>
+                      <li class=""><a class="menu-item" href="">Inactive Listings</a>
+                      </li>
+                      <li class=""><a class="menu-item" href="">Favourites</a>
                       </li>
                     </ul>
                 </li>

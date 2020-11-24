@@ -29,7 +29,7 @@ Route::get('/access-control', 'AccessController@index');
 Route::get('/access-control/{roles}', 'AccessController@roles');
 Route::get('/ecommerce', 'AccessController@home')->middleware('role:Admin');
 
-Route::get('/choose', 'ChooseRoleController@index');
+Route::get('/choose', 'ChooseRoleController@index')->name('choose');
 
 Route::group(['middleware' => ['auth','admin'], 'prefix' => 'admin'], function(){
 

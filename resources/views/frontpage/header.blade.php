@@ -205,7 +205,7 @@
 		            
 				</div>
 				<ul class="menu_bar_home2">
-	                <li class="list-inline-item list_s"><a href="page-register.html"><span class="flaticon-user"></span></a></li>
+	                <li class="list-inline-item list_s"><a href="{{route('choose')}}"><span class="flaticon-user"></span></a></li>
 					<li class="list-inline-item"><a href="#menu"><span></span></a></li>
 				</ul>
 			</div>

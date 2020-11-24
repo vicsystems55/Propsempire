@@ -16,6 +16,8 @@ class FrontPageController extends Controller
 
         $listings = Listing::with('users')->where('status', 'active');
 
+        $featured_listings = Listing::with('users')->where('status', 'active')->where('type');
+
         return view('frontpage.pages.home',[
             'listings' => $listings
         ]);

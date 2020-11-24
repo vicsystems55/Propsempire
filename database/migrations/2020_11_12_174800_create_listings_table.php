@@ -25,7 +25,9 @@ class CreateListingsTable extends Migration
             $table->double('min_price');
             $table->double('max_price');
             $table->string('status');
-            
+
+            $table->string('type')->default('standard');
+
             $table->integer('views')->default('0');
             $table->integer('likes')->default('0');
             $table->integer('unlikes')->default('0');

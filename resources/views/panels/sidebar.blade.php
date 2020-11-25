@@ -105,7 +105,7 @@
                         </a>
                     </li>
 
-                    <li class="nav-item  {{ (request()->is('agent/add_prop')) ? 'active' : '' }}">
+                    <li class="nav-item  {{ (request()->is('agent/add_prop', 'add_listing2/*')) ? 'active' : '' }}">
                         <a href="{{route('agent.add_prop')}}">
                           <i class="menu-livicon livicon-evo-holder" data-icon="desktop">
                           </i> 

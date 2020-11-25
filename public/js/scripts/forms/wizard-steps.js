@@ -15,13 +15,17 @@ $(".wizard-horizontal").steps({
   transitionEffect: "fade",
   titleTemplate: '<span class="step">#index#</span> #title#',
   labels: {
-    finish: 'Submit'
+    finish: 'Submit..'
   },
   onFinished: function (event, currentIndex) {
     alert("Form submitted.");
   }
 });
 //        vertical Wizard       //
+
+$('a[href="#next"]:eq(1)').click(function() {
+  alert( "Second next button was called." );
+});
 // ------------------------------
 $(".wizard-vertical").steps({
   headerTag: "h3",
@@ -30,10 +34,54 @@ $(".wizard-vertical").steps({
   enableAllSteps: true,
   stepsOrientation: "vertical",
   labels: {
-    finish: 'Submit'
+    finish: 'Submit.'
   },
+
+
+  
   onFinished: function (event, currentIndex) {
-    alert("Form submitted.");
+    var title = $( "#title" ).val();
+    var description = $( "#title" ).val();
+    var location = $( "#search_input" ).val();
+    var category = $( "#category" ).val();
+    var type = $( "#type" ).val();
+    var bedrooms = $( "#bedrooms" ).val();
+    var toilet = $( "#toilet" ).val();
+    var furnished = $( "#furnished" ).val();
+    var parking = $( "#parking" ).val();
+    var min_price = $( "#min_price" ).val();
+    var max_price = $( "#max_price" ).val();
+    let _token   = $('meta[name="csrf-token"]').attr('content');
+
+  var formData = new FormData(formElem);  
+
+  formData.append("featured_img", document.getElementById('file1').files[0]);
+  formData.append("token", _token);
+
+  console.log(_token);
+
+    $.ajax({
+      url: "/add_listing",
+      type:"POST",
+      enctype: 'multipart/form-data',
+      data: formData,
+      processData: false,  // tell jQuery not to process the data
+      contentType: false,   // tell jQuery not to set contentType
+      
+      success:function(response){
+        console.log(response);
+        if(response) {
+          console.log(response);
+         
+        }
+      },
+     });
+    
+
+
+
+
+   console.log(title)
   }
 });
 
@@ -50,10 +98,11 @@ stepsValidation.steps({
   transitionEffect: "fade",
   titleTemplate: '<span class="step">#index#</span> #title#',
   labels: {
-    finish: 'Submit'
+    finish: 'Submit&'
   },
   onStepChanging: function (event, currentIndex, newIndex) {
     // Allways allow previous action even if the current form is not valid!
+    console.log('hello');
     if (currentIndex > newIndex) {
       return true;
     }

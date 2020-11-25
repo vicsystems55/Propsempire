@@ -15,32 +15,44 @@ class CreateListingsTable extends Migration
     {
         Schema::create('listings', function (Blueprint $table) {
             $table->id();
+            $table->string('slug');
             $table->bigInteger('posted_by')->unsigned();
             $table->string('title');
             $table->string('description');
             $table->string('location');
-            $table->string('featured_img1');
+            $table->string('featured_img1')->default('default.png');
             $table->string('featured_img2')->nullable();
             $table->string('featured_img3')->nullable();
+            $table->string('category');
+            $table->string('subtype');
+            $table->string('type');
+            $table->integer('bedrooms')->unsigned();
+            $table->integer('toilets')->unsigned();
+            $table->integer('bathrooms')->unsigned();
+            $table->boolean('furnished')->default(0);
+            $table->boolean('parking')->default(0);
             $table->double('min_price');
             $table->double('max_price');
-            $table->string('status');
+            $table->string('status')->default('inactive');
 
-            $table->string('type')->default('standard');
+            $table->string('class')->default('standard');
 
             $table->integer('views')->default('0');
             $table->integer('likes')->default('0');
             $table->integer('unlikes')->default('0');
 
-            $table->bigInteger('features_id')->unsigned();
+          
 
             $table->foreign('posted_by')->references('id')->on('users');
-            $table->foreign('features_id')->references('id')->on('features');
+      
 
 
             $table->timestamps();
         });
     }
+
+    // just a random string generator
+  
 
     /**
      * Reverse the migrations.

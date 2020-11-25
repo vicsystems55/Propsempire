@@ -54,7 +54,7 @@ $(document).on('change', '#'+searchInput, function () {
     </div>
     <div class="card-content">
       <div class="card-body">
-        <form action="#" class="wizard-vertical">
+        <form id="formElem" action="{{route('agent.add_prop')}}" class="wizard-vertical">
           <!-- step 1 -->
           <h3>
             <span class="fonticon-wrap mr-1">

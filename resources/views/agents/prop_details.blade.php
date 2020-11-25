@@ -11,7 +11,7 @@
               <div class="col-sm-12">
                 <div class="form-group">
                   <label for="lastName1">Description</label>
-                  <input type="text" class="form-control" id="lastName1" placeholder="Enter a description">
+                  <input type="text" class="form-control" id="description" placeholder="Enter a description">
                   <small class="text-muted form-text"></small>
                 </div>
               </div>
@@ -39,7 +39,7 @@
                   <div class="col-sm-6">
                     <div class="form-group">
                       <label for="category">Category</label>
-                        <select class="form-control">
+                        <select id="category" class="form-control">
 							          <option value="square">Square</option>
 	                        <option value="rectangle">Rectangle</option>
 	                        <option value="rombo">Rombo</option>
@@ -54,7 +54,7 @@
                       <div class="col-sm-6">
                         <div class="form-group">
                           <label for="type">Type</label>
-                          <select class="form-control">
+                          <select id="type" class="form-control">
                             <option value="square">Square</option>
                               <option value="rectangle">Rectangle</option>
                               <option value="rombo">Rombo</option>
@@ -69,7 +69,7 @@
                         <div class="col-sm-6">
                           <div class="form-group">
                             <label for="type">Bedrooms</label>
-                             <select class="form-control">
+                             <select id="bedrooms" class="form-control">
                                 <option value="square">Square</option>
                                   <option value="rectangle">Rectangle</option>
                                   <option value="rombo">Rombo</option>
@@ -84,7 +84,7 @@
                       <div class="col-sm-6">
                         <div class="form-group">
                           <label>Toilet</label>
-                          <select class="form-control">
+                          <select id="toilet" class="form-control">
                                 <option value="square">Square</option>
                                   <option value="rectangle">Rectangle</option>
                                   <option value="rombo">Rombo</option>
@@ -98,8 +98,8 @@
 
                       <div class="col-sm-6">
                         <div class="form-group">
-                          <label>Bedrooms</label>
-                          <select class="form-control">
+                          <label>Bathrooms</label>
+                          <select id="bathrooms" class="form-control">
                                 <option value="square">Square</option>
                                   <option value="rectangle">Rectangle</option>
                                   <option value="rombo">Rombo</option>
@@ -117,16 +117,16 @@
                               <li class="d-inline-block mr-2 mb-1">
                                 <fieldset>
                                   <div class="checkbox checkbox-primary">
-                                      <input type="checkbox" id="colorCheckbox1" checked>
-                                      <label for="colorCheckbox1">Furnished</label>
+                                      <input type="checkbox" id="furnished" value="1" >
+                                      <label for="furnished">Furnished</label>
                                   </div>
                                 </fieldset>
                               </li>
                               <li class="d-inline-block mr-2 mb-1">
                                 <fieldset>
-                                  <div class="checkbox checkbox-secondary">
-                                      <input type="checkbox" id="colorCheckbox2" checked>
-                                      <label for="colorCheckbox2">Parking</label>
+                                  <div class="checkbox checkbox-primary">
+                                      <input type="checkbox" id="parking"  value="1">
+                                      <label for="parking">Parking</label>
                                   </div>
                                 </fieldset>
                               </li>
@@ -141,14 +141,14 @@
               <div class="row">
                   <div class="col-md-6">
                     <label for="">Min Price</label>
-                  <input type="text" class="touchspin" value="50" data-bts-step="0.5" data-bts-decimals="2">
+                    <input id="min_price" type="text" class="touchspin" value="50" data-bts-step="0.5" data-bts-decimals="2">
 
                   
                   </div>
 
                     <div class="col-md-6">
                       <label for="">Max Price</label>
-                    <input type="text" class="touchspin" value="50" data-bts-step="0.5" data-bts-decimals="2">
+                      <input id="max_price" type="text" class="touchspin" value="50" data-bts-step="0.5" data-bts-decimals="2">
                     
                     </div>
 

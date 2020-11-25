@@ -50,7 +50,9 @@ class AgentPageController extends Controller
             //Pageheader set true for breadcrumbs
             $pageConfigs = ['pageHeader' => true];
 
-            return view('agents.add_prop',[
+
+
+            return view('agents.add_prop2',[
                 'pageConfigs' => $pageConfigs,
                 'breadcrumbs' => $breadcrumbs
             ]);

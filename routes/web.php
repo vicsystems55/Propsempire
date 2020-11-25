@@ -62,3 +62,8 @@ Route::get('/logout', 'RoutingController@logout')->name('logout');
 
 Auth::routes();
 
+Route::post('/add_listing', 'ListingController@store')->name('agent.add_listing');
+
+Route::post('/add_assets/{slug}', 'ListingController@add_assets')->name('agent.add_assets');
+
+Route::get('/add_listing2/{slug}', 'ListingController@step2')->name('agent.add_listing2');

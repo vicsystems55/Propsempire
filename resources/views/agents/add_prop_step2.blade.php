@@ -25,8 +25,22 @@
   <div class="row match-height">
     <div class="col-12">
       <div class="card">
-        <div class="card-header">
-          <h4 class="card-title">Create Listing Step 2/3</h4>
+      <div class="card-header border-bottom">
+          <h4 class="card-title p-1">Create Listing Step 2/3</h4>
+
+          <div class="row">
+
+            <div class="p-2 bg-primary col-md-4 text-white">
+               Step 1
+            </div>
+            <div class="p-2 bg-primary text-white border-left-white mx-auto col-md-4">
+               Step 2
+            </div>
+            <div class="p-2 border-primary mx-auto col-md-4">
+               Step 3
+            </div>
+
+          </div>
         </div>
         <div class="card-content">
           <div class="card-body">

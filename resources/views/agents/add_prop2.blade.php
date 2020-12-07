@@ -26,18 +26,18 @@
     <div class="col-12">
       <div class="card">
         <div class="card-header">
-          <h4 class="card-title">Create Listing Step 1/3</h4>
+          <h4 class="card-title p-1">Create Listing Step 1/3</h4>
 
           <div class="row">
 
-            <div class="bg-primary col-md-4">
-               one
+            <div class="p-2 bg-primary col-md-4 text-white">
+               Step 1
             </div>
-            <div class="col-md-4">
-               one
+            <div class="p-2 border-primary mx-auto col-md-4">
+               Step 2
             </div>
-            <div class="col-md-4">
-               one
+            <div class="p-2 border-primary mx-auto col-md-4">
+               Step 3
             </div>
 
           </div>

@@ -42,8 +42,15 @@
 
           </div>
         </div>
-        <div class=" pt-1">
+        <div class="">
           <div class="card-bod py-sm-0">
+
+         <div class="p-1">
+         <p class="alert alert-warning">
+            Rules for listing property <br>
+            It is important that you read and understand the rules of listing properties in Propsempire <a href="">click here of details</a>
+          </p>
+         </div>
             <form method="post" class="form" action="{{route('agent.add_listing')}}">
                 @csrf  
             <div class="form-body">
@@ -90,6 +97,23 @@
                     @enderror
                     </div>
                   </div>
+
+                  <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="">Minimum Price</label>
+                                    <input name="min_price" id="min_price" data-bts-prefix="NGN" type="number" class="touchspin" value="20000" data-bts-max="1000000s" data-bts-step="500" data-bts-decimals="2">
+                                </div>
+
+                                <div class="col-md-6">
+                                <label for="">Maximum Price</label>
+                                <input id="max_price" name="max_price" data-bts-prefix="NGN" type="number" class="touchspin" value="20000" data-bts-max="1000000s" data-bts-step="500" data-bts-decimals="2">
+                                
+                                </div>
+
+                                
+                            </div>
+                        </div>
               
               
               </div>

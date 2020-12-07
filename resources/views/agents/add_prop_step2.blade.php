@@ -119,11 +119,11 @@
 
            <form method="post" enctype="multipart/form-data" action="{{route('agent.add_assets', $listing_data->slug)}}">
 
-           {{$listing_data->slug}}
+        
                     @csrf
                 <div class="row">
 
-                    <div class="col-md-3">
+                    <div class="col-md-3 mx-auto">
                             <div class="p-1">
                             <img onclick="openFileOption()" width="200" height="200" class="img-thumbnail" id="previewImg" src="/images/banner/banner-21.jpg" alt="">
                                
@@ -143,7 +143,7 @@
                             </div>
                     </div>
 
-                    <div class="col-md-3">
+                    <div class="col-md-3 mx-auto">
                             <div class="p-1">
                             <img onclick="openFileOption2()" width="200" height="200" class="img-thumbnail" id="previewImg2" src="/images/banner/banner-21.jpg" alt="">
 
@@ -157,7 +157,7 @@
                             </div>
                     </div>
 
-                    <div class="col-md-3">
+                    <div class="col-md-3 mx-auto">
                             <div class="p-1">
                             <img onclick="openFileOption3()" width="200" height="200" class="img-thumbnail" id="previewImg3" src="/images/banner/banner-21.jpg" alt="">
 
@@ -171,7 +171,7 @@
                             </div>
                     </div>
 
-                    <div class="col-md-3">
+                    <div class="col-md-3 mx-auto">
                             <div class="p-1">
                             <img onclick="openFileOption4()" width="200" height="200" class="img-thumbnail" id="previewImg4" src="/images/banner/banner-21.jpg" alt="">
 

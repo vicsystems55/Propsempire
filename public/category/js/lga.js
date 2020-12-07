@@ -95,9 +95,7 @@ for (var a = 0; a < data.length; a++) {//begin for loop
   var key= data[a];
   key=key.replace(" ","_");
 
-  if(data[0]){
-    key = '';
-  }
+ 
 
 //add the option elements to the html array
 html.push("<option value=" + key +">" + data[a] + "</option>")

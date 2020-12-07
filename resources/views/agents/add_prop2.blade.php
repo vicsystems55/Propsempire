@@ -25,7 +25,7 @@
   <div>
     <div class="col-12">
       <div class="card">
-        <div class="card-header">
+        <div class="card-header border-bottom">
           <h4 class="card-title p-1">Create Listing Step 1/3</h4>
 
           <div class="row">
@@ -42,8 +42,8 @@
 
           </div>
         </div>
-        <div class=" pt-3">
-          <div class="card-body">
+        <div class=" pt-1">
+          <div class="card-bod py-sm-0">
             <form method="post" class="form" action="{{route('agent.add_listing')}}">
                 @csrf  
             <div class="form-body">
@@ -185,13 +185,16 @@
                
                    
 
-                        
-
+                <div class="row">
                   
-                  <div class="col-12 d-flex justify-content-end">
-                    <button type="submit" class="btn btn-primary btn-lg shadow mr-1 mb-1">Next</button>
+                <div class="col-md-8"></div>
+                  <div class="col-md-4 p-1">
+
+                    <button type="submit" class="btn btn-primary btn-block btn-lg shadow mr-1 mb-1">Next</button>
                    
                   </div>
+                </div>          
+
                 </div>
               </div>
             </form>

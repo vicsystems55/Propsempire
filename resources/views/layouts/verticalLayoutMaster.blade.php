@@ -29,7 +29,7 @@ data-open="click" data-menu="vertical-menu-modern" data-col="2-columns">
 			</div>
 			<div class="content-right">
           <div class="content-overlay"></div>
-				<div class="content-wrapper">
+				<div  class=" content-wrapper">
           <div class="content-header row">
           </div>
           <div class="content-body">
@@ -41,7 +41,7 @@ data-open="click" data-menu="vertical-menu-modern" data-col="2-columns">
 	@else
     {{-- others page structures --}}
     <div class="content-overlay"></div>
-		<div class="content-wrapper">
+		<div style="padding:0px;" class="content-wrapper">
 			<div class="content-header row">
         @if($configData['pageHeader']=== true && isset($breadcrumbs))
           @include('panels.breadcrumbs')

@@ -41,8 +41,8 @@ data-open="click" data-menu="vertical-menu-modern" data-col="2-columns">
 	@else
     {{-- others page structures --}}
     <div class="content-overlay"></div>
-		<div style="padding:0px;" class="content-wrapper">
-			<div class="content-header row">
+		<div style="padding:0px;" class="pt-2 content-wrapper">
+			<div class="pl-1 content-header row">
         @if($configData['pageHeader']=== true && isset($breadcrumbs))
           @include('panels.breadcrumbs')
         @endif

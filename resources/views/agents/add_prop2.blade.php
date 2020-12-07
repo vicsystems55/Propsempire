@@ -188,7 +188,7 @@
                 <div class="row">
                   
                 <div class="col-md-8"></div>
-                  <div class="col-md-4 p-1">
+                  <div class="col-md-4 p-2">
 
                     <button type="submit" class="btn btn-primary btn-block btn-lg shadow mr-1 mb-1">Next</button>
                    

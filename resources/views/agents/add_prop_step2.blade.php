@@ -36,10 +36,6 @@
            <script>
                
 
-                   
-
-                
-
                 function openFileOption()
                     {
                     document.getElementById("file1").click();

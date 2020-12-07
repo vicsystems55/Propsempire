@@ -18,7 +18,7 @@ data-open="click" data-menu="vertical-menu-modern" data-col="2-columns">
   <!-- END: Main Menu-->
 
   <!-- BEGIN: Content-->
-  <div class="app-content content">
+  <div  class="app-content content">
   {{-- Application page structure --}}
 	@if($configData['isContentSidebar'] === true)
 		<div class="content-area-wrapper">

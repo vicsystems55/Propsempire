@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Listing;
 
+use Carbon\Carbon;
+
 class FrontPageController extends Controller
 {
     //
@@ -16,7 +18,9 @@ class FrontPageController extends Controller
 
         $listings = Listing::with('users')->where('status', 'active');
 
-        $featured_listings = Listing::with('users')->where('status', 'active')->where('type');
+        $listings = Listing::with('users')->get();
+
+        // dd($listings);
 
         return view('frontpage.pages.home',[
             'listings' => $listings

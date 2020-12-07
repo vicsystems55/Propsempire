@@ -44,4 +44,9 @@ class User extends Authenticatable
         # code...
        return $this->hasMany('App\ActivityLog', 'for_');
     }
+
+    public function listings()
+    {
+        return $this->hasMany('App\Listing', 'posted_by');
+    }
 }

@@ -33,7 +33,12 @@ License: You must have a valid license purchased only from themeforest(the above
     <title>@yield('title') - PROPSEMPIRE</title>
     <link rel="apple-touch-icon" href="{{asset('images/ico/apple-icon-120.png')}}">
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('images/ico/favicon.ico')}}">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.0/css/hover-min.css" integrity="sha512-glciccPoOqr5mfDGmlJ3bpbvomZmFK+5dRARpt62nZnlKwaYZSfFpFIgUoD8ujqBw4TmPa/F3TX28OctJzoLfg==" crossorigin="anonymous" />
     {{-- Include core + vendor Styles --}}
     @include('panels.styles')
     </head>

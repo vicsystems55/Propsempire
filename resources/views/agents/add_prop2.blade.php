@@ -51,7 +51,7 @@
             It is important that you read and understand the rules of listing properties in Propsempire <a href="">click here of details</a>
           </p>
          </div>
-            <form method="post" class="form" action="{{route('agent.add_listing')}}">
+            <form method="post" class="form" action="{{route('agent.add_prop1')}}">
                 @csrf  
             <div class="form-body">
 
@@ -211,12 +211,12 @@
 
                 <div class="row">
                   
-                <div class="col-md-8"></div>
-                  <div class="col-md-4 p-2">
+                    <div class="col-md-8"></div>
+                    <div class="col-md-4 p-2">
 
-                    <button type="submit" class="btn btn-primary btn-block btn-lg shadow mr-1 mb-1">Next</button>
-                   
-                  </div>
+                      <button type="submit" class="btn btn-primary btn-block btn-lg shadow mr-1 mb-1">Next</button>
+                    
+                    </div>
                 </div>          
 
                 </div>

@@ -52,8 +52,20 @@ Route::group(['middleware' => ['auth','agency'], 'prefix' => 'agency'], function
 Route::group(['middleware' => ['auth','agent'], 'prefix' => 'agent'], function(){
 
     Route::get('/', 'AgentPageController@index')->name('agent');
+
     Route::get('/add-prop', 'AgentPageController@add_prop')->name('agent.add_prop');
-    Route::get('/all_listings', 'AgentPageController@all_listings')->name('agent.all_listings');
+
+    Route::get('/add-prop3/{slug}', 'ListingController@step3')->name('agent.add_prop3');
+
+    Route::get('/add_prop2/{slug}', 'ListingController@step2')->name('agent.add_prop2');
+
+    Route::post('/add_prop1', 'ListingController@step1')->name('agent.add_prop1');
+
+    Route::get('/all_listings', 'ListingController@add_prop1')->name('agent.all_listings');
+
+    Route::post('/up_pix', 'ListingController@up_pix')->name('up_pix');
+
+    Route::post('/edit_pix','ListingController@edit_pix')->name('edit_pix');
 
 	
 });
@@ -67,3 +79,8 @@ Route::post('/add_listing', 'ListingController@store')->name('agent.add_listing'
 Route::post('/add_assets/{slug}', 'ListingController@add_assets')->name('agent.add_assets');
 
 Route::get('/add_listing2/{slug}', 'ListingController@step2')->name('agent.add_listing2');
+
+
+Route::post('/pay', 'PaymentController@redirectToGateway')->name('pay');
+
+Route::get('/payment/callback', 'PaymentController@handleGatewayCallback');

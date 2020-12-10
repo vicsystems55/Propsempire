@@ -42,13 +42,116 @@ class ListingController extends Controller
 
     }
 
+    function up_doccc(Request $request, $type)
+    {
+        # code...
+
+        
+       
+
+        $user_id = Auth::user()->id;
+
+        // $this->validate($request,
+        // [
+        //     'featured_img1' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        // ]);
+
+        
+
+        if($type =='passport'){
+
+            request()->validate([
+                'passport'  => 'mimes:jpeg,jpg,png,gif|required|max:600',
+                
+              ]);
+
+        }
+
+        if($type =='first_appoint'){
+
+            request()->validate([
+                'first_appoint'  => 'mimes:jpeg,jpg,png,gif|required|max:500',
+                
+              ]);
+
+        }
+
+        
+
+        
+
+        $doc = $request->file($type);
+
+        
+
+        $new_name = rand().".".$doc->getClientOriginalExtension();
+
+        $path = "images/applicants_assets/".$user_id .'/'.$type;
+
+        $file1 = $doc->move(public_path($path), $new_name);
+
+        $doc_url = $path .'/'.$new_name;
+
+        $passport_upload = DocumentUpload::firstOrCreate([
+                'name' => $type,
+                'user_id' => Auth::user()->id,
+            ],[
+            'name' => $type,
+            'user_id' => $user_id,
+            'doc_url' => $doc_url,
+            'slug' => Str::random(32),
+            'category' => 'profile_update'
+        ]);
+
+        ActivityLog::create([
+            'action_by' => Auth::user()->id,
+            'title' => 'User Profile Update',
+            'log' => 'Just a uploaded Document'
+        ]);
+
+
+
+
+          return back()->with($type,'file uploaded successfully');
+
+
+    }
+
+        public function step1(Request $request)
+        {
+            # code...
+
+            $listing = Listing::Create($request->all() + [
+                'posted_by' => Auth::user()->id,  
+                'slug' => Str::random(32)
+                ]);
+                
+                return redirect('/agent/add_prop2/'. $listing->slug);
+    
+            
+        }
+        
         public function step2($slug)
+        {
+
+            $listing_data = Listing::where('slug', $slug)->where('posted_by', Auth::user()->id)->first();
+
+
+            return view('agents.add_prop_step2',[
+
+                'listing_data' => $listing_data
+            ]);
+            # code...
+        }
+
+
+        public function step3($slug)
         {
 
             $listing_data = Listing::where('slug', $slug)->first();
 
 
-            return view('agents.add_prop_step2',[
+            return view('agents.add_prop_step3',[
 
                 'listing_data' => $listing_data
             ]);

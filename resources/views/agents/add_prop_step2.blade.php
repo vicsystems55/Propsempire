@@ -47,165 +47,103 @@
            <h1 class="text-center">You have successfull added listing</h1>
            <h3 class="text-center text-muted">Please proceed to add Images of your listing...</h3>
 
-           <script>
-               
 
-                function openFileOption()
-                    {
-                    document.getElementById("file1").click();
-                    }
-                function previewFile(input){
-                    console.log('hello');
-                    var file = $("input[name=featured_img1]").get(0).files[0];
-            
-                    if(file){
-                        var reader = new FileReader();
-            
-                        reader.onload = function(){
-                            $("#previewImg").attr("src", reader.result);
-                        }
-            
-                        reader.readAsDataURL(file);
-                    }
-                }
+                                <div class="col-md-10 mx-auto  mt-2">
+                                    <div class=" ">
+                                            @error('featured_img1')
+                                            <p class="alert alert-warning" >
+                                                <strong>{{ $message }}</strong>
+                                            </p>
+                                            @enderror
 
-                function openFileOption2()
-                    {
-                    document.getElementById("file2").click();
-                    }
-                function previewFile2(input){
-                    console.log('hello');
-                    var file = $("input[name=featured_img2]").get(0).files[0];
-            
-                    if(file){
-                        var reader = new FileReader();
-            
-                        reader.onload = function(){
-                            $("#previewImg2").attr("src", reader.result);
-                        }
-            
-                        reader.readAsDataURL(file);
-                    }
-                }
+                                            @if(Session::has('featured_img1'))
+                                                <p class="alert alert-dark" >
+                                                    <strong>{{Session::get('featured_img1')}}</strong>
+                                                </p>
+                                            @endif
+                                        <div class="row">
+                                            <div class="col-md-5 mx-auto">
 
+                                                <div  style="background-image:url({{config('app.url')}}images/banner/banner-21.jpg); background-size:cover; width: 250px; height:250px;" id="featured_img1_chooser_preview" class="mx-auto shadow p-1">
 
+                                                </div>
 
-                function openFileOption3()
-                    {
-                    document.getElementById("file3").click();
-                    }
-                function previewFile3(input){
-                    console.log('hello');
-                    var file = $("input[name=featured_img3]").get(0).files[0];
-            
-                    if(file){
-                        var reader = new FileReader();
-            
-                        reader.onload = function(){
-                            $("#previewImg3").attr("src", reader.result);
-                        }
-            
-                        reader.readAsDataURL(file);
-                    }
-                }
+                            
+                                                <div class="form-group   mt-2 mx-auto ">                                            
+                                                    <button onclick="openFileOption4(this.id)" id="featured_img1"  class=" btn btn-sm btn-block btn-primary shadow">Choose</button>
+                                                </div>
+                                                <form enctype="multipart/form-data" method="post" action="{{route('up_pix')}}">
+                                                    @csrf
+                                                        <input id="featured_img1_chooser" onchange="previewFile4(this.id);" type="file" name="featured_img1" class="d-none" >
+                                                    <div class="form-group mb-0">
+                                                        <button class="btn btn-sm btn-block btn-primary shadow">Upload</button>
+                                                    </div>
+
+                                                </form>
+
+                                            </div>
+
+                                            <div class="col-md-7">
+
+                                                <div class="container-fluid">
+                                                    <div class="row">
+
+                                                        <div class="col-md-6">
+                                                        
+                                                            <div  style="background-image:url({{config('app.url')}}images/banner/banner-21.jpg); background-size:cover; min-width: 100%; min-height:140px;" id="featured_img1_chooser_preview" class="hvr-grow shadow-lg img-fluid mb-1">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-6">
+                                                            <div  style="background-image:url({{config('app.url')}}images/banner/banner-21.jpg); background-size:cover; min-width: 100%; min-height:140px;" id="featured_img1_chooser_preview" class="hvr-grow shadow mb-1">
+                                                            </div>
+                                                        </div>
 
 
-                function openFileOption4()
-                    {
-                    document.getElementById("file4").click();
-                    }
-                function previewFile4(input){
-                    console.log('hello');
-                    var file = $("input[name=featured_img4]").get(0).files[0];
-            
-                    if(file){
-                        var reader = new FileReader();
-            
-                        reader.onload = function(){
-                            $("#previewImg4").attr("src", reader.result);
-                        }
-            
-                        reader.readAsDataURL(file);
-                    }
-                }
-            </script>
+                                                        <div class="col-md-6">
+                                                            <div  style="background-image:url({{config('app.url')}}images/banner/banner-21.jpg); background-size:cover; min-width: 100%; min-height:140px;" id="featured_img1_chooser_preview" class="hvr-grow shadow mb-1">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-6">
+                                                            <div  style="background-image:url({{config('app.url')}}images/banner/banner-21.jpg); background-size:cover; min-width: 100%; min-height:140px;" id="featured_img1_chooser_preview" class="hvr-grow shadow mb-1">
+                                                            </div>
+                                                        </div>
+                                                    
+                                                    </div>
+                                                </div>
 
 
-           <form method="post" enctype="multipart/form-data" action="{{route('agent.add_assets', $listing_data->slug)}}">
+                                            </div>
+                                        </div>
+
+
+                                        
+
+                                
+                                    </div>
+                                </div>
+
+                                <div class="row m-3">
+                  
+                  <div class="col-md-3">
+
+                      <a href="" class="btn btn-primary btn-block btn-lg shadow mr-1 mb-1">Back</a>
+
+                  </div>
+                  <div class="col-md-6"></div>
+                  <div class="col-md-3 ">
+
+                      <a href="{{route('agent.add_prop3', $listing_data->slug)}}" class="btn btn-primary btn-block btn-lg shadow mr-1 mb-1">Next</a>
+                  
+                  </div>
+              </div> 
+
+                           
+           
+
 
         
-                    @csrf
-                <div class="row">
-
-                    <div class="col-md-3 mx-auto">
-                            <div class="p-1">
-                            <img onclick="openFileOption()" width="200" height="200" class="img-thumbnail" id="previewImg" src="/images/banner/banner-21.jpg" alt="">
-                               
-                                @error('featured_img')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-
-                            </div>
-                       
-                            <div class="form-group custom-file">
-
-                    
-                                <input id="file1" onchange="previewFile();" type="file" name="featured_img1" class="custom-file-input" >
-                                <label class="custom-file-label d-none" for="inputGroupFile01">Choose file</label>
-                            </div>
-                    </div>
-
-                    <div class="col-md-3 mx-auto">
-                            <div class="p-1">
-                            <img onclick="openFileOption2()" width="200" height="200" class="img-thumbnail" id="previewImg2" src="/images/banner/banner-21.jpg" alt="">
-
-                            </div>
-                       
-                            <div class="form-group custom-file">
-
-                    
-                                <input id="file2" onchange="previewFile2();" type="file" name="featured_img2" class="custom-file-input" >
-                                <label class="custom-file-label d-none" for="inputGroupFile01">Choose file</label>
-                            </div>
-                    </div>
-
-                    <div class="col-md-3 mx-auto">
-                            <div class="p-1">
-                            <img onclick="openFileOption3()" width="200" height="200" class="img-thumbnail" id="previewImg3" src="/images/banner/banner-21.jpg" alt="">
-
-                            </div>
-                       
-                            <div class="form-group custom-file">
-
-                    
-                                <input id="file3" onchange="previewFile3();" type="file" name="featured_img3" class="custom-file-input" >
-                                <label class="custom-file-label d-none" for="inputGroupFile01">Choose file</label>
-                            </div>
-                    </div>
-
-                    <div class="col-md-3 mx-auto">
-                            <div class="p-1">
-                            <img onclick="openFileOption4()" width="200" height="200" class="img-thumbnail" id="previewImg4" src="/images/banner/banner-21.jpg" alt="">
-
-                            </div>
-                       
-                            <div class="form-group custom-file">
-
-                    
-                                <input id="file4" onchange="previewFile4();" type="file" name="featured_img4" class="custom-file-input" >
-                                <label class="custom-file-label d-none" for="inputGroupFile01">Choose file</label>
-                            </div>
-                    </div>
-
-
-                
-                </div>
-                <div class="col-12 d-flex justify-content-center">
-                     <button type="submit" class="btn btn-success btn-lg shadow mr-1 mt-2 mb-1">Upload Images</button>
-                </div>
-                </form>
 
           
 
@@ -238,3 +176,40 @@
 <script src="{{asset('js/scripts/forms/select/form-select2.js')}}"></script>
 <script src="{{asset('js/scripts/forms/number-input.js')}}"></script>
 @endsection
+
+<script>
+
+function openFileOption4(_button)
+        {
+            console.log('i was clicked');
+            var chooser = _button +'_chooser';
+        document.getElementById(chooser).click();
+        }
+    function previewFile4(chooser){
+        console.log('hello');
+
+
+        var file = $('#' + chooser).get(0).files[0];
+
+       
+
+    
+
+        if(file){
+            var reader = new FileReader();
+
+            reader.onload = function(){
+                var previewer = chooser +'_preview';
+            
+                $('#' + previewer).css('background-image', 'url("' + reader.result + '")');
+                $("#previewImg").attr("src", reader.result);
+                
+                // $("#bg-img").css("background-image", "url(" + reader.result + ")");
+            }
+
+            reader.readAsDataURL(file);
+        }
+    }
+
+
+</script>

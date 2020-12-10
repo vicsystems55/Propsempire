@@ -27,17 +27,126 @@
       <div class="card">
         <div class="card-header">
           <h4 class="card-title">Step 3/3</h4>
+          <div class="row">
+
+          <div class="p-2 border-primary col-md-4 ">
+            Step 1
+          </div>
+          <div class="p-2 border-primary  border-left-white mx-auto col-md-4">
+            Step 2
+          </div>
+          <div class="bg-primary text-white p-2 border-primary mx-auto col-md-4">
+            Step 3
+          </div>
+
+          </div>
         </div>
         <div class="card-content">
             <div class="card-body">
-                <h1 class="text-center">congratulations!!!</h1>
-                <h3 class="text-center text-muted">Your listing is now active...</h3>
+                <h1 class="text-center">Almost done</h1>
+                <h3 class="text-center font-italic">Subscription Type</h3>
+                
+                <div class="row">
+
+                    <div class="col-md-4">
+                      <div id="free" style="width:100%; height:230px;" class="c  shadow hvr-float-shadow">
+                        <div class=" card-bod p-1">
+                        <h4>Free</h4>
+                        <ul>
+                            <li>limited asset upload</li>
+                            <li>limited asset upload</li>
+                            <li>limited asset upload</li>
+                            <li>limited asset upload</li>
+                          </ul>
+                          <a class="btn btn-secondary mt-2 btn-block shadow" href="">Get Started <br>
+                            <i>(free)</i>
+                          </a>
+
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div id="standard" style="width:100%; height:230px;" class="border border-primary c shadow-lg hvr-float-shadow">
+                        <div class="card-bod p-1">
+                          <h4>Standard</h4>
+                          <ul>
+                            <li>limited asset upload</li>
+                            <li>limited asset upload</li>
+                            <li>limited asset upload</li>
+                            <li>limited asset upload</li>
+                          </ul>
+                          @include('agents.standard_pay')
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div id="premium" style="width:100%; height:230px;" class="c shadow hvr-float-shadow">
+                        <div class="card-bod p-1">
+                          <h4>Premium</h4>
+                          <ul>
+                            <li>limited asset upload</li>
+                            <li>limited asset upload</li>
+                            <li>limited asset upload</li>
+                            <li>limited asset upload</li>
+                          </ul>
+                              @include('agents.premium_pay')
+                        </div>
+                      </div>
+                    </div>
+
+                </div>
+
+                <script>
+
+                  $(document).ready(function() {
+
+                  
+
+                        $('.c').click(function() { 
+
+                         
+                            var id = $(this).attr('id');
+
+                          //  $('#'+id).addClass('border border-primary');
+
+                          $('ul li a').click( function(){
+                        if ( $(this).hasClass('current') ) {
+                            $(this).removeClass('current');
+                        } else {
+                            $('li a.current').removeClass('current');
+                            $(this).addClass('current');    
+                        }
+                    });
+                            
+                            
+                            return true; 
+
+                           
+                        }); 
+
+                        if ($("#c_radio1").is(":checked")) {
+                              console.log('se');
+                            $('#free').addClass("border border-primary");
+                        }
+
+                        
+
+                  });
+
+                </script>
+
+                  
+                    <!-- <input id="c_radio1" type="radio" name="subscription" value="free">
+                    <input id="c_radio2" type="radio" name="subscription" value="free">
+                    <input id="c_radio3" type="radio" name="subscription" value="free"> -->
                
 
-            
+               
 
-                <div class="col-12 d-flex justify-content-center">
-                    <button type="submit" class="btn btn-primary btn-lg shadow mr-1 mt-2 mb-1">Back to Dashboard</button>
+                <div class="col-12 mt-3 d-flex justify-content-start">
+                    <button type="submit" class="btn btn-primary btn-lg shadow mr-1 mt-2 mb-1">Previous</button>
                    
                   </div>
 

@@ -2,7 +2,7 @@
     <div class="ro mt-2" >
         <div class="">
             
-            <input type="hidden" name="email" value="Auth::user()->email"> {{-- required --}}
+            <input type="hidden" name="email" value="{{Auth::user()->email}}"> {{-- required --}}
             <input type="hidden" name="orderID" value="345">
             <input type="hidden" name="amount" value="800000"> {{-- required in kobo --}}
             <input type="hidden" name="quantity" value="1">

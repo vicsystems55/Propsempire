@@ -49,4 +49,10 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Listing', 'posted_by');
     }
+
+
+    public function problems()
+    {
+        return $this->hasMany('App\ProblemsToSolve');
+    }
 }

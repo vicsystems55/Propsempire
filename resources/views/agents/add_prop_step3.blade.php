@@ -45,11 +45,18 @@
             <div class="card-body">
                 <h1 class="text-center">Almost done</h1>
                 <h3 class="text-center font-italic">Subscription Type</h3>
+
+                @if(Session::has('msg'))
+                  <p class="alert alert-success">
+                    {{Session::get('msg')}}
+                  </p>
+
+                @endif
                 
                 <div class="row">
 
                     <div class="col-md-4">
-                      <div id="free" style="width:100%; height:230px;" class="c  shadow hvr-float-shadow">
+                      <div id="free" style="width:100%; height:230px;" class="c  shadow hvr-float-shadow mb-2">
                         <div class=" card-bod p-1">
                         <h4>Free</h4>
                         <ul>
@@ -67,7 +74,7 @@
                     </div>
 
                     <div class="col-md-4">
-                      <div id="standard" style="width:100%; height:230px;" class="border border-primary c shadow-lg hvr-float-shadow">
+                      <div id="standard" style="width:100%; height:230px;" class="border border-primary c shadow-lg hvr-float-shadow mb-2">
                         <div class="card-bod p-1">
                           <h4>Standard</h4>
                           <ul>
@@ -82,7 +89,7 @@
                     </div>
 
                     <div class="col-md-4">
-                      <div id="premium" style="width:100%; height:230px;" class="c shadow hvr-float-shadow">
+                      <div id="premium" style="width:100%; height:230px;" class="c shadow hvr-float-shadow mb-2">
                         <div class="card-bod p-1">
                           <h4>Premium</h4>
                           <ul>

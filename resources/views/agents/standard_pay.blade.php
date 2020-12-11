@@ -8,6 +8,8 @@
             <input type="hidden" name="amount" value="800000"> {{-- required in kobo --}}
             <input type="hidden" name="quantity" value="1">
             <input type="hidden" name="currency" value="NGN">
+            <input type="hidden" name="callback_url" value="{{ config('app.url')}}payment/callback">
+
             <input type="hidden" name="metadata" value="{{ json_encode($array = [
             
             'prop_slug' => $listing_data->slug,

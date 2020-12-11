@@ -9,6 +9,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Redirect;
 use Paystack;
 
+use App\PaymentDetail;
+
 class PaymentController extends Controller
 {
 
@@ -36,11 +38,11 @@ class PaymentController extends Controller
      */
     public function handleGatewayCallback()
     {
-        // $paymentDetails = Paystack::getPaymentData();
+        $paymentDetails = Paystack::getPaymentData();
 
        
 
-        return view('agents.success')
+        return view('agents.success');
 
         // $order = Subscription::firstOrCreate([
         //     'status' => $paymentDetails['data']['status'],

@@ -4,7 +4,7 @@
 
 @section('content')
 <!-- error 500 -->
-<section class="row flexbox-container">
+<section class="row">
   <div class="col-xl-6 col-md-7 col-9">
       <!-- w-100 for IE specific -->
     <div class="card bg-transparent shadow-none"> 

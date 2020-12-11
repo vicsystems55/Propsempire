@@ -16,9 +16,9 @@ class FrontPageController extends Controller
     {
         # code...
 
-        $listings = Listing::with('users')->where('status', 'active');
+        // $listings = Listing::with('users')->where('status', 'active');
 
-        $listings = Listing::with('users')->get();
+        $listings = Listing::with('users')->latest()->get();
 
         // dd($listings);
 

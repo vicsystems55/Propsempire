@@ -63,7 +63,9 @@ Route::group(['middleware' => ['auth','agent'], 'prefix' => 'agent'], function()
 
     Route::get('/all_listings', 'ListingController@add_prop1')->name('agent.all_listings');
 
-    Route::post('/up_pix', 'ListingController@up_pix')->name('up_pix');
+    Route::post('/up_pix/{slug}', 'ListingController@up_doccc')->name('up_pix');
+
+    Route::post('/remove_pix/{slug}', 'ListingController@remove_pix')->name('remove_pix');
 
     Route::post('/edit_pix','ListingController@edit_pix')->name('edit_pix');
 

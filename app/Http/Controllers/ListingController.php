@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Validator;
 
 use App\Listing;
 
+use App\FeauturedImage;
+
 use Illuminate\Support\Str;
 
 use Auth;
@@ -42,7 +44,7 @@ class ListingController extends Controller
 
     }
 
-    function up_doccc(Request $request, $type)
+    function up_doccc(Request $request, $slug)
     {
         # code...
 
@@ -51,68 +53,141 @@ class ListingController extends Controller
 
         $user_id = Auth::user()->id;
 
-        // $this->validate($request,
-        // [
-        //     'featured_img1' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        // ]);
+        $this->validate($request,
+        [
+            'featured_img' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
 
         
 
-        if($type =='passport'){
+        // if($type =='passport'){
 
-            request()->validate([
-                'passport'  => 'mimes:jpeg,jpg,png,gif|required|max:600',
+        //     request()->validate([
+        //         'passport'  => 'mimes:jpeg,jpg,png,gif|required|max:600',
                 
-              ]);
+        //       ]);
 
-        }
+        // }
 
-        if($type =='first_appoint'){
+        // if($type =='first_appoint'){
 
-            request()->validate([
-                'first_appoint'  => 'mimes:jpeg,jpg,png,gif|required|max:500',
+        //     request()->validate([
+        //         'first_appoint'  => 'mimes:jpeg,jpg,png,gif|required|max:500',
                 
-              ]);
+        //       ]);
 
-        }
-
-        
+        // }
 
         
 
-        $doc = $request->file($type);
+        
+
+        $doc = $request->file('featured_img');
 
         
 
         $new_name = rand().".".$doc->getClientOriginalExtension();
 
-        $path = "images/applicants_assets/".$user_id .'/'.$type;
+        $path = "images/listings_images";
 
         $file1 = $doc->move(public_path($path), $new_name);
 
-        $doc_url = $path .'/'.$new_name;
+        $image = Listing::where('slug', $slug)->first();
 
-        $passport_upload = DocumentUpload::firstOrCreate([
-                'name' => $type,
-                'user_id' => Auth::user()->id,
-            ],[
-            'name' => $type,
-            'user_id' => $user_id,
-            'doc_url' => $doc_url,
-            'slug' => Str::random(32),
-            'category' => 'profile_update'
-        ]);
+        if($image->featured_img1 == 'default.png' ){
 
-        ActivityLog::create([
-            'action_by' => Auth::user()->id,
-            'title' => 'User Profile Update',
-            'log' => 'Just a uploaded Document'
-        ]);
+            Listing::where('slug', $slug)->update([
+                'featured_img1' => $new_name,
+            ]);
+
+            return back()->with('message','Image 1 uploaded successfully');
+
+        }
+        if(!$image->featured_img2){
+            
+            Listing::where('slug', $slug)->update([
+                'featured_img2' => $new_name,
+            ]);
+
+            return back()->with('message','Image 2 uploaded successfully');
+        }
+
+        if(!$image->featured_img3){
+            Listing::where('slug', $slug)->update([
+                'featured_img3' => $new_name,
+            ]);
+
+            return back()->with('message','Image 3 uploaded successfully');
+        }
+
+        if(!$image->featured_img4){
+            Listing::where('slug', $slug)->update([
+                'featured_img4' => $new_name,
+            ]);
+
+            return back()->with('message','Image 4 uploaded successfully');
+        }
+
+
+      
 
 
 
+          return back()->with('message','All images are uploaded');
 
-          return back()->with($type,'file uploaded successfully');
+
+    }
+
+    public function remove_pix(Request $request, $slug)
+    {
+        # code...
+
+        if($request->pix == '1'){
+
+            Listing::where('slug', $slug)->update([
+                'featured_img1' => 'default.png',
+            ]);
+
+
+            return back()->with('message','Image 1 removed, bros why you change am na..');
+
+        }
+
+        if($request->pix == '2'){
+
+            Listing::where('slug', $slug)->update([
+                'featured_img2' => null,
+            ]);
+
+
+            return back()->with('message','You don comot image 2 ooo... how far na');
+
+        }
+
+        if($request->pix == '3'){
+
+            Listing::where('slug', $slug)->update([
+                'featured_img3' => null,
+            ]);
+
+
+            return back()->with('message','Image 3 again this one serious ooo');
+
+        }
+
+        if($request->pix == '3'){
+
+            Listing::where('slug', $slug)->update([
+                'featured_img3' => null,
+            ]);
+
+
+            return back()->with('message','Image 3 are updated');
+
+        }
+
+
+        return back()->with('message','an error occured...');
 
 
     }

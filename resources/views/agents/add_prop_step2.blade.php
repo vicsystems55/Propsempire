@@ -50,31 +50,33 @@
 
                                 <div class="col-md-10 mx-auto  mt-2">
                                     <div class=" ">
-                                            @error('featured_img1')
+                                            @error('featured_img')
                                             <p class="alert alert-warning" >
                                                 <strong>{{ $message }}</strong>
                                             </p>
                                             @enderror
 
-                                            @if(Session::has('featured_img1'))
-                                                <p class="alert alert-dark" >
-                                                    <strong>{{Session::get('featured_img1')}}</strong>
+                                            @if(Session::has('message'))
+                                                <p class="alert alert-success animate__animated animate__bounce" >
+                                                    <strong>{{Session::get('message')}}</strong>
                                                 </p>
                                             @endif
                                         <div class="row">
                                             <div class="col-md-5 mx-auto">
 
-                                                <div  style="background-image:url({{config('app.url')}}images/banner/banner-21.jpg); background-size:cover; width: 250px; height:250px;" id="featured_img1_chooser_preview" class="mx-auto shadow p-1">
+                                            
+
+                                                <div  style="background-image:url({{config('app.url')}}images/listings_images/{{$listing_data->featured_img1??'default.png'}}); background-size:cover; width: 250px; height:250px;" id="featured_img_chooser_preview" class="mx-auto shadow p-1">
 
                                                 </div>
 
                             
                                                 <div class="form-group   mt-2 mx-auto ">                                            
-                                                    <button onclick="openFileOption4(this.id)" id="featured_img1"  class=" btn btn-sm btn-block btn-primary shadow">Choose</button>
+                                                    <button onclick="openFileOption4(this.id)" id="featured_img"  class=" btn btn-sm btn-block btn-primary shadow">Choose</button>
                                                 </div>
-                                                <form enctype="multipart/form-data" method="post" action="{{route('up_pix')}}">
+                                                <form enctype="multipart/form-data" method="post" action="{{route('up_pix', $listing_data->slug)}}">
                                                     @csrf
-                                                        <input id="featured_img1_chooser" onchange="previewFile4(this.id);" type="file" name="featured_img1" class="d-none" >
+                                                        <input id="featured_img_chooser" onchange="previewFile4(this.id);" type="file" name="featured_img" class="d-none" >
                                                     <div class="form-group mb-0">
                                                         <button class="btn btn-sm btn-block btn-primary shadow">Upload</button>
                                                     </div>
@@ -90,24 +92,45 @@
 
                                                         <div class="col-md-6">
                                                         
-                                                            <div  style="background-image:url({{config('app.url')}}images/banner/banner-21.jpg); background-size:cover; min-width: 100%; min-height:140px;" id="featured_img1_chooser_preview" class="hvr-grow shadow-lg img-fluid mb-1">
+                                                            <div  style="background-image:url({{config('app.url')}}images/listings_images/{{$listing_data->featured_img1??'default.png'}}); background-size:cover; min-width: 100%; min-height:140px;" id="featured_img_chooser_preview" class="hvr-grow shadow-lg img-fluid mb-1">
                                                             </div>
+                                                            <form method="post" action="{{route('remove_pix', $listing_data->slug)}}">
+                                                            @csrf
+                                                                <input type="hidden" name="pix" value="1">
+                                                                <button class="btn btn-block btn-sm btn-outline-primary shadow">remove</button>
+                                                            </form>
+                                                            
                                                         </div>
 
                                                         <div class="col-md-6">
-                                                            <div  style="background-image:url({{config('app.url')}}images/banner/banner-21.jpg); background-size:cover; min-width: 100%; min-height:140px;" id="featured_img1_chooser_preview" class="hvr-grow shadow mb-1">
+                                                            <div  style="background-image:url({{config('app.url')}}images/listings_images/{{$listing_data->featured_img2??'default.png'}}); background-size:cover; min-width: 100%; min-height:140px;" id="featured_img_chooser_preview" class="hvr-grow shadow mb-1">
                                                             </div>
+                                                            <form method="post" action="{{route('remove_pix', $listing_data->slug)}}">
+                                                            @csrf
+                                                                <input type="hidden" name="pix" value="2">
+                                                                <button class="btn btn-block btn-sm btn-outline-primary shadow">remove</button>
+                                                            </form>
                                                         </div>
 
 
                                                         <div class="col-md-6">
-                                                            <div  style="background-image:url({{config('app.url')}}images/banner/banner-21.jpg); background-size:cover; min-width: 100%; min-height:140px;" id="featured_img1_chooser_preview" class="hvr-grow shadow mb-1">
+                                                            <div  style="background-image:url({{config('app.url')}}images/listings_images/{{$listing_data->featured_img3??'default.png'}}); background-size:cover; min-width: 100%; min-height:140px;" id="featured_img_chooser_preview" class="hvr-grow shadow mb-1">
                                                             </div>
+                                                            <form method="post" action="{{route('remove_pix', $listing_data->slug)}}">
+                                                            @csrf
+                                                                <input type="hidden" name="pix" value="3">
+                                                                <button class="btn btn-block btn-sm btn-outline-primary shadow">remove</button>
+                                                            </form>
                                                         </div>
 
                                                         <div class="col-md-6">
-                                                            <div  style="background-image:url({{config('app.url')}}images/banner/banner-21.jpg); background-size:cover; min-width: 100%; min-height:140px;" id="featured_img1_chooser_preview" class="hvr-grow shadow mb-1">
+                                                            <div  style="background-image:url({{config('app.url')}}images/listings_images/{{$listing_data->featured_img4??'default.png'}}); background-size:cover; min-width: 100%; min-height:140px;" id="featured_img_chooser_preview" class="hvr-grow shadow mb-1">
                                                             </div>
+                                                            <form method="post" action="{{route('remove_pix', $listing_data->slug)}}">
+                                                            @csrf
+                                                                <input type="hidden" name="pix" value="4">
+                                                                <button class="btn btn-block btn-sm btn-outline-primary shadow">remove</button>
+                                                            </form>
                                                         </div>
                                                     
                                                     </div>
@@ -128,7 +151,7 @@
                   
                   <div class="col-md-3">
 
-                      <a href="" class="btn btn-primary btn-block btn-lg shadow mr-1 mb-1">Back</a>
+                      <a href="{{route('agent.add_prop')}}" class="btn btn-primary btn-block btn-lg shadow mr-1 mb-1">Back</a>
 
                   </div>
                   <div class="col-md-6"></div>

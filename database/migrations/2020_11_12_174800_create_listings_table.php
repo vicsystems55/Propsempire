@@ -23,6 +23,7 @@ class CreateListingsTable extends Migration
             $table->string('featured_img1')->default('default.png');
             $table->string('featured_img2')->nullable();
             $table->string('featured_img3')->nullable();
+            $table->string('featured_img4')->nullable();
             $table->string('category');
             $table->string('subtype');
             $table->string('type');

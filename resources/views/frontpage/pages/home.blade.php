@@ -229,15 +229,15 @@
 								<div class="thumb"><div class="ribbon"><span>Busness</span></div>
 									<div class="fp_single_item_slider">
 										<div class="item">
-											<img class="img-whp" src="/propsempire/images/property/fp1.jpg" alt="fp1.jpg">
+											<img class="img-whp" src="{{config('app.url')}}listings_images/{{$listing->featured_img1}}" alt="fp1.jpg">
 										</div>
 										<div class="item">
-											<img class="img-whp" src="/propsempire/images/property/fp2.jpg" alt="fp2.jpg">
+											<img class="img-whp" src="{{config('app.url')}}listings_images/{{$listing->featured_img2}}" alt="fp2.jpg">
 										</div>
 									</div>
 									<div class="thmb_cntnt style2">
 										<ul class="tag mb0">
-											<li class="list-inline-item"><a href="#">For Rent</a></li>
+											<li class="list-inline-item"><a href="#">{{$listing->type}}</a></li>
 											<li class="list-inline-item"><a href="#">Agent</a></li>
 										</ul>
 									</div>
@@ -246,24 +246,24 @@
 											<li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
 											<li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
 										</ul>
-										<a class="fp_price" href="#">₦13,000<small>/mo</small></a>
+										<a class="fp_price" href="#">₦{{$listing->min_price}}<small>/mo</small></a>
 									</div>
 								</div>
 								<div class="details">
 									<div class="tc_content">
 										<p class="text-thm">Apartment</p>
-										<h4>Renovated Apartment</h4>
-										<p><span class="flaticon-placeholder"></span> 1421 San Pedro St, Los Angeles, CA 90015</p>
+										<h4>{{$listing->title}}</h4>
+										<p><span class="flaticon-placeholder"></span> {{$listing->description}}</p>
 										<ul class="prop_details mb0">
-											<li class="list-inline-item"><a class="text-thm3" href="#">Beds: 4</a></li>
-											<li class="list-inline-item"><a class="text-thm3" href="#">Baths: 2</a></li>
+											<li class="list-inline-item"><a class="text-thm3" href="#">Beds: {{$listing->bedrooms}}</a></li>
+											<li class="list-inline-item"><a class="text-thm3" href="#">Baths: {{$listing->bathrooms}}</a></li>
 											<li class="list-inline-item"><a class="text-thm3" href="#">Sq Ft: 5280</a></li>
 										</ul>
 									</div>
 									<div class="fp_footer">
 										<ul class="fp_meta float-left mb0">
 											<li class="list-inline-item"><a href="#"><img src="/propsempire/images/property/pposter1.png" alt="pposter1.png"></a></li>
-											<li class="list-inline-item"><a href="#">{</a></li>
+											<li class="list-inline-item"><a href="#">{{$listing->users->name}}</a></li>
                                           
                                             
 

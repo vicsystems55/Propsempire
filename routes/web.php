@@ -12,7 +12,9 @@ use App\Http\Controllers\LanguageController;
 */
 // dashboard Routes
 
-Route::get('/','FrontPageController@index');
+Route::get('/','FrontPageController@index')->name('home');
+
+Route::get('/single_view','FrontPageController@single_view')->name('single_view');
 
 Route::get('/dashboard','StarterKitController@index');
 Route::get('/sk-layout-1-column','StarterKitController@column_1Sk');

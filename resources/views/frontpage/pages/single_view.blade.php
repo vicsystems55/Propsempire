@@ -275,9 +275,9 @@
 							<div class="breadcrumb_content style2 mt30-767 mb30-767">
 								<ol class="breadcrumb">
 								    <li class="breadcrumb-item"><a href="#">Home</a></li>
-								    <li class="breadcrumb-item active text-thm" aria-current="page">Agencies Single</li>
+								    <li class="breadcrumb-item active text-thm" aria-current="page">{{$listing->title}}</li>
 								</ol>
-								<h2 class="breadcrumb_title">Agencies Single</h2>
+								<h2 class="breadcrumb_title">{{$listing->title}}</h2>
 							</div>
 							<div class="dn db-991 mt30 mb0">
 								<div id="main2">
@@ -288,7 +288,7 @@
 						<div class="col-lg-12">
 							<div class="feat_property list agency">
 								<div class="thumb"><div class="ribbon"><span>Vip</span></div>
-									<img class="img-whp" src="images/agency/2.jpg" alt="2.jpg">
+									<img class="img-whp" src="{{config('app.url')}}images/listings_images/{{$listing->featured_img1}}" alt="2.jpg">
 									<div class="thmb_cntnt">
 										<ul class="tag mb0">
 											<li class="list-inline-item dn"></li>
@@ -298,7 +298,7 @@
 								</div>
 								<div class="details">
 									<div class="tc_content">
-										<h4>High-Rise Real Estate</h4>
+										<h4>{{$listing->users->name}}</h4>
 										<p class="text-thm">Agent</p>
 										<ul class="prop_details mb0">
 											<li><a href="#">Office: 134 456 3210</a></li>
@@ -594,7 +594,7 @@
 								<div class="item">
 									<div class="feat_property home7 agent">
 										<div class="thumb"><div class="ribbon"><span>Vip</span></div>
-											<img class="img-whp" src="images/property/fp1.jpg" alt="fp1.jpg">
+											<img class="img-whp" src="{{config('app.url')}}images/listings_images/{{$listing->featured_img1}}" alt="fp1.jpg">
 											<div class="thmb_cntnt">
 												<ul class="tag mb0">
 													<li class="list-inline-item"><a href="#">For Rent</a></li>
@@ -609,7 +609,7 @@
 								<div class="item">
 									<div class="feat_property home7 agent">
 										<div class="thumb"><div class="ribbon"><span>Vip</span></div>
-											<img class="img-whp" src="images/property/fp2.jpg" alt="fp2.jpg">
+											<img class="img-whp" src="{{config('app.url')}}images/listings_images/{{$listing->featured_img2}}" alt="fp2.jpg">
 											<div class="thmb_cntnt">
 												<ul class="tag mb0">
 													<li class="list-inline-item"><a href="#">For Rent</a></li>
@@ -624,7 +624,7 @@
 								<div class="item">
 									<div class="feat_property home7 agent">
 										<div class="thumb">
-											<img class="img-whp" src="images/property/fp3.jpg" alt="fp3.jpg">
+											<img class="img-whp" src="{{config('app.url')}}images/listings_images/{{$listing->featured_img3}}" alt="fp3.jpg">
 											<div class="thmb_cntnt">
 												<ul class="tag mb0">
 													<li class="list-inline-item"><a href="#">For Rent</a></li>
@@ -639,7 +639,7 @@
 								<div class="item">
 									<div class="feat_property home7 agent">
 										<div class="thumb"><div class="ribbon"><span>Vip</span></div>
-											<img class="img-whp" src="images/property/fp4.jpg" alt="fp4.jpg">
+											<img class="img-whp" src="{{config('app.url')}}images/listings_images/{{$listing->featured_img4}}" alt="fp4.jpg">
 											<div class="thmb_cntnt">
 												<ul class="tag mb0">
 													<li class="list-inline-item"><a href="#">For Rent</a></li>

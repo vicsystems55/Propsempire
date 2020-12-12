@@ -252,7 +252,11 @@
 								<div class="details">
 									<div class="tc_content">
 										<p class="text-thm">Apartment</p>
-										<h4>{{$listing->title}}</h4>
+										<h4>
+											<a href="{{route('single_view',$listing->slug)}}">{{$listing->title}}</a>
+											
+										
+										</h4>
 										<p><span class="flaticon-placeholder"></span> {{$listing->description}}</p>
 										<ul class="prop_details mb0">
 											<li class="list-inline-item"><a class="text-thm3" href="#">Beds: {{$listing->bedrooms}}</a></li>
@@ -262,7 +266,7 @@
 									</div>
 									<div class="fp_footer">
 										<ul class="fp_meta float-left mb0">
-											<li class="list-inline-item"><a href="#"><img src="/propsempire/images/property/pposter1.png" alt="pposter1.png"></a></li>
+											<li class="list-inline-item"><a href="#"><img src="{{config('app.url')}}/images/avatar/{{$listing->users->avatar}}" alt="pposter1.png"></a></li>
 											<li class="list-inline-item"><a href="#">{{$listing->users->name}}</a></li>
                                           
                                             

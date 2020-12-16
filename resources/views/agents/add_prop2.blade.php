@@ -58,6 +58,29 @@
             <div class="row">
               <div class="col-md-6">
 
+              <div class="form-group p-1">
+                 
+                  <ul class="list-unstyled mb-0">
+                      <li class="d-inline-block mr-2 mb-1">
+                        <fieldset>
+                          <div class="radio radio-shadow">
+                              <input type="radio" id="radioshadow1" name="role" value="agent" checked>
+                              <label for="radioshadow1">Publish</label>
+                          </div>
+                        </fieldset>
+                      </li>
+                      <li class="d-inline-block mr-2 mb-1">
+                        <fieldset>
+                          <div class="radio radio-shadow">
+                              <input type="radio" id="radioshadow2" name="role" value="vendor">
+                              <label for="radioshadow2">Unpublish</label>
+                          </div>
+                        </fieldset>
+                      </li>
+
+                    </ul>
+                 </div>
+
                   <div class="col-md-12 col-12">
                     <div class="form-group">
                     <label for="title">Title</label>
@@ -75,14 +98,26 @@
                   <div class="col-md-12 col-12">
                     <div class="form-group">
                     <label for="description">Description</label>
-                      <input type="text" id="description" class="form-control" placeholder="Description"
-                        name="description">
+                      <textarea col="10" row="30" type="text" id="description" class="form-control" placeholder="Description"
+                        name="description"></textarea>
                         @error('description')
                       <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                       </span>
                     @enderror
                       
+                    </div>
+                  </div>
+
+                  <div class="col-md-12 col-12">
+                    <div class="form-group">
+                    <label for="city-column">Video url</label>
+                      <input type="text" id="video_url" class="form-control" placeholder="Video description" name="video_url">
+                      @error('video_url')
+                      <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                      </span>
+                    @enderror
                     </div>
                   </div>
 
@@ -114,6 +149,8 @@
                                 
                             </div>
                         </div>
+
+                        
               
               
               </div>

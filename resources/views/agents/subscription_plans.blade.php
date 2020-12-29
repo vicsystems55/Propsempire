@@ -21,7 +21,10 @@
 
             <div class="card bg-primary">
             <div class="card-body text-center">
+
                 <h4 class="card-title white">{{$plan->plan_name}}</h4>
+
+                
                 <p class="card-text white"></p>
                 <a href="" class="btn btn-warning">Subscribe</a>
               </div>

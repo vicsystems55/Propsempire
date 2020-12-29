@@ -139,7 +139,7 @@
                     </ul>
                 </li>
 
-                <li class="nav-item has-sub">
+                <li class="nav-item {{ (request()->is('agent/subscription_plans')) ? 'active' : '' }} has-sub  ">
                     <a href="#">
                     <i class="bx bxs-grid"></i>
                     <span class="menu-title" data-i18n="">Subscriptions</span>

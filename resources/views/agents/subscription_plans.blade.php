@@ -24,8 +24,12 @@
 
                 <h4 class="card-title white">{{$plan->plan_name}}</h4>
 
-                
-                <p class="card-text white"></p>
+
+                    <p class="card-text white">Cost per month: NGN {{$plan->cost_per_month}}</p>
+                    <p class="card-text white">Maximum Listings: {{$plan->max_listings}}</p>
+                    <p class="card-text white"> Premium Listings: {{$plan->premium_listings}}</p>
+                    <p class="card-text white"> Auto Boost: {{$plan->auto_boost}}</p>
+
                 <a href="" class="btn btn-warning">Subscribe</a>
               </div>
             </div>

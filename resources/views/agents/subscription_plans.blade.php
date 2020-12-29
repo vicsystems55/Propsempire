@@ -12,18 +12,20 @@
 
 @section('content')
 <!-- Dashboard Ecommerce Starts -->
-<section id="dashboard-ecommerce">
+<section id="dashboard-ecommerce pl-1">
 
 <div class="row">
 
     @foreach($subscription_plans as $plan)
         <div class="col-md-3">
 
-        <div class="card-body text-center">
+            <div class="card bg-primary">
+            <div class="card-body text-center">
                 <h4 class="card-title white">{{$plan->plan_name}}</h4>
-                <p class="card-text white">Mac Book.</p>
-                <a href="" class="btn btn-secondary">Buy Now</a>
+                <p class="card-text white"></p>
+                <a href="" class="btn btn-warning">Subscribe</a>
               </div>
+            </div>
         
         </div>
     @endforeach

@@ -1,6 +1,6 @@
 @extends('layouts.contentLayoutMaster')
 {{-- page Title --}}
-@section('title','My Listings')
+@section('title','Subscription Plans')
 {{-- vendor css --}}
 @section('vendor-styles')
 <link rel="stylesheet" type="text/css" href="{{asset('vendors/css/charts/apexcharts.css')}}">
@@ -14,9 +14,21 @@
 <!-- Dashboard Ecommerce Starts -->
 <section id="dashboard-ecommerce">
 
-<div class="">
-<h3 class="display-4 text-center">You have no Listings yet</h3>
-    <a class="btn btn-primary text-center" href="{{route('agent.add_prop')}}">Create a Listing</a>
+<div class="row">
+
+    @foreach($subscription_plans as $plan)
+        <div class="col-md-3">
+
+        <div class="card-body text-center">
+                <h4 class="card-title white">{{$plan->plan_name}}</h4>
+                <p class="card-text white">Mac Book.</p>
+                <a href="" class="btn btn-secondary">Buy Now</a>
+              </div>
+        
+        </div>
+    @endforeach
+
+    
 </div>
     
    

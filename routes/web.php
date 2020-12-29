@@ -71,6 +71,10 @@ Route::group(['middleware' => ['auth','agent'], 'prefix' => 'agent'], function()
 
     Route::post('/edit_pix','ListingController@edit_pix')->name('edit_pix');
 
+
+    //view all subscription plans
+    Route::post('/subscription_plans','SubscriptionPlanController@subscription_plans')->name('subscription_plans');
+
 	
 });
 

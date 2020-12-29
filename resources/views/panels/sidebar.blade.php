@@ -44,9 +44,9 @@
                       <span class="menu-title" data-i18n="">UI</span>
                       </a>
                       <ul class="menu-content" style="">
-                        <li class=""><a class="menu-item" href="documentation-card.html">Cards</a>
+                        <li class=""><a class="menu-item" href="">Cards</a>
                         </li>
-                        <li class=""><a class="menu-item" href="documentation-colors.html">Colors</a>
+                        <li class=""><a class="menu-item" href="">Colors</a>
                         </li>
                         <li class=""><a class="menu-item" href="documentation-icons.html">Icons</a>
                         </li>
@@ -145,9 +145,11 @@
                     <span class="menu-title" data-i18n="">Subscriptions</span>
                     </a>
                     <ul class="menu-content" style="">
-                      <li class=""><a class="menu-item" href="documentation-card.html">My Subscriptions</a>
+                    <li class=""><a class="menu-item" href="{{route('subscription_plans')}}">All Plans</a>
                       </li>
-                      <li class=""><a class="menu-item" href="documentation-colors.html">History</a>
+                      <li class=""><a class="menu-item" href="">My Subscriptions</a>
+                      </li>
+                      <li class=""><a class="menu-item" href="">History</a>
                       </li>
                      
                     </ul>
@@ -159,9 +161,9 @@
                     <span class="menu-title" data-i18n="">Notifications</span>
                     </a>
                     <ul class="menu-content" style="">
-                      <li class=""><a class="menu-item" href="documentation-card.html">Request</a>
+                      <li class=""><a class="menu-item" href="">Request</a>
                       </li>
-                      <li class=""><a class="menu-item" href="documentation-colors.html">Support Messages</a>
+                      <li class=""><a class="menu-item" href="">Support Messages</a>
                       </li>
                      
                     </ul>
@@ -173,9 +175,9 @@
                     <span class="menu-title" data-i18n="">Accounts</span>
                     </a>
                     <ul class="menu-content" style="">
-                      <li class=""><a class="menu-item" href="documentation-card.html">My Profile</a>
+                      <li class=""><a class="menu-item" href="">My Profile</a>
                       </li>
-                      <li class=""><a class="menu-item" href="documentation-colors.html">Settings</a>
+                      <li class=""><a class="menu-item" href="">Settings</a>
                       </li>
                      
                     </ul>
@@ -238,9 +240,9 @@
                       <span class="menu-title" data-i18n="">UI</span>
                       </a>
                       <ul class="menu-content" style="">
-                        <li class=""><a class="menu-item" href="documentation-card.html">Cards</a>
+                        <li class=""><a class="menu-item" href="">Cards</a>
                         </li>
-                        <li class=""><a class="menu-item" href="documentation-colors.html">Colors</a>
+                        <li class=""><a class="menu-item" href="">Colors</a>
                         </li>
                         <li class=""><a class="menu-item" href="documentation-icons.html">Icons</a>
                         </li>
@@ -304,9 +306,9 @@
                       <span class="menu-title" data-i18n="">UI</span>
                       </a>
                       <ul class="menu-content" style="">
-                        <li class=""><a class="menu-item" href="documentation-card.html">Cards</a>
+                        <li class=""><a class="menu-item" href="">Cards</a>
                         </li>
-                        <li class=""><a class="menu-item" href="documentation-colors.html">Colors</a>
+                        <li class=""><a class="menu-item" href="">Colors</a>
                         </li>
                         <li class=""><a class="menu-item" href="documentation-icons.html">Icons</a>
                         </li>

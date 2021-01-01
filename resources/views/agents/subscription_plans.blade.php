@@ -20,15 +20,15 @@
         <div class="col-md-3">
 
             <div class="card bg-primary">
-            <div class="card-body text-center">
+            <div class="card-body ">
 
                 <h4 class="card-title white">{{$plan->plan_name}}</h4>
 
 
-                    <p class="card-text white">Cost per month: NGN {{$plan->cost_per_month}}</p>
-                    <p class="card-text white">Maximum Listings: {{$plan->max_listings}}</p>
-                    <p class="card-text white"> Premium Listings: {{$plan->premium_listings}}</p>
-                    <p class="card-text white"> Auto Boost: {{$plan->auto_boost}}</p>
+                    <p class="card-text white">Cost per month: <span class="font-weight-bold">NGN {{$plan->cost_per_month}} </span></p>
+                    <p class="card-text white">Maximum Listings: <span class="font-weight-bold">{{$plan->max_listings}} </span></p>
+                    <p class="card-text white"> Premium Listings: <span class="font-weight-bold">{{$plan->premium_listings}} </span></p>
+                    <p class="card-text white"> Auto Boost: <span class="font-weight-bold">{{$plan->auto_boost}} </span></p>
 
                 <a href="" class="btn btn-warning">Subscribe</a>
               </div>

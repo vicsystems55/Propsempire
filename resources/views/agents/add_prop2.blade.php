@@ -62,9 +62,9 @@
                  
                   <ul class="list-unstyled mb-0">
                       <li class="d-inline-block mr-2 mb-1">
-                        <fieldset>
+                        <!-- <fieldset>
                           <div class="radio radio-shadow">
-                              <input type="radio" id="radioshadow1" name="role" value="agent" checked>
+                              <input type="radio" id="radioshadow1"  checked>
                               <label for="radioshadow1">Publish</label>
                           </div>
                         </fieldset>
@@ -72,10 +72,10 @@
                       <li class="d-inline-block mr-2 mb-1">
                         <fieldset>
                           <div class="radio radio-shadow">
-                              <input type="radio" id="radioshadow2" name="role" value="vendor">
+                              <input type="radio" id="radioshadow2"  >
                               <label for="radioshadow2">Unpublish</label>
                           </div>
-                        </fieldset>
+                        </fieldset> -->
                       </li>
 
                     </ul>
@@ -112,7 +112,7 @@
                   <div class="col-md-12 col-12">
                     <div class="form-group">
                     <label for="city-column">Video url</label>
-                      <input type="text" id="video_url" class="form-control" placeholder="Video description" name="video_url">
+                      <input type="text" id="video_url" class="form-control" placeholder="Video description" >
                       @error('video_url')
                       <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>

@@ -66,7 +66,7 @@
 
                                             
 
-                                                <div  style="background-image:url({{config('app.url')}}images/listings_images/{{$listing_data->featured_img1??'default.png'}}); background-size:cover; width: 250px; height:250px;" id="featured_img_chooser_preview" class="mx-auto shadow p-1">
+                                                <div  style="background-image:url({{config('app.url')}}/images/listings_images/{{$listing_data->featured_img1??'default.png'}}); background-size:cover; width: 250px; height:250px;" id="featured_img_chooser_preview" class="mx-auto shadow p-1">
 
                                                 </div>
 
@@ -92,7 +92,7 @@
 
                                                         <div class="col-md-6">
                                                         
-                                                            <div  style="background-image:url({{config('app.url')}}images/listings_images/{{$listing_data->featured_img1??'default.png'}}); background-size:cover; min-width: 100%; min-height:140px;" id="featured_img_chooser_preview" class="hvr-grow shadow-lg img-fluid mb-1">
+                                                            <div  style="background-image:url({{config('app.url')}}/images/listings_images/{{$listing_data->featured_img1??'default.png'}}); background-size:cover; min-width: 100%; min-height:140px;" id="featured_img_chooser_preview" class="hvr-grow shadow-lg img-fluid mb-1">
                                                             </div>
                                                             <form method="post" action="{{route('remove_pix', $listing_data->slug)}}">
                                                             @csrf
@@ -103,7 +103,7 @@
                                                         </div>
 
                                                         <div class="col-md-6">
-                                                            <div  style="background-image:url({{config('app.url')}}images/listings_images/{{$listing_data->featured_img2??'default.png'}}); background-size:cover; min-width: 100%; min-height:140px;" id="featured_img_chooser_preview" class="hvr-grow shadow mb-1">
+                                                            <div  style="background-image:url({{config('app.url')}}/images/listings_images/{{$listing_data->featured_img2??'default.png'}}); background-size:cover; min-width: 100%; min-height:140px;" id="featured_img_chooser_preview" class="hvr-grow shadow mb-1">
                                                             </div>
                                                             <form method="post" action="{{route('remove_pix', $listing_data->slug)}}">
                                                             @csrf
@@ -114,7 +114,7 @@
 
 
                                                         <div class="col-md-6">
-                                                            <div  style="background-image:url({{config('app.url')}}images/listings_images/{{$listing_data->featured_img3??'default.png'}}); background-size:cover; min-width: 100%; min-height:140px;" id="featured_img_chooser_preview" class="hvr-grow shadow mb-1">
+                                                            <div  style="background-image:url({{config('app.url')}}/images/listings_images/{{$listing_data->featured_img3??'default.png'}}); background-size:cover; min-width: 100%; min-height:140px;" id="featured_img_chooser_preview" class="hvr-grow shadow mb-1">
                                                             </div>
                                                             <form method="post" action="{{route('remove_pix', $listing_data->slug)}}">
                                                             @csrf
@@ -124,7 +124,7 @@
                                                         </div>
 
                                                         <div class="col-md-6">
-                                                            <div  style="background-image:url({{config('app.url')}}images/listings_images/{{$listing_data->featured_img4??'default.png'}}); background-size:cover; min-width: 100%; min-height:140px;" id="featured_img_chooser_preview" class="hvr-grow shadow mb-1">
+                                                            <div  style="background-image:url({{config('app.url')}}/images/listings_images/{{$listing_data->featured_img4??'default.png'}}); background-size:cover; min-width: 100%; min-height:140px;" id="featured_img_chooser_preview" class="hvr-grow shadow mb-1">
                                                             </div>
                                                             <form method="post" action="{{route('remove_pix', $listing_data->slug)}}">
                                                             @csrf

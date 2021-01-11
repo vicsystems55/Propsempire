@@ -15,15 +15,16 @@ class CreateSubscriptionsTable extends Migration
     {
         Schema::create('subscriptions', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('listing_id')->unsigned()->unique();
+            
             $table->bigInteger('subscription_plan_id')->unsigned();
+            $table->string('plan_name');
             $table->bigInteger('agent_id')->unsigned();
             $table->string('status')->default('active');
 
             $table->string('slug');
 
             $table->foreign('agent_id')->references('id')->on('users');
-            $table->foreign('listing_id')->references('id')->on('listings');
+           
             $table->foreign('subscription_plan_id')->references('id')->on('subscription_plans');
             $table->timestamps();
         });

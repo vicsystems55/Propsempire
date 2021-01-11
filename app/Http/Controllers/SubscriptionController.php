@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Subscription;
+
 use Illuminate\Http\Request;
 
 class SubscriptionController extends Controller
@@ -36,6 +37,10 @@ class SubscriptionController extends Controller
     public function store(Request $request)
     {
         //
+
+        
+
+
     }
 
     /**

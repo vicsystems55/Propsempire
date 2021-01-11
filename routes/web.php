@@ -75,6 +75,10 @@ Route::group(['middleware' => ['auth','agent'], 'prefix' => 'agent'], function()
     //view all subscription plans
     Route::get('/subscription_plans','SubscriptionPlanController@subscription_plans')->name('subscription_plans');
 
+    //user subscribe
+
+    Route::post('/subscribe','SubscriptionController@store')->name('subscribe');
+
 	
 });
 

@@ -12,7 +12,7 @@
 
 @section('content')
 <!-- Dashboard Ecommerce Starts -->
-<section id="dashboard-ecommerce pl-1">
+<section style="padding-left: 12px;" id="dashboard-ecommerce">
 
 <div class="row">
 
@@ -28,9 +28,8 @@
                     <p class="card-text white">Cost per month: <span class="font-weight-bold">NGN {{$plan->cost_per_month}} </span></p>
                     <p class="card-text white">Maximum Listings: <span class="font-weight-bold">{{$plan->max_listings}} </span></p>
                     <p class="card-text white"> Premium Listings: <span class="font-weight-bold">{{$plan->premium_listings}} </span></p>
-                    <p class="card-text white"> Auto Boost: <span class="font-weight-bold">{{$plan->auto_boost}} </span></p>
-
-                <a href="" class="btn btn-warning">Subscribe</a>
+                    <p class="card-text white"> Auto Boost: <span class="font-weight-bold">{{$plan->auto_boost}} Minutes</span></p>
+                    @include('agents.sub_pay')
               </div>
             </div>
         

@@ -27,7 +27,7 @@ class SubscriptionPlanController extends Controller
             if ($my_plan) {
                 # code...
             }else{
-                $my_plan = null;
+                $my_plan = [];
             }
 
         return view('agents.subscription_plans',[

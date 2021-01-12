@@ -17,7 +17,7 @@
 <div class="row">
 
     @foreach($subscription_plans as $plan)
-       @if($subscriptions->contains('agent_id', '1'))
+       @if($subscriptions->contains('agent_id', Auth::user()->id))
         
        <div class="col-md-3">
 

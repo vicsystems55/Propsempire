@@ -24,16 +24,12 @@ class SubscriptionPlanController extends Controller
 
         $my_plan = Subscription::where('agent_id', Auth::user()->id)->first();
 
-            if ($my_plan) {
-                # code...
-            }else{
-                $my_plan = [];
-            }
+           
 
         return view('agents.subscription_plans',[
             'subscription_plans' => $subscription_plans,
             'subscriptions' => $subscriptions,
-            'my_plan' => $my_plan
+            'my_plan' => $my_plan->plan
         ]);
     }
 }

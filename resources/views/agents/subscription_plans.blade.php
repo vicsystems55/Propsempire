@@ -23,7 +23,7 @@
 
        
 
-        <div class="card bg-{{$plan->plan_name==$my_plan->plan_name?'success':'secondary'}}">
+        <div class="card bg-{{$plan->plan_name==$my_plan?'success':'secondary'}}">
         <div class="card-body ">
 
             <h4 class="card-title white">{{$plan->plan_name}}</h4>

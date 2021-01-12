@@ -20,16 +20,38 @@
     <div class="col-12">
       <div class="card">
         <div class="card-header">
-          <h4 class="card-title">Multiple Files Upload</h4>
+        <div class="card-header border-bottom">
+          <h4 class="card-title p-1">Create Listing Step 2/3</h4>
+
+          <div class="row">
+
+            <div class="p-2 bg-primary col-md-4 text-white">
+               Step 1
+            </div>
+            <div class="p-2 bg-primary border-white text-white mx-auto col-md-4">
+               Step 2
+            </div>
+            <div class="p-2 border-primary mx-auto col-md-4">
+               Step 3
+            </div>
+
+          </div>
+        </div>
         </div>
         <div class="card-content">
           <div class="card-body">
-            <p class="card-text">This example uploads a multiple files using dropzone js library. By default, dropzone
-              is a multiple file uploader. User can either click on the dropzone area and select multiple files or just
-              drop all selected files in the dropzone area. This example is the most basic setup for dropzone.</p>
+            
             <form action="#" class="dropzone dropzone-area" id="dpz-multiple-files">
               <div class="dz-message">Drop Files Here To Upload</div>
             </form>
+
+            <script>
+              myDropzone.on("sending", function(file, xhr, formData) {
+              // Will send the filesize along with the file as POST data.
+              formData.append("filesize", file.size);
+          });
+                      
+            </script>
           </div>
         </div>
       </div>

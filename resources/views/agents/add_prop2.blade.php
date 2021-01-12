@@ -232,6 +232,27 @@
                             </div>
                         </div>
 
+                        <div id="" class="col-md-12 mt-2">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label for="">T</label>
+                                    <input name="bedrooms" id="bedrooms" type="text" class="touchspin" value="1" data-bts-step="1" data-bts-decimals="0">
+                                </div>
+
+                                <div class="col-md-4">
+                                <label for="">Toilet</label>
+                                <input id="toilets" name="toilets" type="text" class="touchspin" value="1" data-bts-step="1" data-bts-decimals="0">
+                                
+                                </div>
+
+                                <div class="col-md-4">
+                                <label for="">Bathrooms</label>
+                                <input id="bathrooms" name="bathrooms" type="text" class="touchspin" value="1" data-bts-step="1" data-bts-decimals="0">
+                                
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="col-sm-12">
                           <div class="form-group mt-2">
                           <ul class="list-unstyled mb-0">

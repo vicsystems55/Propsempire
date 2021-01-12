@@ -14,9 +14,27 @@
 <!-- Dashboard Ecommerce Starts -->
 <section id="dashboard-ecommerce">
 
-<div class="">
+<!-- <div class="">
+
+
 <h3 class="display-4 text-center">You have no Listings yet</h3>
     <a class="btn btn-primary text-center" href="{{route('agent.add_prop')}}">Create a Listing</a>
+</div> -->
+
+<div class="row">
+
+@foreach($my_listings as $listings)
+
+    <div class="col-md-4">
+
+        
+    
+    </div>
+
+
+@endforeach
+   
+
 </div>
     
    

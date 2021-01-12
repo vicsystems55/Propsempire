@@ -16,6 +16,17 @@ use Auth;
 
 class ListingController extends Controller
 {
+
+    public function all_listings()
+    {
+        # code...
+
+        $my_listings = Listing::where('posted_by', Auth::user()->id)->latest()->get();
+
+        return view('agents.all_listings', [
+            'my_listings' => $my_listings
+        ]);
+    }
     //
     public function store(Request $request)
     {

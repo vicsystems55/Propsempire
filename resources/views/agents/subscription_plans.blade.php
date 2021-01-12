@@ -3,10 +3,12 @@
 @section('title','Subscription Plans')
 {{-- vendor css --}}
 @section('vendor-styles')
+<link rel="stylesheet" type="text/css" href="{{asset('vendors/css/forms/spinner/jquery.bootstrap-touchspin.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('vendors/css/charts/apexcharts.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('vendors/css/extensions/swiper.min.css')}}">
 @endsection
 @section('page-styles')
+
 <link rel="stylesheet" type="text/css" href="{{asset('css/pages/dashboard-ecommerce.css')}}">
 @endsection
 
@@ -33,6 +35,12 @@
                 <p class="card-text white">Maximum Listings: <span class="font-weight-bold">{{$plan->max_listings}} </span></p>
                 <p class="card-text white"> Premium Listings: <span class="font-weight-bold">{{$plan->premium_listings}} </span></p>
                 <p class="card-text white"> Auto Boost: <span class="font-weight-bold">{{$plan->auto_boost}} Minutes</span></p>
+               
+                <div class="">
+                    <label class="text-white" for="">Number of Months</label>
+                    <input name="months" id="min_price"  type="number" class="touchspin" value="1" data-bts-max="12" data-bts-step="1" data-bts-decimals="">
+                </div>
+               
                 @include('agents.sub_change')
         </div>
         </div>
@@ -55,6 +63,12 @@
                     <p class="card-text white">Maximum Listings: <span class="font-weight-bold">{{$plan->max_listings}} </span></p>
                     <p class="card-text white"> Premium Listings: <span class="font-weight-bold">{{$plan->premium_listings}} </span></p>
                     <p class="card-text white"> Auto Boost: <span class="font-weight-bold">{{$plan->auto_boost}} Minutes</span></p>
+                       
+                        <div class="">
+                            <label class="text-white" for="">Number of Months</label>
+                            <input name="months" id="min_price"  type="number" class="touchspin" value="1" data-bts-max="12" data-bts-step="1" data-bts-decimals="">
+                        </div>
+                   
                     @include('agents.sub_pay')
             </div>
             </div>
@@ -75,11 +89,14 @@
 @endsection
 
 @section('vendor-scripts')
+<script src="{{asset('vendors/js/forms/spinner/jquery.bootstrap-touchspin.js')}}"></script>
 <script src="{{asset('vendors/js/charts/apexcharts.min.js')}}"></script>
 <script src="{{asset('vendors/js/extensions/swiper.min.js')}}"></script>
 @endsection
 
 @section('page-scripts')
+
 <script src="{{asset('js/scripts/pages/dashboard-ecommerce.js')}}"></script>
+<script src="{{asset('js/scripts/forms/number-input.js')}}"></script>
 @endsection
 

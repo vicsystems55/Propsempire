@@ -7,7 +7,7 @@
             <input type="hidden" name="amount" value="{{$plan->cost_per_month}}00"> {{-- required in kobo --}}
             <input type="hidden" name="quantity" value="1">
             <input type="hidden" name="currency" value="NGN">
-            <input type="hidden" name="callback_url" value="{{ config('app.url')}}agent/subscribe">
+            <input type="hidden" name="callback_url" value="{{ config('app.url')}}/agent/subscribe">
             <?php
 
                

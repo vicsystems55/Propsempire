@@ -29,7 +29,7 @@ class SubscriptionPlanController extends Controller
         return view('agents.subscription_plans',[
             'subscription_plans' => $subscription_plans,
             'subscriptions' => $subscriptions,
-            'my_plan' => $my_plan->plan
+            'my_plan' => $my_plan->plan_name
         ]);
     }
 }

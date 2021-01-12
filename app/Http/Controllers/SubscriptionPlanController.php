@@ -8,6 +8,8 @@ use App\SubscriptionPlan;
 
 use App\Subscription;
 
+use Auth;
+
 class SubscriptionPlanController extends Controller
 {
     //
@@ -20,9 +22,12 @@ class SubscriptionPlanController extends Controller
 
         $subscriptions = Subscription::get();
 
+        $my_plan = Subscription::where('agent_id', Auth::user()->id)->first();
+
         return view('agents.subscription_plans',[
             'subscription_plans' => $subscription_plans,
-            'subscriptions' => $subscriptions
+            'subscriptions' => $subscriptions,
+            'my_plan' => $my_plan
         ]);
     }
 }

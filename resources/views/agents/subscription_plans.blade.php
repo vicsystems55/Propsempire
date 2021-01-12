@@ -18,10 +18,12 @@
 
     @foreach($subscription_plans as $plan)
        @if($subscriptions->contains('agent_id', '1'))
-            on
+        
        <div class="col-md-3">
 
-        <div class="card bg-warning">
+       
+
+        <div class="card bg-{{$plan->plan_name==$my_plan->plan_name?'success':'secondary'}}">
         <div class="card-body ">
 
             <h4 class="card-title white">{{$plan->plan_name}}</h4>

@@ -108,7 +108,7 @@
                     <li class="nav-item active bg-success ">
                         <a href="">
                           
-                          <span class="menu-title font-weight-bold">
+                          <span class="menu-title font-weight-bold text-white">
                           
                          You are on:  {{$my_subscription->plan_name}}
 
@@ -124,7 +124,7 @@
                     <li class="nav-item active bg-success shadow">
                         <a href="">
                          
-                          <span class="menu-title text-white font-weight-bold">
+                          <span class="menu-titl text-white font-weight-bold">
                           
                             You are on: Free Plan
 

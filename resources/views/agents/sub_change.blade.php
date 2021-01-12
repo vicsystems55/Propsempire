@@ -35,7 +35,7 @@
 
             <p>
                 <button class="btn btn-warning shadow btn-block" type="submit" value="Pay Now!">
-                    <i class="fa fa-plus-circle fa-lg"></i> Subscribe 
+                    <i class="fa fa-plus-circle fa-lg"></i> Change Plan 
                 </button>
             </p>
         </div>

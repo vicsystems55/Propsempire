@@ -77,7 +77,9 @@ Route::group(['middleware' => ['auth','agent'], 'prefix' => 'agent'], function()
 
     //user subscribe
 
-    Route::post('/subscribe','SubscriptionController@store')->name('subscribe');
+    Route::get('/subscribe','SubscriptionController@subscribe')->name('subscribe');
+
+    
 
 	
 });

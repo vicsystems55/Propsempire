@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\SubscriptionPlan;
 
+use App\Subscription;
+
 class SubscriptionPlanController extends Controller
 {
     //
@@ -16,8 +18,11 @@ class SubscriptionPlanController extends Controller
 
         $subscription_plans = SubscriptionPlan::where('status', 'active')->get();
 
+        $subscriptions = Subscription::get();
+
         return view('agents.subscription_plans',[
-            'subscription_plans' => $subscription_plans
+            'subscription_plans' => $subscription_plans,
+            'subscriptions' => $subscriptions
         ]);
     }
 }

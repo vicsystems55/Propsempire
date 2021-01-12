@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Subscription;
 
+use Paystack;
+
 use Illuminate\Http\Request;
 
 class SubscriptionController extends Controller
@@ -28,6 +30,39 @@ class SubscriptionController extends Controller
         //
     }
 
+
+    public function subscribe()
+    {
+        //
+        $paymentDetails = Paystack::getPaymentData();
+
+        $subscription_plan_id = $paymentDetails['data']['metadata']['subscription_plan_id'];
+
+        $plan_name = $paymentDetails['data']['metadata']['plan_name'];
+
+        $agent_id = $paymentDetails['data']['metadata']['agent_id'];
+
+        $slug = $paymentDetails['data']['metadata']['slug'];
+
+        $subscription_plan_id = $paymentDetails['data']['metadata']['subscription_plan_id'];
+
+        $order = Subscription::updateOrCreate([
+            
+            'subscription_plan_id' => $subscription_plan_id,
+            'plan_name' => $plan_name,
+            'agent_id' => $agent_id,
+            'slug' => $slug,
+            'subscription_plan_id' => $subscription_plan_id
+
+        ]);
+
+
+
+
+        return view('agents.success');
+
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -37,8 +72,12 @@ class SubscriptionController extends Controller
     public function store(Request $request)
     {
         //
+        $paymentDetails = Paystack::getPaymentData();
 
-        
+
+
+
+        return view('agents.success');
 
 
     }

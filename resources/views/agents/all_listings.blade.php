@@ -12,7 +12,7 @@
 
 @section('content')
 <!-- Dashboard Ecommerce Starts -->
-<section id="dashboard-ecommerce">
+<section style="padding-left:12px; padding-right: 4px;" id="dashboard-ecommerce">
 
 <!-- <div class="">
 
@@ -41,13 +41,13 @@
             </ol>
             <div class="carousel-inner rounded-0" role="listbox">
               <div class="carousel-item active">
-                <img src="{{asset('images/slider/01.jpg')}}" class="d-block w-100" alt="First slide">
+                <img src="{{asset('listings_images')}}/{{$featured_img1??'default.png'}}" class="d-block w-100" alt="First slide">
               </div>
               <div class="carousel-item">
-                <img src="{{asset('images/slider/02.jpg')}}" class="d-block w-100" alt="Second slide">
+                <img src="{{asset('listings_images')}}/{{$featured_img1??'default.png'}}" class="d-block w-100" alt="Second slide">
               </div>
               <div class="carousel-item">
-                <img src="{{asset('images/slider/03.jpg')}}" class="d-block w-100" alt="Third slide">
+                <img src="{{asset('listings_images')}}/{{$featured_img1??'default.png'}}" class="d-block w-100" alt="Third slide">
               </div>
             </div>
             <a class="carousel-control-prev" href="#carousel-example-card" role="button" data-slide="prev">
@@ -61,13 +61,24 @@
           </div>
           <div class="card-body">
             <p class="card-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt assumenda mollitia
-              officia dolorum eius quasi.Chocolate sesame snaps apple pie danish cupcake sweet roll jujubes tiramisu.
+             
             </p>
             <p class="card-text">
+
+                <ul>
+                <li>location:</li>
+                <li>location:</li>
+                <li>location:</li>
+                <li>location:</li>
+
+                </ul>
            
             </p>
           </div>
+        </div>
+
+        <div class="card-footer">
+             <a target="_black" href="{{route('agent.single_listing',  $listing->slug)}}" class="btn btn-block btn-primary shadow">More</a>
         </div>
       </div>
 

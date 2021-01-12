@@ -156,7 +156,7 @@
                         </a>
                     </li>
 
-                  <li class="nav-item {{ (request()->is('agent/listings','/agent/listing/*' )) ? 'active' : '' }} has-sub">
+                  <li class="nav-item {{ (request()->is('agent/listings','/agent/listing/*', 'agent/single_listing/*' )) ? 'active' : '' }} has-sub">
                     <a href="">
                     <i class="bx bxs-grid"></i>
                     <span class="menu-title" data-i18n="">Listings</span>

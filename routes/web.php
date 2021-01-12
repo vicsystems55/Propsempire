@@ -51,6 +51,7 @@ Route::group(['middleware' => ['auth','agency'], 'prefix' => 'agency'], function
 	
 });
 
+
 Route::group(['middleware' => ['auth','agent'], 'prefix' => 'agent'], function(){
 
     Route::get('/', 'AgentPageController@index')->name('agent');
@@ -64,6 +65,8 @@ Route::group(['middleware' => ['auth','agent'], 'prefix' => 'agent'], function()
     Route::post('/add_prop1', 'ListingController@step1')->name('agent.add_prop1');
 
     Route::get('/all_listings', 'ListingController@all_listings')->name('agent.all_listings');
+
+    Route::get('/single_listing/{slug}', 'ListingController@single_listing')->name('agent.single_listing');
 
     Route::post('/up_pix/{slug}', 'ListingController@up_doccc')->name('up_pix');
 

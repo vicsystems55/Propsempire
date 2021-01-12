@@ -27,6 +27,18 @@ class ListingController extends Controller
             'my_listings' => $my_listings
         ]);
     }
+
+
+    public function single_listing($slug)
+    {
+        # code...
+
+        $single_listing = Listing::where('posted_by', Auth::user()->id)->where('slug', $slug)->first();
+
+        return view('agents.single_listing', [
+            'single_listing' => $single_listing
+        ]);
+    }
     //
     public function store(Request $request)
     {

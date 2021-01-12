@@ -160,7 +160,7 @@
                   <div class="col-sm-12">
                     <div class="form-group">
                       <label for="category">Category</label>
-                      <select name="category" id="category" class="form-control">
+                      <select  name="category" id="category" class="form-control">
                         <option value="" selected="selected" >- Select -</option>
                         <option value='rent'>Rent</option>
                         <option value='sale'>Sale</option>
@@ -175,7 +175,7 @@
                   <div class="col-sm-12">
                         <div class="form-group">
                           <label for="type">Type</label>
-                          <select name="type" id="type" class="form-control" required>
+                          <select onchange="set()" name="type" id="type" class="form-control" required>
                           <option value="" selected="selected" >- Select -</option>
                           </select>
                         </div>
@@ -184,13 +184,34 @@
                       <div class="col-sm-12">
                         <div class="form-group">
                           <label for="type">Sub Type</label>
-                          <select name="subtype" id="subtype" class="form-control" required>
+                          <select  name="subtype" id="subtype" class="form-control" required>
                             <option value="" selected="selected" >- Select -</option>
                           </select>
                         </div>
                       </div>
 
-                      <div class="col-md-12">
+                      <script>
+                       function set() {
+
+                        $type =  document.getElementById('type').value;
+
+                          if ($type == 'Land') {
+
+                            document.getElementById('landCheck').classList.add('d-none');
+
+                            alert('disappear bedroom');
+                            
+                          }
+
+                        
+
+                         
+                         
+                       }
+                      
+                      </script>
+
+                      <div id="landCheck" class="col-md-12">
                             <div class="row">
                                 <div class="col-md-4">
                                     <label for="">Bedrooms</label>

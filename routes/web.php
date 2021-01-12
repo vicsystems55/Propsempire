@@ -97,4 +97,7 @@ Route::get('/add_listing2/{slug}', 'ListingController@step2')->name('agent.add_l
 
 Route::post('/pay', 'PaymentController@redirectToGateway')->name('pay');
 
+
+Route::view('/upload', 'agents/upload')->name('upload');
+
 Route::get('/payment/callback', 'PaymentController@handleGatewayCallback');

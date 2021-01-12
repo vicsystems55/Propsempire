@@ -212,7 +212,7 @@ class ListingController extends Controller
             $listing_data = Listing::where('slug', $slug)->where('posted_by', Auth::user()->id)->first();
 
 
-            return view('agents.add_prop_step2',[
+            return view('agents.upload',[
 
                 'listing_data' => $listing_data
             ]);

@@ -46,11 +46,15 @@ class SubscriptionController extends Controller
 
         $subscription_plan_id = $paymentDetails['data']['metadata']['subscription_plan_id'];
 
-        $order = Subscription::updateOrCreate([
+        $order = Subscription::updateOrCreate(
+            [
+                'agent_id' => $agent_id
+            ],
+            [
             
             'subscription_plan_id' => $subscription_plan_id,
             'plan_name' => $plan_name,
-            'agent_id' => $agent_id,
+            
             'slug' => $slug,
             'subscription_plan_id' => $subscription_plan_id
 

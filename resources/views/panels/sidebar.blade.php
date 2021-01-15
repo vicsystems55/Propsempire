@@ -105,12 +105,13 @@
               ?>
                     @if($my_subscription)
 
-                    <li class="nav-item active bg-success ">
+                    <li class="nav-item active bg-success shadow ">
                         <a href="">
                           
                           <span class="menu-title font-weight-bold text-white">
                           
-                         You are on:  {{$my_subscription->plan_name}}
+                         You are on:  {{$my_subscription->plan_name}} <br>
+                         Listings:  0/{{$my_subscription->subscription_plans->max_listings}}
 
                           </span>
 

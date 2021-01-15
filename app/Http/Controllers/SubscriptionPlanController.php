@@ -39,4 +39,16 @@ class SubscriptionPlanController extends Controller
             'my_plan' => $my_plan
         ]);
     }
+
+    public function checkout_plans($plan_name)
+    {
+        # code...
+
+        $single_plan = SubscriptionPlan::where('plan_name', $plan_name)->first();
+
+        return view('agents.checkout_plans',[
+            'single_plan' => $single_plan
+        ]);
+
+    }
 }

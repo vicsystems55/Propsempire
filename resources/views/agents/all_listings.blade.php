@@ -10,9 +10,32 @@
 <link rel="stylesheet" type="text/css" href="{{asset('css/pages/dashboard-ecommerce.css')}}">
 @endsection
 
+<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
+
+
+
+
 @section('content')
 <!-- Dashboard Ecommerce Starts -->
 <section style="padding-left:12px; padding-right: 4px;" id="dashboard-ecommerce">
+
+@if(Session::has('publish'))
+<p class="alert alert-info alert-dismissible">{{ Session::get('publish') }}</p>
+@endif
+
+@if(Session::has('unpublish'))
+<p class="alert alert-warning alert-dismissible">{{ Session::get('unpublish') }}</p>
+@endif
+
+
+@if(Session::has('upgrade'))
+<p class="alert alert-info alert-dismissible">{{ Session::get('upgrade') }} 
+
+  <a href="{{route('subscription_plans')}}">Please upgrade </a>
+
+</p>
+@endif
+
 
 <!-- <div class="">
 
@@ -20,6 +43,7 @@
 <h3 class="display-4 text-center">You have no Listings yet</h3>
     <a class="btn btn-primary text-center" href="{{route('agent.add_prop')}}">Create a Listing</a>
 </div> -->
+
 
 <div class="row">
 
@@ -29,10 +53,7 @@
 
     <div class="card">
         <div class="card-content">
-          <div class="card-body">
-            <h4 class="card-title">{{$listing->title}}</h4>
-            <h6 class="card-subtitle">Support card subtitle</h6>
-          </div>
+         
           <div id="carousel-example-card" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
               <li data-target="#carousel-example-card" data-slide-to="0" class="active"></li>
@@ -60,8 +81,12 @@
             </a>
           </div>
           <div class="card-body">
-            <p class="card-text">
-             
+          <div class="">
+            <h4 class="card-title">{{$listing->title}}</h4>
+            
+          </div>
+            <p class="c">
+            <h4 class="card-title text-center badge badge-primary">NGN {{number_format($listing->min_price, 2)}}</h4>
             </p>
             <p class="card-text">
 
@@ -77,6 +102,33 @@
           </div>
         </div>
 
+        @if($listing->status == 'published')
+
+        <form method="post" class="text-center" action="{{route('agent.unpublish')}}">
+          @csrf
+          <input type="hidden" name="slug" value="{{$listing->slug}}">
+          <button  class="btn btn-dark shadow">Unpublish</button>
+        </form>
+
+
+        @else
+
+        <form method="post" class="text-center" action="{{route('agent.publish')}}">
+          @csrf
+          <input type="hidden" name="slug" value="{{$listing->slug}}">
+          <button class="btn btn-success shadow">Publish Now</button>
+        </form>
+        
+        @endif
+
+      
+            
+
+            
+       
+      
+        
+
         <div class="card-footer">
              <a target="_black" href="{{route('agent.single_listing',  $listing->slug)}}" class="btn btn-block btn-primary shadow">More</a>
         </div>
@@ -88,9 +140,13 @@
 
 
 @endforeach
+
+{{$my_listings->links()}}
    
 
 </div>
+
+
     
    
 </section>
@@ -105,4 +161,8 @@
 @section('page-scripts')
 <script src="{{asset('js/scripts/pages/dashboard-ecommerce.js')}}"></script>
 @endsection
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
 

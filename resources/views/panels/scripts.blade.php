@@ -25,7 +25,9 @@
     <script src="{{asset('js/scripts/footer.js')}}"></script>
     <script src="{{asset('js/scripts/customizer.js')}}"></script>
     <!-- END: Theme JS-->
+   
 
+   
     <!-- BEGIN: Page JS-->
     @yield('page-scripts')
     <!-- END: Page JS-->

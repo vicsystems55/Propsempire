@@ -10,6 +10,8 @@ use App\Listing;
 
 use App\FeauturedImage;
 
+use App\Subscription;
+
 use Illuminate\Support\Str;
 
 use Auth;
@@ -21,7 +23,7 @@ class ListingController extends Controller
     {
         # code...
 
-        $my_listings = Listing::where('posted_by', Auth::user()->id)->latest()->get();
+        $my_listings = Listing::where('posted_by', Auth::user()->id)->latest()->paginate(6);
 
         return view('agents.all_listings', [
             'my_listings' => $my_listings
@@ -67,7 +69,61 @@ class ListingController extends Controller
 
     }
 
-    function up_doccc(Request $request, $slug)
+    public function publish(Request $request)
+    {
+        # code...
+
+        $slug = $request->slug;
+
+        $users_listings = Listing::where('posted_by', Auth::user()->id)->where('status', 'published')->get()->count();
+
+        $user_subscription = Subscription::with('subscription_plans')->where('agent_id', Auth::user()->id)->first();
+
+        $limit = $user_subscription->subscription_plans->max_listings;
+
+
+        if ($users_listings >= $limit) {
+            # code...
+            
+            return back()->with('upgrade', 'You have excceeded your subscription');
+
+        }else{
+
+        
+
+            $publish = Listing::where('slug', $slug)->update([
+                'status' => 'published'
+            ]);
+            return back()->with('publish', 'Your listing has been published ' .'you have uploaded ' .$users_listings .' listings');
+        }
+
+        
+
+
+    }
+
+
+    public function unpublish(Request $request)
+    {
+        # code...
+
+        $slug = $request->slug;
+
+        $unpulish = Listing::where('slug', $slug)->update([
+            'status' => 'unpublished'
+        ]);
+
+
+
+        return back()->with('unpublish', 'Your listing has been unpublished');
+
+    }
+
+    
+
+ 
+
+    public function up_doccc(Request $request, $slug)
     {
         # code...
 

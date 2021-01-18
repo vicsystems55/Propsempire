@@ -88,7 +88,12 @@ Route::group(['middleware' => ['auth','agent'], 'prefix' => 'agent'], function()
 
     Route::get('/subscribe','SubscriptionController@subscribe')->name('subscribe');
 
-    
+ 
+
+    Route::get('/notification_read/{id}', 'ActivityLogController@notification_read')->name('agent.notification_read');
+
+    Route::get('/my_profile', 'AgentPageController@my_profile')->name('agent.my_profile');
+
 
 	
 });

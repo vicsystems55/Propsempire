@@ -20,6 +20,7 @@ class CreateActivityLogsTable extends Migration
             $table->bigInteger('for_')->unsigned();
             $table->string('by_')->default('Support');
             $table->string('category')->default('unique');
+            $table->string('status')->default('unread');
             $table->timestamps();
             $table->foreign('for_')->references('id')->on('users');
         });

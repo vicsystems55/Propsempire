@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class ActivityLog extends Model
 {
     //
+    protected $guarded = [];
+    
     public function users()
     {
         # code...

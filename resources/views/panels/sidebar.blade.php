@@ -100,6 +100,8 @@
 
                 $my_subscription = App\Subscription::where('agent_id', Auth::user()->id)->first();
 
+                $published = App\Listing::where('posted_by', Auth::user()->id)->where('status', 'published')->count();
+
 
 
               ?>
@@ -109,9 +111,11 @@
                         <a href="">
                           
                           <span class="menu-title font-weight-bold text-white">
+
+
                           
                          You are on:  {{$my_subscription->plan_name}} <br>
-                         Listings:  0/{{$my_subscription->subscription_plans->max_listings}}
+                         Listings:  {{$published}}/{{$my_subscription->subscription_plans->max_listings}}
 
                           </span>
 
@@ -218,7 +222,7 @@
                     <span class="menu-title" data-i18n="">Accounts</span>
                     </a>
                     <ul class="menu-content" style="">
-                      <li class=""><a class="menu-item" href="">My Profile</a>
+                      <li class=""><a class="menu-item" href="{{route('agent.my_profile')}}">My Profile</a>
                       </li>
                       <li class=""><a class="menu-item" href="">Settings</a>
                       </li>

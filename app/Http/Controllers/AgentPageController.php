@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Carbon\Carbon;
+
 class AgentPageController extends Controller
 {
     /**
@@ -66,6 +68,14 @@ class AgentPageController extends Controller
     public function create()
     {
         //
+    }
+
+
+    public function my_profile()
+    {
+        //
+
+        return view('agents.my_profile');
     }
 
     /**

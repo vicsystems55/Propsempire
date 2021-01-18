@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Subscription;
 
+use App\ActivityLog;
+
 use Paystack;
 
 use Illuminate\Http\Request;
@@ -58,6 +60,12 @@ class SubscriptionController extends Controller
             'slug' => $slug,
             'subscription_plan_id' => $subscription_plan_id
 
+        ]);
+
+        $log = ActivityLog::Create([
+            'title' => 'Package Subscription',
+            'message' => 'You just successfully subscribed for ' .$plan_name,
+            'for_' => $agent_id
         ]);
 
 

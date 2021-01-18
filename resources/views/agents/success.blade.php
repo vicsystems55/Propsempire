@@ -15,7 +15,7 @@
           <p class="p-2">
            
           </p>
-        <a href="{{asset('/')}}" class="btn btn-primary round glow">BACK TO HOME</a>
+        <a href="{{route('/agent')}}" class="btn btn-primary round glow">BACK TO HOME</a>
         </div>
       </div>
     </div>

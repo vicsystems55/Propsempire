@@ -16,6 +16,11 @@ Route::get('/','FrontPageController@index')->name('home');
 
 Route::get('/single_view/{slug}','FrontPageController@single_view')->name('single_view');
 
+
+Route::post('/search','FrontPageController@search')->name('search');
+
+
+
 Route::get('/dashboard','StarterKitController@index');
 Route::get('/sk-layout-1-column','StarterKitController@column_1Sk');
 Route::get('/sk-layout-2-columns','StarterKitController@columns_2Sk');

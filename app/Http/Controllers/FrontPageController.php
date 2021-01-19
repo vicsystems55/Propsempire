@@ -41,4 +41,15 @@ class FrontPageController extends Controller
             'listing' => $listing
         ]);
     }
+
+    public function search(Request $request)
+    {
+        # code...
+
+        // $listings = Listings::where('status', 'published')->where('title', 'LIKE', "%{$request->key}%")->get();
+
+
+
+        return 123;
+    }
 }

@@ -3,6 +3,8 @@
 
 @section('content')
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
 
 <section class="home-three bg-img3">
 		<div class="container">
@@ -53,7 +55,7 @@
 									<ul class="h1ads_1st_list mb0">
 										<li class="list-inline-item">
 										    <div class="form-group">
-										    	<input type="text" class="form-control" id="exampleInputName1" placeholder="Enter keyword...">
+										    	<input type="text" class="form-control" id="search_key" placeholder="Enter keyword...">
 										    </div>
 										</li>
 										<li class="list-inline-item">
@@ -98,6 +100,38 @@
 											    <button type="submit" class="btn btn-thm3">Search</button>
 											</div>
 										</li>
+
+
+										<script>
+
+											$(document).ready(function(){
+											
+												$("#search_key").keyup(function(){
+												let _token   = $('meta[name="csrf-token"]').attr('content');
+													$.ajax({
+														url: "{{route('search')}}",
+														type:"POST",
+														data:{
+															name:'name',
+															
+															_token: _token
+															},
+														beforeSend:function(){
+															$('.cc').addClass('d-none');
+															$('.loader').removeClass('d-none');
+															console.log('we never go yet');
+														},
+														success:function(response){
+															console.log(response);
+
+															
+																
+														},
+													});										
+												});
+											});
+
+										</script>
 									</ul>
 								</div>
 							  </div>
@@ -115,22 +149,18 @@
 	</section>
 
 
+	<div style="height:900px;" class="loader d-none mt-5 p-5">
 	
+		<h4 class="text-center text-secondary ">Loading...</h4>
+											
+	</div>
 
 
 
-	<!-- Feature Properties -->
+<div class="cc">
+								<!-- Feature Properties -->
 	<section id="feature-property" class="feature-property mt80 pb50">
 
-
-		<div class="row">
-			<div class="col-lg-12">
-				
-				
-			</div>
-		</div>
-
-		
 		<div class="container-fluid ovh">
 			<div class="row">
 				<div class="col-lg-12">
@@ -185,9 +215,11 @@
 				</div>
 			</div>
 		</div>
+		
 	</section>
-	<!-- End Feature Properties -->
-	
+
+		<!-- End Feature Properties -->
+
 
 	<section class="our-listing bgc-f7 pb30-991">
 		<div class="container">
@@ -268,8 +300,8 @@
 										<ul class="fp_meta float-left mb0">
 											<li class="list-inline-item"><a href="#"><img src="{{config('app.url')}}/images/avatar/{{$listing->users->avatar}}" alt="pposter1.png"></a></li>
 											<li class="list-inline-item"><a href="#">{{$listing->users->name}}</a></li>
-                                          
-                                            
+										
+											
 
 										</ul>
 										<div class="fp_pdate float-right">{{$listing->created_at->diffForHumans()}}</div>
@@ -289,19 +321,19 @@
 						<div class="col-lg-12 mt20">
 							<div class="mbp_pagination">
 								<ul class="page_navigation">
-								    <li class="page-item disabled">
-								    	<a class="page-link" href="#" tabindex="-1" aria-disabled="true"> <span class="flaticon-left-arrow"></span> Prev</a>
-								    </li>
-								    <li class="page-item"><a class="page-link" href="#">1</a></li>
-								    <li class="page-item active" aria-current="page">
-								    	<a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-								    </li>
-								    <li class="page-item"><a class="page-link" href="#">3</a></li>
-								    <li class="page-item"><a class="page-link" href="#">...</a></li>
-								    <li class="page-item"><a class="page-link" href="#">29</a></li>
-								    <li class="page-item">
-								    	<a class="page-link" href="#"><span class="flaticon-right-arrow"></span></a>
-								    </li>
+									<li class="page-item disabled">
+										<a class="page-link" href="#" tabindex="-1" aria-disabled="true"> <span class="flaticon-left-arrow"></span> Prev</a>
+									</li>
+									<li class="page-item"><a class="page-link" href="#">1</a></li>
+									<li class="page-item active" aria-current="page">
+										<a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+									</li>
+									<li class="page-item"><a class="page-link" href="#">3</a></li>
+									<li class="page-item"><a class="page-link" href="#">...</a></li>
+									<li class="page-item"><a class="page-link" href="#">29</a></li>
+									<li class="page-item">
+										<a class="page-link" href="#"><span class="flaticon-right-arrow"></span></a>
+									</li>
 								</ul>
 							</div>
 						</div>
@@ -311,6 +343,7 @@
 		</div>
 	</section>
 
+</div>
 
 
 

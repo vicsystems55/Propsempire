@@ -3,12 +3,12 @@
 @section('title','File Uploader')
 {{-- vendor style --}}
 @section('vendor-styles')
-<link rel="stylesheet" type="text/css" href="{{asset('vendors/css/ui/prism.min.css')}}">
-<link rel="stylesheet" type="text/css" href="{{asset('vendors/css/file-uploaders/dropzone.min.css')}}">
+
 @endsection
 {{-- page-styles --}}
 @section('page-styles')
-<link rel="stylesheet" type="text/css" href="{{asset('css/plugins/file-uploaders/dropzone.css')}}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/basic.css" integrity="sha512-Ucip2staDcls3OuwEeh5s9rRVYBsCA4HRr18+qd0Iz3nYpnfUeCIMh/82aHKeYgdaXGebmi9vcREw7YePXsutQ==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/dropzone.css" integrity="sha512-CmjeEOiBCtxpzzfuT2remy8NP++fmHRxR3LnsdQhVXzA3QqRMaJ3heF9zOB+c1lCWSwZkzSOWfTn1CdqgkW3EQ==" crossorigin="anonymous" />
 @endsection
 
 @section('content')
@@ -39,19 +39,50 @@
         </div>
         </div>
         <div class="card-content">
-          <div class="card-body">
-            
-            <form action="#" class="dropzone dropzone-area" id="dpz-multiple-files">
-              <div class="dz-message">Drop Files Here To Upload</div>
-            </form>
 
-            <script>
-              myDropzone.on("sending", function(file, xhr, formData) {
-              // Will send the filesize along with the file as POST data.
-              formData.append("filesize", file.size);
-          });
-                      
-            </script>
+
+        <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">Remove Thumbnail</h4>
+        </div>
+        <div class="card-content">
+          <div class="card-body">
+          
+          <form action="/file-upload"
+      class="drop"
+      id="my-awesome-dropzone"></form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+  Dropzone.options.myAwesomeDropzone = false;
+var myAwesomeDropzone = new Dropzone("div#my-awesome-dropzone", { url: "/file/post"});
+Dropzone.options.myAwesomeDropzone = {
+  paramName: "file", // The name that will be used to transfer the file
+  maxFilesize: 2, // MB
+  createImageThumbnails: false,
+  dictDefaultMessage: "one",
+  accept: function(file, done) {
+    if (file.name == "justinbieber.jpg") {
+      done("Naha, you don't.");
+    }
+    else { done(); }
+  }
+};
+
+Dropzone.autoDiscover = false;
+
+
+      
+</script>
+          <div class="card-body">
+         
+
           </div>
         </div>
       </div>
@@ -67,11 +98,11 @@
 
 {{-- vendor scripts --}}
 @section('vendor-scripts')
-<script src="{{asset('vendors/js/extensions/dropzone.min.js')}}"></script>
-<script src="{{asset('vendors/js/ui/prism.min.js')}}"></script>
+
 @endsection
 
 {{-- page scripts --}}
 @section('page-scripts')
-<script src="{{asset('js/scripts/extensions/dropzone.js')}}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/dropzone-amd-module.min.js" integrity="sha512-AbQlw5cF2Yotp5oubG4/Ye8N8Hnda2DH+l+vlrw0+KA0D8GiPn/RBdvVe5D5XBqzWcBq4yVe1KxiJjsbKa+n4g==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/dropzone.js" integrity="sha512-0QMJSMYaer2wnpi+qbJOy4rOAlE6CbYImSlrgQuf2MBBMqTvK/k6ZJV126/EbdKzMAXaB6PHzdYxOX6Qey7WWw==" crossorigin="anonymous"></script>
 @endsection

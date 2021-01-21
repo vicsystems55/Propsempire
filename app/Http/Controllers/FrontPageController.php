@@ -8,6 +8,8 @@ use App\Listing;
 
 use Carbon\Carbon;
 
+use DB;
+
 class FrontPageController extends Controller
 {
     //
@@ -45,11 +47,12 @@ class FrontPageController extends Controller
     public function search(Request $request)
     {
         # code...
+        $key = $request->params['key'];
+        $listings = Listing::where('title','like', $key.'%')->get();
+       
 
-        // $listings = Listings::where('status', 'published')->where('title', 'LIKE', "%{$request->key}%")->get();
 
 
-
-        return 123;
+        return $listings;
     }
 }

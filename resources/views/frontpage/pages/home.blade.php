@@ -3,7 +3,6 @@
 
 @section('content')
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
 
 
 <section class="home-three bg-img3">
@@ -102,36 +101,7 @@
 										</li>
 
 
-										<script>
-
-											$(document).ready(function(){
-											
-												$("#search_key").keyup(function(){
-												let _token   = $('meta[name="csrf-token"]').attr('content');
-													$.ajax({
-														url: "{{route('search')}}",
-														type:"POST",
-														data:{
-															name:'name',
-															
-															_token: _token
-															},
-														beforeSend:function(){
-															$('.cc').addClass('d-none');
-															$('.loader').removeClass('d-none');
-															console.log('we never go yet');
-														},
-														success:function(response){
-															console.log(response);
-
-															
-																
-														},
-													});										
-												});
-											});
-
-										</script>
+									
 									</ul>
 								</div>
 							  </div>
@@ -148,17 +118,71 @@
 			
 	</section>
 
+	<example-component></example-component>
+<section id="feature-property" class="feature-property mt80 pb50">
 
-	<div style="height:900px;" class="loader d-none mt-5 p-5">
-	
-		<h4 class="text-center text-secondary ">Loading...</h4>
+		<div class="container-fluid ovh">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="col-lg-6 offset-lg-3">
+					<div class="main-title text-center mb40">
+					
+						<h2>Featured Properties</h2>
+						<p>Handpicked properties by our team.</p>
+					</div>
+				</div>
+				</div>
+				<div class="col-lg-12">
+					<div class="feature_property_home3_slider">
+
+						@foreach($listings as $listing)
+
+						<div class="item">
+							<div class="feat_property home3">
+								<div class="thumb"><div class="ribbon"><span>Advance</span></div>
+									<img class="img-whp" src="{{config('app.url')}}listings_images/{{$listing->featured_img1}}" alt="fp1.jpg">
+									<div class="thmb_cntnt">
+										<ul class="tag mb0">
+											<li class="list-inline-item"><a href="#">{{$listing->type}}</a></li>
 											
-	</div>
+										</ul>
+										<ul class="icon mb0">
+											<li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
+											<li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
+										</ul>
+										<a class="fp_price" href="#">₦{{$listing->max_price}}<small>/mo</small></a>
+									</div>
+								</div>
+								<div class="details">
+									<div class="tc_content">
+										<p class="text-thm">Apartment</p>
+										<h4>{{$listing->title}}</h4>
+										<p><span class="flaticon-placeholder"></span> {{$listing->description}}</p>
+										<ul class="prop_details mb0">
+											<li class="list-inline-item"><a href="#">Beds: {{$listing->bedrooms}}</a></li>
+											<li class="list-inline-item"><a href="#">Baths: {{$listing->bathrooms}}</a></li>
+											<!-- <li class="list-inline-item"><a href="#">Sq Ft: 5280</a></li> -->
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+						@endforeach
+						
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</section>	
 
 
 
 <div class="cc">
-								<!-- Feature Properties -->
+<!-- Feature Properties -->
 	<section id="feature-property" class="feature-property mt80 pb50">
 
 		<div class="container-fluid ovh">
@@ -166,6 +190,7 @@
 				<div class="col-lg-12">
 					<div class="col-lg-6 offset-lg-3">
 					<div class="main-title text-center mb40">
+					<example-component></example-component>
 						<h2>Featured Properties</h2>
 						<p>Handpicked properties by our team.</p>
 					</div>

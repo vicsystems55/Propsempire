@@ -29,60 +29,50 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+	<script src="{{ asset('js/app.js') }}" defer></script>
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
 </head>
-<body class="maxw1600 m0a">
+<body  class="maxw1600 m0a">
 <div class="wrapper">
 <div class="preloader"></div>
 	
 
-	<!-- Main Header Nav -->
-	@include('frontpage.header')
+	<div id="app">
+		<!-- Main Header Nav -->
+		@include('frontpage.header')
 
-	<!-- Home Design -->
-	@yield('content')
+		<!-- Home Design -->
+		@yield('content')
 
+
+		@include('frontpage.footer')
+	</div>
 	
-
-	<!-- Property Cities -->
-	
-
-	<!-- Property Search -->
-	
-
-	<!-- Property Cities -->
-	
-
-	<!-- Our Agent -->
-	
-
-
-
-	@include('frontpage.footer')
 <a class="scrollToHome text-thm3" href="#"><i class="flaticon-arrows"></i></a>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
 
 <!-- Wrapper End -->
-<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript" src="js/jquery-3.3.1.js"></script>
-<script type="text/javascript" src="{{asset('propsempire')}}/js/jquery-migrate-3.0.0.min.js"></script>
-<script type="text/javascript" src="{{asset('propsempire')}}/js/popper.min.js"></script>
-<script type="text/javascript" src="{{asset('propsempire')}}/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="{{asset('propsempire')}}/js/jquery.mmenu.all.js"></script>
-<script type="text/javascript" src="{{asset('propsempire')}}/js/ace-responsive-menu.js"></script>
-<script type="text/javascript" src="{{asset('propsempire')}}/js/bootstrap-select.min.js"></script>
-<script type="text/javascript" src="{{asset('propsempire')}}/js/isotop.js"></script>
-<script type="text/javascript" src="{{asset('propsempire')}}/js/snackbar.min.js"></script>
-<script type="text/javascript" src="{{asset('propsempire')}}/js/simplebar.js"></script>
-<script type="text/javascript" src="{{asset('propsempire')}}/js/parallax.js"></script>
-<script type="text/javascript" src="{{asset('propsempire')}}/js/scrollto.js"></script>
-<script type="text/javascript" src="{{asset('propsempire')}}/js/jquery-scrolltofixed-min.js"></script>
-<script type="text/javascript" src="{{asset('propsempire')}}/js/jquery.counterup.js"></script>
-<script type="text/javascript" src="{{asset('propsempire')}}/js/wow.min.js"></script>
-<script type="text/javascript" src="{{asset('propsempire')}}/js/slider.js"></script>
-<script type="text/javascript" src="{{asset('propsempire')}}/js/timepicker.js"></script>
+<script type="text/javascript" src="{{config('app.url')}}propsempire/js/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="{{config('app.url')}}propsempire/js/jquery-migrate-3.0.0.min.js"></script>
+<script type="text/javascript" src="{{config('app.url')}}propsempire/js/popper.min.js"></script>
+<script type="text/javascript" src="{{config('app.url')}}propsempire/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="{{config('app.url')}}propsempire/js/jquery.mmenu.all.js"></script>
+<script type="text/javascript" src="{{config('app.url')}}propsempire/js/ace-responsive-menu.js"></script>
+<script type="text/javascript" src="{{config('app.url')}}propsempire/js/bootstrap-select.min.js"></script>
+<script type="text/javascript" src="{{config('app.url')}}propsempire/js/isotop.js"></script>
+<script type="text/javascript" src="{{config('app.url')}}propsempire/js/snackbar.min.js"></script>
+<script type="text/javascript" src="{{config('app.url')}}propsempire/js/simplebar.js"></script>
+<script type="text/javascript" src="{{config('app.url')}}propsempire/js/parallax.js"></script>
+<script type="text/javascript" src="{{config('app.url')}}propsempire/js/scrollto.js"></script>
+<script type="text/javascript" src="{{config('app.url')}}propsempire/js/jquery-scrolltofixed-min.js"></script>
+<script type="text/javascript" src="{{config('app.url')}}propsempire/js/jquery.counterup.js"></script>
+<script type="text/javascript" src="{{config('app.url')}}propsempire/js/wow.min.js"></script>
+<script type="text/javascript" src="{{config('app.url')}}propsempire/js/slider.js"></script>
+<script type="text/javascript" src="{{config('app.url')}}propsempire/js/timepicker.js"></script>
 <!-- Custom script for all pages --> 
-<script type="text/javascript" src="{{asset('propsempire')}}/js/script.js"></script>
+<script type="text/javascript" src="{{config('app.url')}}propsempire/js/script.js"></script>
+
 </body>
 
 <!-- Mirrored from grandetest.com/theme/findhouse-html/index3.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 15 Oct 2020 13:14:57 GMT -->

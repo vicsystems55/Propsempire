@@ -14,7 +14,7 @@ use App\Http\Controllers\LanguageController;
 
 Route::get('/','FrontPageController@index')->name('home');
 
-Route::get('/single_view/{slug}','FrontPageController@single_view')->name('single_view');
+Route::get('/single_view','FrontPageController@single_view')->name('single_view');
 
 
 Route::post('/search','FrontPageController@search')->name('search');

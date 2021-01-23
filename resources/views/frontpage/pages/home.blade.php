@@ -32,16 +32,24 @@
 											</div>
 										</div>
 									</li>
+										
+										
+										
+										
+
 									<li class="list-inline-item">
-									    <div class="form-group">
-									    	<input type="text" class="form-control" id="exampleInputName1" placeholder="Enter keyword...">
-									    </div>
+										<form method="post" action="{{route('search')}}">
+											<div class="form-group">
+												<input type="text" class="form-control" id="exampleInputName1" placeholder="Enter keyword...">
+											</div>
+											</li>
+											<li class="list-inline-item">
+												<div class="search_option_button">
+													<button type="submit" class="btn btn-thm">Search</button>
+												</div>
+										</form>
 									</li>
-									<li class="list-inline-item">
-										<div class="search_option_button">
-										    <button type="submit" class="btn btn-thm">Search</button>
-										</div>
-									</li>
+									
 								</ul>
 							</div>
 						</div>

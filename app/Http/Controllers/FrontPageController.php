@@ -29,19 +29,22 @@ class FrontPageController extends Controller
         ]);
     }
 
-    public function single_view($slug)
+    public function single_view()
     {
         # code...
 
         // $listings = Listing::with('users')->where('status', 'active');
 
-        $listing = Listing::with('users')->where('slug', $slug)->first();
+        // $listing = Listing::with('users')->where('slug', $slug)->first();
 
         // dd($listings);
 
-        return view('frontpage.pages.single_view',[
-            'listing' => $listing
-        ]);
+        // return view('frontpage.pages.single_view',[
+        //     'listing' => $listing
+        // ]);
+
+        
+        return view('frontpage.pages.single_view');
     }
 
     public function search(Request $request)
@@ -53,6 +56,7 @@ class FrontPageController extends Controller
 
 
 
-        return $listings;
+        return view('frontpage.pages.search');
+    
     }
 }

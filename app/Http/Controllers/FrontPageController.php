@@ -59,4 +59,19 @@ class FrontPageController extends Controller
         return view('frontpage.pages.search');
     
     }
+
+
+    
+    public function _search()
+    {
+        // # code...
+        // $key = $request->params['key'];
+        // $listings = Listing::where('title','like', $key.'%')->get();
+       
+
+
+
+        return view('frontpage.pages.search');
+    
+    }
 }

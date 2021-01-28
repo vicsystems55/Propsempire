@@ -95,7 +95,7 @@
 						<img class="img-fluid w100" src="{{config('app.url')}}propsempire/images/property/pc1.png" alt="pc1.png">
 					</div>
 					<div class="details">
-						<h4>Miami</h4>
+						<h4>Lagos</h4>
 						<p>24 Properties</p>
 					</div>
 				</div>
@@ -106,7 +106,7 @@
 						<img class="img-fluid w100" src="{{config('app.url')}}propsempire/images/property/pc2.png" alt="pc2.png">
 					</div>
 					<div class="details">
-						<h4>New York</h4>
+						<h4>Abuja</h4>
 						<p>24 Properties</p>
 					</div>
 				</div>
@@ -117,7 +117,7 @@
 						<img class="img-fluid w100" src="{{config('app.url')}}propsempire/images/property/pc3.png" alt="pc3.png">
 					</div>
 					<div class="details">
-						<h4>Rome</h4>
+						<h4>Portharcourt</h4>
 						<p>24 Properties</p>
 					</div>
 				</div>
@@ -128,22 +128,12 @@
 						<img class="img-fluid w100" src="{{config('app.url')}}propsempire/images/property/pc4.png" alt="pc4.png">
 					</div>
 					<div class="details">
-						<h4>Paris</h4>
+						<h4>Calabar</h4>
 						<p>24 Properties</p>
 					</div>
 				</div>
 			</div>
-			<div class="col-sm-6 col-lg-4 col-xl">
-				<div class="properti_city_home8 text-center">
-					<div class="thumb">
-						<img class="img-fluid w100" src="{{config('app.url')}}propsempire/images/property/pc5.png" alt="pc5.png">
-					</div>
-					<div class="details">
-						<h4>Sydney</h4>
-						<p>24 Properties</p>
-					</div>
-				</div>
-			</div>
+			
 		</div>
 	</div>
 </section>
@@ -380,7 +370,7 @@
 
 					<div class="card-body">
 
-						<h4 class="text-center">Plumber</h4>
+						<h4 class="text-center">Electrician</h4>
 					
 					</div>
 					
@@ -392,7 +382,7 @@
 
 					<div class="card-body">
 
-						<h4 class="text-center">Plumber</h4>
+						<h4 class="text-center">Painter</h4>
 					
 					</div>
 					
@@ -404,7 +394,7 @@
 
 					<div class="card-body">
 
-						<h4 class="text-center">Plumber</h4>
+						<h4 class="text-center">Interior Decorator</h4>
 					
 					</div>
 					
@@ -432,7 +422,7 @@
 			<div class="row">
 				<div class="col-lg-6 offset-lg-3">
 					<div class="main-title text-center">
-						<h2>Featured Properties</h2>
+						<h2>Most Searched For</h2>
 						<p>Handpicked properties by our team.</p>
 					</div>
 				</div>
@@ -662,27 +652,15 @@
 				</div>
 			</div>
 		</div>
-</section>
 
-<div class="col-lg-12 mt20">
-	<div class="mbp_pagination">
-		<ul class="page_navigation">
-			<li class="page-item disabled">
-				<a class="page-link" href="#" tabindex="-1" aria-disabled="true"> <span class="flaticon-left-arrow"></span> Prev</a>
-			</li>
-			<li class="page-item"><a class="page-link" href="#">1</a></li>
-			<li class="page-item active" aria-current="page">
-				<a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-			</li>
-			<li class="page-item"><a class="page-link" href="#">3</a></li>
-			<li class="page-item"><a class="page-link" href="#">...</a></li>
-			<li class="page-item"><a class="page-link" href="#">29</a></li>
-			<li class="page-item">
-				<a class="page-link" href="#"><span class="flaticon-right-arrow"></span></a>
-			</li>
-		</ul>
+		<div class="col-lg-12 pb-2">
+	<div class="mx-auto text-center">
+	<a href="{{route('search')}}" class=" btn btn-lg btn-primary shadow">Show More</a>
 	</div>
 </div>
+</section>
+
+
 
 
 

@@ -35,7 +35,7 @@ class ListingController extends Controller
     {
         # code...
 
-        $single_listing = Listing::where('posted_by', Auth::user()->id)->where('slug', $slug)->first();
+        $single_listing = Listing::where('slug', $slug)->first();
 
         return view('agents.single_listing', [
             'single_listing' => $single_listing

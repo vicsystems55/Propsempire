@@ -8,6 +8,9 @@
 
 @section('content')
 
+<div id="ap">
+
+	
 	<!-- Listing Grid View -->
 	<section class="our-listing bgc-f7 pb30-991">
 		<div class="container">
@@ -572,7 +575,7 @@
 													<li class="list-inline-item"><a href="#">For Rent</a></li>
 													<li class="list-inline-item"><a href="#">Featured</a></li>
 												</ul>
-												<a class="fp_price" href="{{route('single_view')}}>$13,000<small>/mo</small></a>
+												<a class="fp_price" href="{{route('single_view2')}}>$13,000<small>/mo</small></a>
 												<h4 class="posr color-white">Renovated Apartment</h4>
 											</div>
 										</div>
@@ -587,7 +590,7 @@
 													<li class="list-inline-item"><a href="#">For Rent</a></li>
 													<li class="list-inline-item"><a href="#">Featured</a></li>
 												</ul>
-												<a class="fp_price" href="{{route('single_view')}}">$13,000<small>/mo</small></a>
+												<a class="fp_price" href="{{route('single_view2')}}">$13,000<small>/mo</small></a>
 												<h4 class="posr color-white">Renovated Apartment</h4>
 											</div>
 										</div>
@@ -602,7 +605,7 @@
 													<li class="list-inline-item"><a href="#">For Rent</a></li>
 													<li class="list-inline-item"><a href="#">Featured</a></li>
 												</ul>
-												<a class="fp_price" href="{{route('single_view')}}">$13,000<small>/mo</small></a>
+												<a class="fp_price" href="{{route('single_view2')}}">$13,000<small>/mo</small></a>
 												<h4 class="posr color-white">Renovated Apartment</h4>
 											</div>
 										</div>
@@ -617,7 +620,7 @@
 													<li class="list-inline-item"><a href="#">For Rent</a></li>
 													<li class="list-inline-item"><a href="#">Featured</a></li>
 												</ul>
-												<a class="fp_price" href="{{route('single_view')}}">$13,000<small>/mo</small></a>
+												<a class="fp_price" href="{{route('single_view2')}}">$13,000<small>/mo</small></a>
 												<h4 class="posr color-white">Renovated Apartment</h4>
 											</div>
 										</div>
@@ -632,7 +635,7 @@
 													<li class="list-inline-item"><a href="#">For Rent</a></li>
 													<li class="list-inline-item"><a href="#">Featured</a></li>
 												</ul>
-												<a class="fp_price" href="{{route('single_view')}}">$13,000<small>/mo</small></a>
+												<a class="fp_price" href="{{route('single_view2')}}">$13,000<small>/mo</small></a>
 												<h4 class="posr color-white">Renovated Apartment</h4>
 											</div>
 										</div>
@@ -746,7 +749,7 @@
 											</ul>
 											<a class="fp_price" href="#">$13,000<small>/mo</small></a>
 										</div>
-										<{{route('single_view')}} class="text-thm">Apartment</p>
+										<{{route('single_view2')}} class="text-thm">Apartment</p>
 										<h4>Renovated Apartment</h4>
 										<p><span class="flaticon-placeholder"></span> 1421 San Pedro St, Los Angeles, CA 90015</p>
 										<ul class="prop_details mb0">
@@ -920,5 +923,6 @@
 
 
 
+</div>
 
 @endsection

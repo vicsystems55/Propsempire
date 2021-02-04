@@ -20,22 +20,26 @@ class FrontPageController extends Controller
 
         // $listings = Listing::with('users')->where('status', 'active');
 
-        $listings = Listing::with('users')->latest()->get();
+        $premium_listings = Listing::with('users')->where('status', 'published')->where('type', 'premium')->latest()->get();
+
+        $frontpage_listings = Listing::with('users')->where('status', 'published')->where('type', 'frontpage')->latest()->get();
 
         // dd($listings);
 
         return view('frontpage.pages.home',[
-            'listings' => $listings
+            'premium_listings' => $premium_listings,
+            'frontpage_listings' => $frontpage_listings
         ]);
+
     }
 
-    public function single_view()
+    public function single_view($slug)
     {
         # code...
 
         // $listings = Listing::with('users')->where('status', 'active');
 
-        // $listing = Listing::with('users')->where('slug', $slug)->first();
+        $listing_data = Listing::with('users')->where('slug', $slug)->first();
 
         // dd($listings);
 
@@ -44,7 +48,29 @@ class FrontPageController extends Controller
         // ]);
 
         
-        return view('frontpage.pages.single_view');
+        return view('frontpage.pages.single_view',[
+            'listing_data' => $listing_data
+        ]);
+    }
+
+    public function single_view2()
+    {
+        # code...
+
+        // $listings = Listing::with('users')->where('status', 'active');
+
+        $listing_data = Listing::with('users')->where('slug', $slug)->first();
+
+        // dd($listings);
+
+        // return view('frontpage.pages.single_view',[
+        //     'listing' => $listing
+        // ]);
+
+        
+        return view('frontpage.pages.single_view',[
+            'listing_data' => $listing_data
+        ]);
     }
 
     public function search(Request $request)

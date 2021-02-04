@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\FeaturedImage;
+use Auth;
 use Illuminate\Http\Request;
 
 class FeaturedImageController extends Controller
@@ -35,7 +36,37 @@ class FeaturedImageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+
+        $image = $request->file('file');
+
+        $listing_id = $request->listing_id;
+        $listing_slug = $request->listing_slug;
+
+        $newname = rand(233,9000).'.'.$image->getClientOriginalExtension();
+
+        $image->move(public_path('listings_images'), $newname);
+
+            $upload = FeaturedImage::Create([
+                'listing_slug' => $listing_slug,
+                'listing_id' => $listing_id,
+                'user_id' => Auth::user()->id,
+                'file_path' => $newname
+                
+            ]);
+
+        return $upload;
+
+
+
+        
+
+
+
+
+
+
+
     }
 
     /**

@@ -135,16 +135,16 @@
 
                   <div class="col-md-12">
                             <div class="row">
-                                <div class="col-md-6">
-                                    <label for="">Minimum Price</label>
+                                <div class="col-md-7">
+                                    <label for=""> Price</label>
                                     <input name="min_price" id="min_price" data-bts-prefix="NGN" type="number" class="touchspin" value="20000" data-bts-max="1000000s" data-bts-step="500" data-bts-decimals="2">
                                 </div>
 
-                                <div class="col-md-6">
+                                <!-- <div class="col-md-6">
                                 <label for="">Maximum Price</label>
                                 <input id="max_price" name="max_price" data-bts-prefix="NGN" type="number" class="touchspin" value="20000" data-bts-max="1000000s" data-bts-step="500" data-bts-decimals="2">
                                 
-                                </div>
+                                </div> -->
 
                                 
                             </div>
@@ -234,22 +234,22 @@
 
                         <div id="" class="col-md-12 mt-2">
                             <div class="row">
-                                <div class="col-md-4">
-                                    <label for="">T</label>
+           
+                                <div class="col-md-6">
+                                    <label for="">Total Area</label>
+                                    <input name="total_area" id="total_area" data-bts-postfix="SQRM" type="number" class="touchspin" value="100" data-bts-max="1000000s" data-bts-step="500" data-bts-decimals="2">
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="">Covered Area</label>
+                                    <input name="covered_area" id="covered_area" data-bts-postfix="SQRM" type="number" class="touchspin" value="100" data-bts-max="1000000s" data-bts-step="500" data-bts-decimals="2">
+                                </div>
+
+                                <div class="col-md-4 pt-1">
+                                    <label for="">Parking</label>
                                     <input name="bedrooms" id="bedrooms" type="text" class="touchspin" value="1" data-bts-step="1" data-bts-decimals="0">
                                 </div>
 
-                                <div class="col-md-4">
-                                <label for="">Toilet</label>
-                                <input id="toilets" name="toilets" type="text" class="touchspin" value="1" data-bts-step="1" data-bts-decimals="0">
-                                
-                                </div>
-
-                                <div class="col-md-4">
-                                <label for="">Bathrooms</label>
-                                <input id="bathrooms" name="bathrooms" type="text" class="touchspin" value="1" data-bts-step="1" data-bts-decimals="0">
-                                
-                                </div>
                             </div>
                         </div>
 
@@ -268,7 +268,7 @@
                                 <fieldset>
                                   <div class="checkbox checkbox-primary">
                                       <input name="parking"  type="checkbox" id="parking"  value="1">
-                                      <label for="parking">Parking</label>
+                                      <label for="parking">Serviced</label>
                                   </div>
                                 </fieldset>
                               </li>

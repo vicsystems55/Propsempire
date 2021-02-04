@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Validator;
 
 use App\Listing;
 
-use App\FeauturedImage;
+use App\FeaturedImage;
 
 use App\Subscription;
 
@@ -35,10 +35,15 @@ class ListingController extends Controller
     {
         # code...
 
+        $images = FeaturedImage::where('listing_slug', $slug)->latest()->get();
+
+        Listing::where('slug', $slug)->increment('views', 1);
+
         $single_listing = Listing::where('slug', $slug)->first();
 
         return view('agents.single_listing', [
-            'single_listing' => $single_listing
+            'single_listing' => $single_listing, 
+            'images' => $images
         ]);
     }
     //
@@ -280,7 +285,7 @@ class ListingController extends Controller
                 'slug' => Str::random(32)
                 ]);
                 
-                return redirect('/agent/add_prop2/'. $listing->slug);
+                return redirect('/agent/single_listing' .'/'.$listing->slug);
     
             
         }

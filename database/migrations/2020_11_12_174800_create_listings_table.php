@@ -30,6 +30,11 @@ class CreateListingsTable extends Migration
             $table->integer('bedrooms')->unsigned();
             $table->integer('toilets')->unsigned();
             $table->integer('bathrooms')->unsigned();
+
+            $table->string('parking_no')->nullable();
+            $table->string('total_area')->nullable();
+            $table->string('covered_area')->nullable();
+            
             $table->boolean('furnished')->default(0);
             $table->boolean('parking')->default(0);
             $table->double('min_price');

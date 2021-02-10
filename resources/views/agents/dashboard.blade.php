@@ -27,7 +27,7 @@
               <div class="pb-0 d-flex justify-content-between">
                 <div class="dashboard-content-left">
                 <span class="">Total Listings</span>
-                  <h3 class="text-primary text-bold-500">0</h3>
+                  <h3 class="text-primary text-bold-500">{{$my_listings->count()}}</h3>
 
                   <span class="">Premium Listings</span>
                   <h3 class="text-primary text-bold-500">0</h3>

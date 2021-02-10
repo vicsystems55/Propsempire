@@ -19,22 +19,7 @@
 <!-- Dashboard Ecommerce Starts -->
 <section style="padding-left:12px; padding-right: 4px;" id="dashboard-ecommerce">
 
-@if(Session::has('publish'))
-<p class="alert alert-info alert-dismissible">{{ Session::get('publish') }}</p>
-@endif
-
-@if(Session::has('unpublish'))
-<p class="alert alert-warning alert-dismissible">{{ Session::get('unpublish') }}</p>
-@endif
-
-
-@if(Session::has('upgrade'))
-<p class="alert alert-info alert-dismissible">{{ Session::get('upgrade') }} 
-
-  <a href="{{route('subscription_plans')}}">Please upgrade </a>
-
-</p>
-@endif
+<h4>All Listings</h4>
 
 
 <!-- <div class="">
@@ -82,55 +67,23 @@
           </div>
           <div class="card-body">
           <div class="">
+          <!-- <h4 class="card-title text-center badge badge-primary">NGN {{number_format($listing->min_price, 2)}}</h4> -->
+
             <h4 class="card-title">{{$listing->title}}</h4>
+
+            <p>
+              {{$listing->description}}
+            </p>
             
           </div>
-            <p class="c">
-            <h4 class="card-title text-center badge badge-primary">NGN {{number_format($listing->min_price, 2)}}</h4>
-            </p>
-            <p class="card-text">
-
-                <ul>
-                <li>location:</li>
-                <li>location:</li>
-                <li>location:</li>
-                <li>location:</li>
-
-                </ul>
+        
            
-            </p>
+           
           </div>
         </div>
 
-        @if($listing->status == 'published')
-
-        <form method="post" class="text-center" action="{{route('agent.unpublish')}}">
-          @csrf
-          <input type="hidden" name="slug" value="{{$listing->slug}}">
-          <button  class="btn btn-dark shadow">Unpublish</button>
-        </form>
-
-
-        @else
-
-        <form method="post" class="text-center" action="{{route('agent.publish')}}">
-          @csrf
-          <input type="hidden" name="slug" value="{{$listing->slug}}">
-          <button class="btn btn-success shadow">Publish Now</button>
-        </form>
-        
-        @endif
-
-      
-            
-
-            
-       
-      
-        
-
         <div class="card-footer">
-             <a target="_black" href="{{route('agent.single_listing',  $listing->slug)}}" class="btn btn-block btn-primary shadow">More</a>
+             <a target="_black" href="{{route('agent.single_listing',  $listing->slug)}}" class="btn btn-block btn-primary shadow">View Details</a>
         </div>
       </div>
 

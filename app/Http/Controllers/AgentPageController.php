@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 use Carbon\Carbon;
 
+use App\Listing;
+
+use Auth;
+
 class AgentPageController extends Controller
 {
     /**
@@ -22,9 +26,12 @@ class AgentPageController extends Controller
             //Pageheader set true for breadcrumbs
             $pageConfigs = ['pageHeader' => true];
 
+            $my_listings = Listing::where('posted_by', Auth::user()->id)->get();
+
             return view('agents.dashboard',[
                 'pageConfigs' => $pageConfigs,
-                'breadcrumbs' => $breadcrumbs
+                'breadcrumbs' => $breadcrumbs,
+                'my_listings' => $my_listings
             ]);
     }
 

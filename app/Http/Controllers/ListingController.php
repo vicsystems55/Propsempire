@@ -23,6 +23,8 @@ class ListingController extends Controller
     {
         # code...
 
+        
+
         return view('frontpage.pages.search');
     }
 

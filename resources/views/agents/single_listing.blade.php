@@ -28,6 +28,14 @@
 
 <div class="col-md-7">
 
+@if(Session::has('publish'))
+<p class="alert alert-info alert-dismissible">{{ Session::get('publish') }}</p>
+@endif
+
+@if(Session::has('unpublish'))
+<p class="alert alert-warning alert-dismissible">{{ Session::get('unpublish') }}</p>
+@endif
+
   <div class="card">
 
     <div class="card-body">
@@ -58,7 +66,7 @@
      
       
              <form action="{{route('agent.add_pix',$single_listing->slug)}}"
-              class="dropzone"
+              class="dropzone "
               id="my-awesome-dropzone">
               @csrf
               </form>
@@ -88,13 +96,39 @@
 
   <h4>Details</h4>
 
-  <button class="btn btn-success shadow">Publish</button>
+      @if($single_listing->status != 'published')
 
-  <button class="btn btn-warning shadow">Make Premium</button>
+      <form class="mb-2" method="post" class="text-center" action="{{route('agent.publish')}}">
+          @csrf
+          <input type="hidden" name="slug" value="{{$single_listing->slug}}">
+          <button  class="btn btn-block btn-success shadow">Publish</button>
+        </form>
 
-<div class="p-1">
-<a href="{{route('subscription_plans')}}" class="btn btn-primary btn-lg shadow">Subscribe to a Plan</a>
-</div>
+
+      @else
+
+      <form class="mb-2" method="post" class="text-center" action="{{route('agent.unpublish')}}">
+          @csrf
+          <input type="hidden" name="slug" value="{{$single_listing->slug}}">
+          <button  class="btn btn-block btn-dark shadow">Unpublish</button>
+        </form>
+
+
+
+      @endif
+
+      
+        <form class="mb-2" method="post" class="text-center" action="{{route('agent.publish')}}">
+          @csrf
+          <input type="hidden" name="slug" value="{{$single_listing->slug}}">
+          <button  class="btn btn-block btn-warning shadow">Make Premium</button>
+        </form>
+
+        <div class="mb-2" class="text-center">
+          
+         
+          <a href="{{route('subscription_plans')}}" class="btn btn-block btn-primary shadow">Upgrade Plan</a>
+        </div>
 
    
 
@@ -156,7 +190,7 @@
           success: function(file, data){
             console.log(data);
 
-            location.reload();
+           
 
            
           },

@@ -19,7 +19,7 @@
 								<ul class="h1ads_1st_list mb0 text-center">
 									<li class="list-inline-item">
 										<div class="search_option_two">
-											<div class="candidate_revew_select">
+											<!-- <div class="candidate_revew_select">
 												<select class="selectpicker w100 show-tick">
 													<option>All Cities</option>
 													<option>Apartment</option>
@@ -29,7 +29,7 @@
 													<option>Land</option>
 													<option>Single Family</option>
 												</select>
-											</div>
+											</div> -->
 										</div>
 									</li>
 										
@@ -91,8 +91,8 @@
 		<div class="row">
 			<div class="col-sm-6 col-lg-4 col-xl">
 				<div class="properti_city_home8 text-center">
-					<div class="thumb">
-						<img class="img-fluid w100" src="{{config('app.url')}}propsempire/images/property/pc1.png" alt="pc1.png">
+					<div class="thmb">
+						<img width="150" height="150" class=" rounded-circle shadow" src="{{config('app.url')}}propsempire/images/property/pc1.png" alt="pc1.png">
 					</div>
 					<div class="details">
 						<h4>Lagos</h4>
@@ -102,8 +102,8 @@
 			</div>
 			<div class="col-sm-6 col-lg-4 col-xl">
 				<div class="properti_city_home8 text-center">
-					<div class="thumb">
-						<img class="img-fluid w100" src="{{config('app.url')}}propsempire/images/property/pc2.png" alt="pc2.png">
+				<div class="thmb">
+						<img width="150" height="150" class=" rounded-circle shadow" src="{{config('app.url')}}propsempire/images/property/abj.jpg" alt="pc1.png">
 					</div>
 					<div class="details">
 						<h4>Abuja</h4>
@@ -113,8 +113,8 @@
 			</div>
 			<div class="col-sm-6 col-lg-4 col-xl">
 				<div class="properti_city_home8 text-center">
-					<div class="thumb">
-						<img class="img-fluid w100" src="{{config('app.url')}}propsempire/images/property/pc3.png" alt="pc3.png">
+				<div class="thmb">
+						<img width="150" height="150" class=" rounded-circle shadow" src="{{config('app.url')}}propsempire/images/property/port.jpg" alt="port.jpg">
 					</div>
 					<div class="details">
 						<h4>Portharcourt</h4>
@@ -124,8 +124,8 @@
 			</div>
 			<div class="col-sm-6 col-lg-4 col-xl">
 				<div class="properti_city_home8 text-center">
-					<div class="thumb">
-						<img class="img-fluid w100" src="{{config('app.url')}}propsempire/images/property/pc4.png" alt="pc4.png">
+				<div class="thmb">
+						<img width="150" height="150" class=" rounded-circle shadow" src="{{config('app.url')}}propsempire/images/property/cal.jpg" alt="cal.jpg">
 					</div>
 					<div class="details">
 						<h4>Calabar</h4>

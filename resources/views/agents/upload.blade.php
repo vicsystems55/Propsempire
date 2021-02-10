@@ -69,8 +69,7 @@
 
 
             <div id="dpz-btn-select-files" class="card-body">
-            <div class="dz-success-mark"><span>✔</span></div>
-            <div class="dz-error-mark"><span>✘</span></div>
+            
             
           
     </div>
@@ -108,6 +107,8 @@
           dictRemoveFile: " Trash",
           previewsContainer: "#dpz-btn-select-files",
           clickable: "#select-files",
+
+          
           
           accept: function(file, done) {
             if (file.name == "justinbieber.jpg") {
@@ -116,6 +117,6 @@
             else { done(); }
           }
         };
-                  </script> 
+    </script> 
 
 @endsection

@@ -19,6 +19,13 @@ use Auth;
 class ListingController extends Controller
 {
 
+    public function search(Request $request)
+    {
+        # code...
+
+        return view('frontpage.pages.search');
+    }
+
     public function all_listings()
     {
         # code...

@@ -12,6 +12,8 @@ use App\FeaturedImage;
 
 use App\Subscription;
 
+use App\User;
+
 use Illuminate\Support\Str;
 
 use Auth;
@@ -23,11 +25,11 @@ class ListingController extends Controller
     {
         # code...
 
-        $listings = Listing::with('users')->get();
+        $listings = Listing::with('users')->with('images')->latest()->get();
 
         
           
-        
+        // return $listings;
 
         return view('frontpage.pages.search', [
             'listings' => $listings
@@ -37,12 +39,11 @@ class ListingController extends Controller
     public function _search(Request $request)
     {
         # code...
-
-        $listings = Listing::with('users')->get();
-
-        
+        $listings = Listing::with('users')->with('images')->latest()->get();
 
         
+          
+        // return $listings[0]->images;
 
         return view('frontpage.pages.search', [
             'listings' => $listings

@@ -735,7 +735,9 @@
 							<div class="col-lg-12">
 								<div class="feat_property list">
 									<div class="thumb">
-										<img class="img-whp" src="images/property/fp1.jpg" alt="fp1.jpg">
+
+									
+										<img class="img-whp" src="listings_images/{{$list->images[0]->file_path??''}}" alt="fp1.jpg">
 										<div class="thmb_cntnt">
 											<ul class="icon mb0">
 												<li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
@@ -746,9 +748,9 @@
 									<div class="details">
 										<div class="tc_content">
 											<div class="dtls_headr">
-												<ul class="tag">
-													<li class="list-inline-item"><a href="#">For Rent</a></li>
-													<li class="list-inline-item"><a href="#">Featured</a></li>
+												<ul class="tag p-1">
+													<li class="list-inline-item"><a href="#">{{str_replace('_', ' ',$list->category)}}</a></li>
+												
 												</ul>
 												<a class="fp_price" href="#">NGN {{$list->min_price}}</a>
 											</div>
@@ -763,7 +765,7 @@
 										</div>
 										<div class="fp_footer">
 											<ul class="fp_meta float-left mb0">
-												<li class="list-inline-item"><a href="#"><img src="images/property/pposter1.png" alt="pposter1.png"></a></li>
+												<li class="list-inline-item"><a href="#"><img width="50" height="50" src="images/avatar/avatar.png" alt="pposter1.png"></a></li>
 												<li class="list-inline-item"><a href="#">{{$list->users->name}}</a></li>
 											</ul>
 											<div class="fp_pdate float-right">4 years ago</div>

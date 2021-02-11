@@ -39,6 +39,7 @@
 
 									<li class="list-inline-item">
 										<form method="post" action="{{route('search')}}">
+										@csrf
 											<div class="form-group">
 												<input type="text" class="form-control" id="exampleInputName1" placeholder="Enter keyword...">
 											</div>

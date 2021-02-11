@@ -23,9 +23,30 @@ class ListingController extends Controller
     {
         # code...
 
+        $listings = Listing::with('users')->get();
+
+        
+          
         
 
-        return view('frontpage.pages.search');
+        return view('frontpage.pages.search', [
+            'listings' => $listings
+        ]);
+    }
+
+    public function _search(Request $request)
+    {
+        # code...
+
+        $listings = Listing::with('users')->get();
+
+        
+
+        
+
+        return view('frontpage.pages.search', [
+            'listings' => $listings
+        ]);
     }
 
     public function all_listings()

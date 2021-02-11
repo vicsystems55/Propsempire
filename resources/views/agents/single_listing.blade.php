@@ -62,6 +62,10 @@
         <p class="col-md-6"><span class="font-weight-bold">Covered Area: </span>{{$single_listing->bedrooms}}</p>
       </div>
 
+      <div class="row">
+        <p class="col-md-6"><span class="font-weight-bold">Total Views: </span>{{$single_listing->views}}</p>
+      </div>
+
 
      
       
@@ -135,7 +139,8 @@
     <div class="popup-gallery">
 
     @foreach($images as $image)
-    <a class="" target="_blank" href="{{config('app.url')}}listings_images/{{$image->file_path}}" title="{{$image->id}}"><img class="p-1 shadow" src="{{config('app.url')}}listings_images/{{$image->file_path}}" width="100" height="100"></a>
+    <a class="" target="_blank" href="{{config('app.url')}}listings_images/{{$image->file_path}}" title="{{$image->id}}"><img class="p-1 shadow" src="{{config('app.url')}}listings_images/{{$image->file_path}}" width="200" height="200"></a>
+    
     @endforeach
 </div>
 

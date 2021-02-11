@@ -19,9 +19,9 @@ Route::get('/single_view/{slug}','FrontPageController@single_view')->name('singl
 Route::get('/single_view2','FrontPageController@single_view2')->name('single_view2');
 
 
-Route::post('/search','FrontPageController@search')->name('search');
+Route::post('/search','ListingController@search')->name('search');
 
-Route::get('/search','FrontPageController@_search')->name('search');
+Route::get('/search','ListingController@_search')->name('search');
 
 
 

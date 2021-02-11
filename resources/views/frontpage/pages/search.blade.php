@@ -758,9 +758,9 @@
 											<h4>{{$list->title}}</h4>
 											<p><span class="flaticon-placeholder"></span>{{$list->location}}</p>
 											<ul class="prop_details mb0">
-												<li class="list-inline-item"><a href="#">Beds: 4</a></li>
-												<li class="list-inline-item"><a href="#">Baths: 2</a></li>
-												<li class="list-inline-item"><a href="#">Sq Ft: 5280</a></li>
+												<li class="list-inline-item"><a href="#">Beds: 4{{$list->bedrooms}}</a></li>
+												<li class="list-inline-item"><a href="#">Baths: {{$list->bathrooms}}</a></li>
+												<li class="list-inline-item"><a href="#">Total Area: {{$list->total_area}}</a></li>
 											</ul>
 										</div>
 										<div class="fp_footer">
@@ -768,7 +768,7 @@
 												<li class="list-inline-item"><a href="#"><img width="50" height="50" src="images/avatar/avatar.png" alt="pposter1.png"></a></li>
 												<li class="list-inline-item"><a href="#">{{$list->users->name}}</a></li>
 											</ul>
-											<div class="fp_pdate float-right">4 years ago</div>
+											<div class="fp_pdate float-right">{{$list->created_at->diffForHumans()}}</div>
 										</div>
 									</div>
 								</div>

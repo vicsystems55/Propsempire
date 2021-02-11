@@ -752,7 +752,7 @@
 													<li class="list-inline-item"><a href="#">{{str_replace('_', ' ',$list->category)}}</a></li>
 												
 												</ul>
-												<a class="fp_price" href="#">NGN {{$list->min_price}}</a>
+												<a class="fp_price" href="#">NGN {{number_format($list->min_price, 2)}}</a>
 											</div>
 								
 											<h4>{{$list->title}}</h4>

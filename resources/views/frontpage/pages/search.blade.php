@@ -755,7 +755,9 @@
 												<a class="fp_price" href="#">NGN {{number_format($list->min_price, 2)}}</a>
 											</div>
 								
+											<a href="{{route('single_view', $list->slug)}}">
 											<h4>{{$list->title}}</h4>
+											</a>
 											<p><span class="flaticon-placeholder"></span>{{$list->location}}</p>
 											<ul class="prop_details mb0">
 												<li class="list-inline-item"><a href="#">Beds: 4{{$list->bedrooms}}</a></li>

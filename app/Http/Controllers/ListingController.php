@@ -66,15 +66,20 @@ class ListingController extends Controller
     {
         # code...
 
-        $images = FeaturedImage::where('listing_slug', $slug)->latest()->get();
+        $single_listing = Listing::where('slug', $slug)->with('images')->first();
 
-        Listing::where('slug', $slug)->increment('views', 1);
+        // $images = FeaturedImage::where('listing_slug', $slug)->latest()->get();
 
-        $single_listing = Listing::where('slug', $slug)->first();
+        // Listing::where('slug', $slug)->increment('views', 1);
+
+        dd($single_listing);
+
+
+        // $single_listing = Listing::where('slug', $slug)->first();
 
         return view('agents.single_listing', [
             'single_listing' => $single_listing, 
-            'images' => $images
+            // 'images' => $images
         ]);
     }
     //

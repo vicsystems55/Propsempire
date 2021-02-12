@@ -267,8 +267,8 @@
 			<div class="row">
 				<div class="col-lg-7 col-xl-8">
 					<div class="single_property_title mt30-767">
-						<h2>Luxury Family Home</h2>
-						<p>1421 San Pedro St, Los Angeles, CA 90015</p>
+						<h2>{{$single_listing->title}}</h2>
+						<p>{{$single_listing->location}}</p>
 					</div>
 					<div class="dn db-991">
 						<div id="main2">
@@ -301,21 +301,19 @@
 			<div class="row">
 				<div class="col-lg-12 p0">
 					<div class="listing_single_property_slider">
+					@forelse($single_listing->images as $image)
+
 						<div class="item">
-							<img class="img-fluid" src="{{config('app.url')}}propsempire/images/property/lsslider1.jpg" alt="lsslider1.jpg">
+							<img class="img-fluid" src="{{config('app.url')}}listings_images/{{$image->file_path}}" alt="lsslider1.jpg">
 						</div>
-						<div class="item">
-							<img class="img-fluid" src="{{config('app.url')}}propsempire/images/property/lsslider2.jpg" alt="lsslider2.jpg">
-						</div>
-						<div class="item">
-							<img class="img-fluid" src="{{config('app.url')}}propsempire/images/property/lsslider3.jpg" alt="lsslider3.jpg">
-						</div>
-						<div class="item">
-							<img class="img-fluid" src="{{config('app.url')}}propsempire/images/property/lsslider1.jpg" alt="lsslider1.jpg">
-						</div>
-						<div class="item">
-							<img class="img-fluid" src="{{config('app.url')}}propsempire/images/property/lsslider2.jpg" alt="lsslider2.jpg">
-						</div>
+
+					@empty
+
+					<p>No pictures</p>
+
+					@endforelse
+						
+						
 					</div>
 				</div>
 			</div>
@@ -1008,7 +1006,7 @@
 											<li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
 											<li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
 										</ul>
-										<a class="fp_price" href="#">$13,000<small>/mo</small></a>
+										<a class="fp_price" href="#">NGN {{number_format($single_listing->min_price, 2)}}</a>
 									</div>
 								</div>
 								<div class="details">
@@ -1040,9 +1038,9 @@
 							<div class="sl_creator">
 								<h4 class="mb25">Listed By</h4>
 								<div class="media">
-									<img class="mr-3" src="{{config('app.url')}}propsempire/images/team/lc1.png" alt="lc1.png">
+									<img width="90" height="90" class="mr-3" src="{{config('app.url')}}images/avatar/avatar.png" alt="lc1.png">
 									<div class="media-body">
-								    	<h5 class="mt-0 mb0">Samul Williams</h5>
+								    	<h5 class="mt-0 mb0">{{$single_listing->users->name}}</h5>
 								    	<p class="mb0">(123)456-7890</p>
 								    	<p class="mb0"><a href="https://grandetest.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c9a0a7afa689afa0a7ada1a6bcbaace7aaa6a4">[email&#160;protected]</a></p>
 								    	<a class="text-thm" href="#">View My Listing</a>

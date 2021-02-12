@@ -58,28 +58,10 @@
             <div class="row">
               <div class="col-md-6">
 
-              <div class="form-group p-1">
+                  <div class="form-grou">
                  
-                  <ul class="list-unstyled mb-0">
-                      <li class="d-inline-block mr-2 mb-1">
-                        <!-- <fieldset>
-                          <div class="radio radio-shadow">
-                              <input type="radio" id="radioshadow1"  checked>
-                              <label for="radioshadow1">Publish</label>
-                          </div>
-                        </fieldset>
-                      </li>
-                      <li class="d-inline-block mr-2 mb-1">
-                        <fieldset>
-                          <div class="radio radio-shadow">
-                              <input type="radio" id="radioshadow2"  >
-                              <label for="radioshadow2">Unpublish</label>
-                          </div>
-                        </fieldset> -->
-                      </li>
-
-                    </ul>
-                 </div>
+                 
+                  </div>
 
                   <div class="col-md-12 col-12">
                     <div class="form-group">
@@ -201,6 +183,12 @@
 
                             alert('disappear bedroom');
                             
+                          }else{
+
+                            document.getElementById('landCheck').classList.remove('d-none');
+
+                            alert('disappear bedroom');
+
                           }
 
                         

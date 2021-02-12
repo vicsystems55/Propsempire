@@ -37,19 +37,20 @@ class FrontPageController extends Controller
     {
         # code...
 
-        // $listings = Listing::with('users')->where('status', 'active');
+        $single_listing = Listing::where('slug', $slug)->with('images')->with('users')->first();
 
-        $listing_data = Listing::with('users')->where('slug', $slug)->first();
+        // $images = FeaturedImage::where('listing_slug', $slug)->latest()->get();
 
-        // dd($listings);
+        // Listing::where('slug', $slug)->increment('views', 1);
 
-        // return view('frontpage.pages.single_view',[
-        //     'listing' => $listing
-        // ]);
+       
+        // dd($single_listing);
 
-        
-        return view('frontpage.pages.single_view',[
-            'listing_data' => $listing_data
+        // $single_listing = Listing::where('slug', $slug)->first();
+
+        return view('frontpage.pages.single_view', [
+            'single_listing' => $single_listing, 
+            // 'images' => $images
         ]);
     }
 

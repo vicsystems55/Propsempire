@@ -59,7 +59,7 @@
               <div class="pb-0 d-flex justify-content-between">
                 <div class="dashboard-content-left">
                 <span class="">Current Plan</span>
-                  <h3 class="text-primary text-bold-500">0</h3>
+                  <h3 class="text-primary text-bold-500">{{$my_sub->plan_name??'No subscription yet.'}}</h3>
 
                   <span class="">Expiry</span>
                   <h3 class="text-primary text-bold-500">0</h3>
@@ -67,10 +67,18 @@
                   <span class="">Days Left</span>
                   <h3 class="text-primary text-bold-500">0</h3>
 
-                  <button type="button" class="btn btn-primary glow">More</button>
+                  @if($my_sub)
+
+                  <button type="button" class="btn btn-primary btn-block ">More</button>
+                  @else
+
+                  <a href="{{route('subscription_plans')}}" type="button" class="btn btn-warning btn-block ">View Plans</a>
+                  @endif
+
+                 
                 </div>
                 <div class="dashboard-content-right">
-                  <img src="{{asset('images/icon/cup.png')}}" height="220" width="220" class="img-fluid"
+                  <img src="{{asset('images/icon/cup.png')}}" height="100" width="100" class="img-fluid"
                     alt="Dashboard Ecommerce" />
                 </div>
               </div>
@@ -175,7 +183,7 @@
                 <div class="dashboard-content-left">
                   <h1 class="text-primary font-large-2 text-bold-500">View Profile</h1>
                  
-                  <button type="button" class="btn btn-primary glow">View Sales</button>
+                  <a href="{{route('agent.my_profile')}}" type="button" class="btn btn-primary glow">View</a>
                 </div>
                 <div class="dashboard-content-right">
                   <img src="{{asset('images/icon/cup.png')}}" height="220" width="220" class="img-fluid"

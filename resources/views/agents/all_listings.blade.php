@@ -32,7 +32,7 @@
 
 <div class="row">
 
-@foreach($my_listings as $listing)
+@forelse($my_listings as $listing)
 
     <div class="col-md-4">
 
@@ -92,7 +92,19 @@
     </div>
 
 
-@endforeach
+@empty
+
+
+  <div class="p-5">
+      <h4 class="text-center mt-3">You have no listings yet...</h4>
+
+      <a class="btn btn-primary shadow" href="{{route('agent.add_prop')}}">ADD LISTINGS</a>
+  </div>
+
+
+
+
+@endforelse
 
 {{$my_listings->links()}}
    

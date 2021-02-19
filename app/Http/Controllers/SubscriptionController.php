@@ -38,6 +38,9 @@ class SubscriptionController extends Controller
         //
         $paymentDetails = Paystack::getPaymentData();
 
+
+        // dd($paymentDetails);
+
         $subscription_plan_id = $paymentDetails['data']['metadata']['subscription_plan_id'];
 
         $plan_name = $paymentDetails['data']['metadata']['plan_name'];

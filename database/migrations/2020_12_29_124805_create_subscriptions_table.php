@@ -20,11 +20,10 @@ class CreateSubscriptionsTable extends Migration
             $table->string('plan_name');
             $table->bigInteger('agent_id')->unsigned();
             $table->string('status')->default('active');
-
             $table->string('slug');
+            $table->string('duration')->default('1');
 
             $table->foreign('agent_id')->references('id')->on('users');
-           
             $table->foreign('subscription_plan_id')->references('id')->on('subscription_plans');
             $table->timestamps();
         });

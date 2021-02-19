@@ -8,6 +8,8 @@ use Carbon\Carbon;
 
 use App\Listing;
 
+use App\Subscription;
+
 use Auth;
 
 class AgentPageController extends Controller
@@ -28,10 +30,15 @@ class AgentPageController extends Controller
 
             $my_listings = Listing::where('posted_by', Auth::user()->id)->get();
 
+            $my_sub = Subscription::where('agent_id', Auth::user()->id)->first();
+
+
+
             return view('agents.dashboard',[
                 'pageConfigs' => $pageConfigs,
                 'breadcrumbs' => $breadcrumbs,
-                'my_listings' => $my_listings
+                'my_listings' => $my_listings,
+                'my_sub' => $my_sub
             ]);
     }
 

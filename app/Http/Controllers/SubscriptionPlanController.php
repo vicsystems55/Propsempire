@@ -22,7 +22,11 @@ class SubscriptionPlanController extends Controller
 
         $subscriptions = Subscription::get();
 
+        $my_planz = Subscription::with('subscription_plans')->where('agent_id', Auth::user()->id)->first();
+
         $my_plan = Subscription::where('agent_id', Auth::user()->id)->first();
+
+      
 
         if ($my_plan) {
             # code...
@@ -36,7 +40,8 @@ class SubscriptionPlanController extends Controller
         return view('agents.subscription_plans',[
             'subscription_plans' => $subscription_plans,
             'subscriptions' => $subscriptions,
-            'my_plan' => $my_plan
+            'my_plan' => $my_plan,
+            'my_planz' => $my_planz
         ]);
     }
 

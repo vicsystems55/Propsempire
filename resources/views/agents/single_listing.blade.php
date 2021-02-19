@@ -41,30 +41,71 @@
     <div class="card-body">
 
       <h3>{{$single_listing->title}}</h3>
-
-      <p><span class="font-weight-bold ">Description:</span> <span class="font-italic">{{$single_listing->description}}</span></p>
-      <p><span class="font-weight-bold">Location:</span> {{$single_listing->location}}</p>
-      <p><span class="font-weight-bold">Category:</span> {{$single_listing->category}}</p>
-   
-
-      <div class="row">
-      <p class="col-md-6"><span class="font-weight-bold">Type:</span> {{$single_listing->type}}</p>
-      <p class="col-md-6"><span class="font-weight-bold">Subtype:</span> {{$single_listing->subtype}}</p>
-        <p class="col-md-6"><span class="font-weight-bold">Toilets: </span>{{$single_listing->bedrooms}}</p>
-        <p class="col-md-6"><span class="font-weight-bold">Bedrooms: </span>{{$single_listing->bedrooms}}</p>
-        <p class="col-md-6"><span class="font-weight-bold">Bathrooms: </span>{{$single_listing->bedrooms}}</p>
-        <p class="col-md-6"><span class="font-weight-bold">Status: </span>{{$single_listing->bedrooms}}</p>
-        <p class="col-md-6"><span class="font-weight-bold">Parking: </span>{{$single_listing->bedrooms}}</p>
-      </div>
+    
+       Total Views: <span>{{$single_listing->views}}</span>
       
-      <div class="row">
-        <p class="col-md-6"><span class="font-weight-bold">Total Area: </span>{{$single_listing->bedrooms}}</p>
-        <p class="col-md-6"><span class="font-weight-bold">Covered Area: </span>{{$single_listing->bedrooms}}</p>
+
+      <table class="table table-striped">
+
+        <tr>
+          <td>Description: </td>
+          <td>{{$single_listing->description}}</td>
+        </tr>
+        <tr>
+          <td>Location: </td>
+          <td>{{$single_listing->location}}</td>
+        </tr>
+        <tr>
+          <td>Category: </td>
+          <td>{{$single_listing->category}}</td>
+        </tr>
+        <tr>
+          <td>Type: </td>
+          <td>{{$single_listing->type}}</td>
+          
+        </tr>
+
+        <tr>
+          <td>Subtype: </td>
+          <td>{{$single_listing->subtype}}</td>
+        </tr>
+
+      </table>
+      
+
+        <div class="">
+          <div class="row">
+            <div class="col-3 mx-auto">
+            <h6>Toilet: {{$single_listing->toilets}} </h6>
+            </div>
+            <div class="col-3 mx-auto">
+            <h6>Bedrooms: {{$single_listing->bedrooms}} </h6>
+            </div>
+
+            <div class="col-3 mx-auto">
+            <h6>Bathrooms: {{$single_listing->bathrooms}} </h6>
+          </div>
+
+
       </div>
 
-      <div class="row">
-        <p class="col-md-6"><span class="font-weight-bold">Total Views: </span>{{$single_listing->views}}</p>
-      </div>
+        <div class="row mt-1">
+          <div class="col-3 mx-auto">
+          <h6>Total Area: <br> {{$single_listing->total_area}} </h6>
+          </div>
+          <div class="col-3 mx-auto">
+          <h6>Covered Area: <br> {{$single_listing->covered_area}} </h6>
+          </div>
+
+          <div class="col-3 mx-auto">
+          <h6>Parking:<br> {{$single_listing->parking}} </h6>
+          </div>
+
+
+        </div>
+        </div>
+
+     
 
 
      
@@ -100,29 +141,43 @@
 
   <h4>Details</h4>
 
-      @if($single_listing->status != 'published')
+      @if($user_subscription)
 
-      <form class="mb-2" method="post" class="text-center" action="{{route('agent.publish')}}">
-          @csrf
-          <input type="hidden" name="slug" value="{{$single_listing->slug}}">
-          <button  class="btn btn-block btn-success shadow">Publish</button>
-        </form>
+              
+            @if($single_listing->status != 'published')
+
+              <form class="mb-2" method="post" class="text-center" action="{{route('agent.publish')}}">
+                  @csrf
+                  <input type="hidden" name="slug" value="{{$single_listing->slug}}">
+                  <button  class="btn btn-block btn-success shadow">Publish</button>
+                </form>
 
 
-      @else
+              @else
 
-      <form class="mb-2" method="post" class="text-center" action="{{route('agent.unpublish')}}">
-          @csrf
-          <input type="hidden" name="slug" value="{{$single_listing->slug}}">
-          <button  class="btn btn-block btn-dark shadow">Unpublish</button>
-        </form>
+              <form class="mb-2" method="post" class="text-center" action="{{route('agent.unpublish')}}">
+                  @csrf
+                  <input type="hidden" name="slug" value="{{$single_listing->slug}}">
+                  <button  class="btn btn-block btn-dark shadow">Unpublish</button>
+                </form>
+
+
+
+              @endif
+
+          @else
+              <h4 class="text-warning">No Subscriptions yet..</h4>
+            <div class="form-group">
+              <a href="{{route('subscription_plans')}}" class="btn btn-block btn-primary shadow">Subscribe</a>
+            </div>
+
 
 
 
       @endif
 
       
-        <form class="mb-2" method="post" class="text-center" action="{{route('agent.publish')}}">
+        <form class="mb-2" method="post" class="text-center" action="{{route('agent.make_premium')}}">
           @csrf
           <input type="hidden" name="slug" value="{{$single_listing->slug}}">
           <button  class="btn btn-block btn-warning shadow">Make Premium</button>

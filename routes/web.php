@@ -87,6 +87,8 @@ Route::group(['middleware' => ['auth','agent'], 'prefix' => 'agent'], function()
 
     Route::post('/publish','ListingController@publish')->name('agent.publish');
 
+    Route::post('/make_premium','ListingController@make_premium')->name('agent.make_premium');
+
     Route::post('/unpublish','ListingController@unpublish')->name('agent.unpublish');
 
 

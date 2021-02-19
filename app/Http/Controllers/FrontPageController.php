@@ -24,11 +24,15 @@ class FrontPageController extends Controller
 
         $frontpage_listings = Listing::with('users')->where('status', 'published')->where('type', 'frontpage')->latest()->get();
 
+
+        $most_viewed_listings = Listing::with('images')->with('users')->where('status', 'published')->where('views', '>=', '100')->orderBy('views', 'desc')->get();
+
         // dd($listings);
 
         return view('frontpage.pages.home',[
             'premium_listings' => $premium_listings,
-            'frontpage_listings' => $frontpage_listings
+            'frontpage_listings' => $frontpage_listings,
+            'most_viewed_listings' => $most_viewed_listings
         ]);
 
     }

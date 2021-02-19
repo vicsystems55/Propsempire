@@ -12,6 +12,8 @@ use App\FeaturedImage;
 
 use App\Subscription;
 
+use App\ActivityLog;
+
 use App\User;
 
 use Illuminate\Support\Str;
@@ -66,20 +68,23 @@ class ListingController extends Controller
     {
         # code...
 
+        $user_subscription = Subscription::with('subscription_plans')->where('agent_id', Auth::user()->id)->first();
+
         $single_listing = Listing::where('slug', $slug)->with('images')->first();
 
-        // $images = FeaturedImage::where('listing_slug', $slug)->latest()->get();
+        $images = FeaturedImage::where('listing_slug', $slug)->latest()->get();
 
         // Listing::where('slug', $slug)->increment('views', 1);
 
-        dd($single_listing);
+       
 
 
         // $single_listing = Listing::where('slug', $slug)->first();
 
         return view('agents.single_listing', [
             'single_listing' => $single_listing, 
-            // 'images' => $images
+            'user_subscription' => $user_subscription,
+            'images' => $images
         ]);
     }
     //
@@ -122,6 +127,8 @@ class ListingController extends Controller
 
         $limit = $user_subscription->subscription_plans->max_listings;
 
+        $images = FeaturedImage::where('listing_slug', $slug)->get();
+
 
         if ($users_listings >= $limit) {
             # code...
@@ -130,17 +137,91 @@ class ListingController extends Controller
 
         }else{
 
+            if ($images->count() > 2) {
+                # code...
+
+                $publish = Listing::where('slug', $slug)->update([
+                    'status' => 'published',
+                    'views' => '100'
+                ]);
+
+              
+    
+                $log = ActivityLog::Create([
+                    'title' => 'Listing Published',
+                    'message' => 'You just successfully published a listing',
+                    'for_' => Auth::user()->id
+                ]);
+    
+                return back()->with('publish', 'Your listing has been published ' .'you have uploaded ' .$users_listings .' listings');
+            }else{
+
+                
+                return back()->with('unpublish', 'Please add atleast 2 images to listing');
+
+            }
+
         
 
-            $publish = Listing::where('slug', $slug)->update([
-                'status' => 'published'
-            ]);
-            return back()->with('publish', 'Your listing has been published ' .'you have uploaded ' .$users_listings .' listings');
+           
         }
 
         
 
 
+    }
+
+    public function make_premium(Request $request)
+    {
+        
+        # code...
+
+        $slug = $request->slug;
+
+        $users_listings = Listing::where('posted_by', Auth::user()->id)->where('status', 'published')->where('class', 'premium')->get()->count();
+
+        $user_subscription = Subscription::with('subscription_plans')->where('agent_id', Auth::user()->id)->first();
+
+        $limit = $user_subscription->subscription_plans->premium_listings;
+
+        $images = FeaturedImage::where('listing_slug', $slug)->get();
+
+
+        if ($users_listings >= $limit) {
+            # code...
+            
+            return back()->with('upgrade', 'You have excceeded your premium count or have no premium for current plan');
+
+        }else{
+
+            if ($images->count() > 2) {
+                # code...
+
+                $publish = Listing::where('slug', $slug)->update([
+                    'class' => 'premium',
+                    
+                ]);
+
+              
+    
+                $log = ActivityLog::Create([
+                    'title' => 'Premium Listin Published',
+                    'message' => 'You just successfully published a premium listing',
+                    'for_' => Auth::user()->id
+                ]);
+    
+                return back()->with('publish', 'Your listing has been published ' .'you have published ' .$users_listings .'premium listings');
+            }else{
+
+                
+                return back()->with('unpublish', 'Please add atleast 2 images to listing');
+
+            }
+
+        
+
+           
+        }
     }
 
 

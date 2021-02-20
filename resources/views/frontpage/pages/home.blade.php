@@ -450,10 +450,12 @@
 							</div>
 							<div class="details">
 								<div class="tc_content">
-								<a href="{{route('agent.single_listing', $listing->slug)}}">
-									<p class="text-thm">{{$listing->title}}</p>
+								
+									
+									<a href="{{route('agent.single_listing', $listing->slug)}}">
+									<h4>{{$listing->title}}</h4>
 									</a>
-									<h4>{{$listing->description}}</h4>
+									<p class="text-secondary">{{$listing->title}}</p>
 									<p><span class="flaticon-placeholder"></span> {{$listing->location}}</p>
 									<ul class="prop_details mb0">
 										<li class="list-inline-item"><a href="#">Beds: {{$listing->bedrooms}}</a></li>

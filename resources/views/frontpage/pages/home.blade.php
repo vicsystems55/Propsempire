@@ -435,7 +435,7 @@
 					<div class="col-md-6 col-lg-4">
 						<div class="feat_property home7">
 							<div class="thumb">
-								<img class="img-whp" src="{{config('app.url')}}listings_images/{{$listing->images[0]}}" alt="fp1.jpg">
+								<img style="width: 230px; height: 230px;" class="img-whp" src="{{config('app.url')}}listings_images/{{$listing->images[0]->file_path}}" alt="fp1.jpg">
 								<div class="thmb_cntnt">
 									<ul class="tag mb0">
 										<li class="list-inline-item"><a href="#">{{$listing->type}}</a></li>
@@ -450,6 +450,7 @@
 							</div>
 							<div class="details">
 								<div class="tc_content">
+								<a href="{{route('agent.single_listing', $listing->slug)}}"></a>
 									<p class="text-thm">{{$listing->title}}</p>
 									<h4>{{$listing->description}}</h4>
 									<p><span class="flaticon-placeholder"></span> {{$listing->location}}</p>
@@ -461,7 +462,7 @@
 								</div>
 								<div class="fp_footer">
 									<ul class="fp_meta float-left mb0">
-										<li class="list-inline-item"><a href="#"><img src="{{config('app.url')}}images/avatar/avatar.png" alt="pposter1.png"></a></li>
+										<li class="list-inline-item"><a href="#"><img width="60" height="60" src="{{config('app.url')}}images/avatar/avatar.png" alt="pposter1.png"></a></li>
 										<li class="list-inline-item"><a href="#">{{$listing->users->name}}</a></li>
 									</ul>
 									<div class="fp_pdate float-right">{{$listing->created_at->diffForHumans()}}</div>

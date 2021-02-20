@@ -280,14 +280,14 @@
 					<div class="single_property_social_share mt20">
 						<div class="spss float-left fn-400">
 							<ul class="mb0">
-								<li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
+							
 								<li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
 								<li class="list-inline-item"><a href="#"><span class="flaticon-share"></span></a></li>
-								<li class="list-inline-item"><a href="#"><span class="flaticon-printer"></span></a></li>
+								
 							</ul>
 						</div>
 						<div class="price text-right tal-400">
-							<h2>$13,000<small>/mo</small></h2>
+							<h2>NGN {{number_format($single_listing->min_price, 2)}}</h2>
 						</div>
 					</div>
 				</div>
@@ -331,26 +331,20 @@
 							<div class="listing_single_description">
 								<div class="lsd_list">
 									<ul class="mb0">
-										<li class="list-inline-item"><a href="#">Apartment</a></li>
-										<li class="list-inline-item"><a href="#">Beds: 4</a></li>
-										<li class="list-inline-item"><a href="#">Baths: 2</a></li>
-										<li class="list-inline-item"><a href="#">Sq Ft: 5280</a></li>
+										<li class="list-inline-item"><a href="#">{{$single_listing->subtype}}</a></li>
+										<li class="list-inline-item"><a href="#">Beds: {{$single_listing->bedrooms}}</a></li>
+										<li class="list-inline-item"><a href="#">Baths: {{$single_listing->bathrooms}}</a></li>
+										<li class="list-inline-item"><a href="#">Sq Ft: {{$single_listing->total_area}}</a></li>
 									</ul>
 								</div>
 								<h4 class="mb30">Description</h4>
-						    	<p class="mb25">Evans Tower very high demand corner junior one bedroom plus a large balcony boasting full open NYC views. You need to see the views to believe them. Mint condition with new hardwood floors. Lots of closets plus washer and dryer.</p>
-						    	<p class="gpara second_para white_goverlay mt10 mb10">Fully furnished. Elegantly appointed condominium unit situated on premier location. PS6. The wide entry hall leads to a large living room with dining area. This expansive 2 bedroom and 2 renovated marble bathroom apartment has great windows. Despite the interior views, the apartments Southern and Eastern exposures allow for lovely natural light to fill every room. The master suite is surrounded by handcrafted milkwork and features incredible walk-in closet and storage space.</p>
-								<div class="collapse" id="collapseExample">
-								  	<div class="card card-body">
-								    	<p class="mt10 mb10">Fully furnished. Elegantly appointed condominium unit situated on premier location. PS6. The wide entry hall leads to a large living room with dining area. This expansive 2 bedroom and 2 renovated marble bathroom apartment has great windows. Despite the interior views, the apartments Southern and Eastern exposures allow for lovely natural light to fill every room. The master suite is surrounded by handcrafted milkwork and features incredible walk-in closet and storage space.</p>
-								    	<p class="mt10 mb10">Fully furnished. Elegantly appointed condominium unit situated on premier location. PS6. The wide entry hall leads to a large living room with dining area. This expansive 2 bedroom and 2 renovated marble bathroom apartment has great windows. Despite the interior views, the apartments Southern and Eastern exposures allow for lovely natural light to fill every room. The master suite is surrounded by handcrafted milkwork and features incredible walk-in closet and storage space.</p>
-								  	</div>
-								</div>
-								<p class="overlay_close">
-									<a class="text-thm fz14" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-								   	 Show More <span class="flaticon-download-1 fz12"></span>
-								  	</a>
+						    	<p class="mb25">
+								
+								{{$single_listing->description}}
+								
 								</p>
+						    	
+							
 							</div>
 						</div>
 						<div class="col-lg-12">

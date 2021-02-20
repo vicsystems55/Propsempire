@@ -445,14 +445,14 @@
 										<li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
 										<li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
 									</ul>
-									<a class="fp_price" href="#"> NGN {{number_format( $listing->min_price, 2)}}<small>/mo</small></a>
+									<a class="fp_price" href="#"> NGN {{number_format( $listing->min_price, 2)}}</a>
 								</div>
 							</div>
 							<div class="details">
 								<div class="tc_content">
 								
 									
-									<a href="{{route('agent.single_listing', $listing->slug)}}">
+									<a href="{{route('single_view', $listing->slug)}}">
 									<h4>{{$listing->title}}</h4>
 									</a>
 									<p class="text-secondary">{{$listing->title}}</p>

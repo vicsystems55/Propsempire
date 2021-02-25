@@ -165,6 +165,29 @@
 
               @endif
 
+
+
+              @if($single_listing->class == 'premium')
+
+              <button  class="btn btn-block btn-dark shadow">On Premium</button>
+              @else
+
+              <form class="mb-2" method="post" class="text-center" action="{{route('agent.make_premium')}}">
+                  @csrf
+                  <input type="hidden" name="slug" value="{{$single_listing->slug}}">
+                  <button  class="btn btn-block btn-warning shadow">Make Premium</button>
+                </form>
+
+
+              @endif
+
+
+              <div class="mb-2" class="text-center">
+          
+         
+                <a href="{{route('subscription_plans')}}" class="btn btn-block btn-primary shadow">Upgrade Plan</a>
+              </div>
+
           @else
               <h4 class="text-warning">No Subscriptions yet..</h4>
             <div class="form-group">
@@ -176,28 +199,12 @@
 
       @endif
 
-      @if($single_listing->class == 'premium')
-
-      <button  class="btn btn-block btn-dark shadow">On Premium</button>
-      @else
-
-      <form class="mb-2" method="post" class="text-center" action="{{route('agent.make_premium')}}">
-          @csrf
-          <input type="hidden" name="slug" value="{{$single_listing->slug}}">
-          <button  class="btn btn-block btn-warning shadow">Make Premium</button>
-        </form>
-
-
-      @endif
+      
 
       
         
 
-        <div class="mb-2" class="text-center">
-          
-         
-          <a href="{{route('subscription_plans')}}" class="btn btn-block btn-primary shadow">Upgrade Plan</a>
-        </div>
+        
 
    
 

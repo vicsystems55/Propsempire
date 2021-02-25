@@ -737,7 +737,7 @@
 									<div class="thumb">
 
 									
-										<img class="img-whp" src="listings_images/{{$list->images[0]->file_path??''}}" alt="fp1.jpg">
+										<img style="width: 230px; height: 230px;" class="img-whp" src="listings_images/{{$list->images[0]->file_path??''}}" alt="fp1.jpg">
 										<div class="thmb_cntnt">
 											<ul class="icon mb0">
 												<li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>

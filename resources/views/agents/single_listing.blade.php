@@ -169,7 +169,11 @@
 
               @if($single_listing->class == 'premium')
 
-              <button  class="btn btn-block btn-dark shadow">On Premium</button>
+              <form class="mb-2" class="text-center" >
+                  
+                  <button  class="btn btn-block btn-black shadow">On Premium</button>
+
+                </form>
               @else
 
               <form class="mb-2" method="post" class="text-center" action="{{route('agent.make_premium')}}">

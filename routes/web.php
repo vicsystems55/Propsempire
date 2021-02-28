@@ -19,9 +19,11 @@ Route::get('/single_view/{slug}','FrontPageController@single_view')->name('singl
 Route::get('/single_view2','FrontPageController@single_view2')->name('single_view2');
 
 
-Route::post('/search','ListingController@search')->name('search');
+Route::get('/search','FrontPageController@search')->name('search');
 
-Route::get('/search','ListingController@_search')->name('search');
+// Route::get('/search','FrontPageController@_search')->name('_search');
+
+Route::get('/all_listings/{key}','FrontPageController@all_listings')->name('all_listings');
 
 
 
@@ -79,11 +81,13 @@ Route::group(['middleware' => ['auth','agent'], 'prefix' => 'agent'], function()
 
     Route::post('/up_pix/{slug}', 'ListingController@up_doccc')->name('up_pix');
 
-    Route::post('/remove_pix/{slug}', 'ListingController@remove_pix')->name('remove_pix');
+    // Route::post('/remove_pix/{slug}', 'ListingController@remove_pix')->name('remove_pix');
 
     Route::post('/edit_pix','ListingController@edit_pix')->name('edit_pix');
 
     Route::post('/add_pix','FeaturedImageController@store')->name('agent.add_pix');
+
+    Route::post('/remove_pix/{id}','FeaturedImageController@remove_pix')->name('agent.remove_pix');
 
     Route::post('/publish','ListingController@publish')->name('agent.publish');
 

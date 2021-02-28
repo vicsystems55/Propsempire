@@ -15,7 +15,7 @@
 <!-- Responsive stylesheet -->
 <link rel="stylesheet" href="{{asset('propsempire')}}/css/responsive.css">
 <!-- Title -->
-<title></title>
+<title>Propsempire</title>
 
 <!-- Favicon -->
 <link href="images/favicon.ico" sizes="128x128" rel="shortcut icon" type="image/x-icon" />

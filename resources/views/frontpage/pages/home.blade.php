@@ -3,6 +3,9 @@
 
 @section('content')
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tarekraafat-autocomplete.js/8.3.2/css/autoComplete.min.css">
+
+
 
 
 <section class="home-seven">
@@ -14,44 +17,34 @@
 							<h2 class="fz55">Discover your place to live</h2>
 							<p class="fz18 color-white">Get started in few clicks.</p>
 						</div>
-						<div class="home_adv_srch_opt home7">
-							<div class="home1-advnc-search home7">
-								<ul class="h1ads_1st_list mb0 text-center">
-									<li class="list-inline-item">
-										<div class="search_option_two">
-											<!-- <div class="candidate_revew_select">
-												<select class="selectpicker w100 show-tick">
-													<option>All Cities</option>
-													<option>Apartment</option>
-													<option>Bungalow</option>
-													<option>Condo</option>
-													<option>House</option>
-													<option>Land</option>
-													<option>Single Family</option>
-												</select>
-											</div> -->
-										</div>
-									</li>
+						<div class="">
+							<div class="">
+								
+									
 										
-										
-										
+						
+
 										
 
-									<li class="list-inline-item">
-										<form method="post" action="{{route('search')}}">
-										@csrf
+									<div class="mt-5">
+										<form method="get" action="/search">
+										
+
 											<div class="form-group">
-												<input type="text" name="key" class="form-control" id="exampleInputName1" placeholder="Enter keyword...">
+											<input class="form-control mx-auto col-md-10" name="key" id="autoComplete" tabindex="1">    <!-- Default "id" value = "autoComplete"> -->
 											</div>
-											</li>
-											<li class="list-inline-item">
-												<div class="search_option_button">
-													<button type="submit" class="btn btn-thm">Search</button>
+															
+												
+										
+											
+											
+												<div class="d-flex justify-content-center">
+													<button type="submit" class="btn btn-danger col-md-4 btn-lg">Search</button>
 												</div>
 										</form>
-									</li>
+									</div>
 									
-								</ul>
+								
 							</div>
 						</div>
 					</div>
@@ -492,13 +485,86 @@
 
 		<div class="col-lg-12 pb-2">
 	<div class="mx-auto text-center">
-	<a href="{{route('search')}}" class=" btn btn-lg btn-primary shadow">Show More</a>
+	<a href="" class=" btn btn-lg btn-primary shadow">Show More</a>
 	</div>
 </div>
 </section>
 
 
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tarekraafat-autocomplete.js/8.3.2/js/autoComplete.min.js"></script>
+
+<script>
+
+new autoComplete({
+    data: {                              // Data src [Array, Function, Async] | (REQUIRED)
+      src: async () => {
+        // API key token
+        const token = "this_is_the_API_token_number";
+        // User search query
+        const query = document.querySelector("#autoComplete").value;
+        // Fetch External Data Source
+        const source = await fetch(`/all_listings/${query}`);
+        // Format data into JSON
+        const data = await source.json();
+        // Return Fetched data
+		
+        return data;
+      },
+      key: ["title","location", "description"],
+      cache: false
+    },
+    query: {                             // Query Interceptor               | (Optional)
+          manipulate: (query) => {
+            return query.replace("pizza", "burger");
+          }
+    },
+    sort: (a, b) => {                    // Sort rendered results ascendingly | (Optional)
+        if (a.match < b.match) return -1;
+        if (a.match > b.match) return 1;
+        return 0;
+    },
+    placeHolder: "Search...",     // Place Holder text                 | (Optional)
+    selector: "#autoComplete",           // Input field selector              | (Optional)
+    observer: true,                      // Input field observer | (Optional)
+    threshold: 3,                        // Min. Chars length to start Engine | (Optional)
+    debounce: 300,                       // Post duration for engine to start | (Optional)
+    searchEngine: "strict",              // Search Engine type/mode           | (Optional)
+    resultsList: {                       // Rendered results list object      | (Optional)
+        container: source => {
+            source.setAttribute("id", "food_list");
+        },
+        destination: "#autoComplete",
+        position: "afterend",
+        element: "ul"
+    },
+    maxResults: 5,                         // Max. number of rendered results | (Optional)
+    highlight: false,                       // Highlight matching results      | (Optional)
+    resultItem: {                          // Rendered result item            | (Optional)
+        content: (data, source) => {
+            source.innerHTML = data.match;
+        },
+        element: "li"
+    },
+    noResults: (dataFeedback, generateList) => {
+        // Generate autoComplete List
+        generateList(autoCompleteJS, dataFeedback, dataFeedback.results);
+        // No Results List Item
+        const result = document.createElement("li");
+        result.setAttribute("class", "no_result");
+        result.setAttribute("tabindex", "1");
+        result.innerHTML = `<span style="display: flex; align-items: center; font-weight: 100; color: rgba(0,0,0,.2);">Found No Results for "${dataFeedback.query}"</span>`;
+        document.querySelector(`#${autoCompleteJS.resultsList.idName}`).appendChild(result);
+    },
+    onSelection: feedback => {   
+		          // Action script onSelection event | (Optional)
+				document.getElementById('autoComplete').value = feedback.selection.match;
+        console.log(feedback.selection);
+    }
+});
+
+
+</script>
 
 
 

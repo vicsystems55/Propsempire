@@ -59,11 +59,26 @@ class FeaturedImageController extends Controller
 
 
 
+    }
+
+    public function remove_pix($id)
+    {
         
 
+        // $image = $request->file('file');
+
+        // $listing_id = $request->listing_id;
+        // $listing_slug = $request->listing_slug;
+
+        // $newname = rand(233,9000).'.'.$image->getClientOriginalExtension();
+
+        // $image->move(public_path('listings_images'), $newname);
+
+            $remove = FeaturedImage::where('id', $id)->delete();
 
 
 
+        return $id;
 
 
 

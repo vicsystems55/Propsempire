@@ -81,13 +81,22 @@ class FrontPageController extends Controller
     public function search(Request $request)
     {
         # code...
-        $key = $request->params['key'];
-        $listings = Listing::where('title','like', $key.'%')->get();
+        
+        $key = $request->key;
+
+       
+        
+        $listings = Listing::where('title','like', $key.'%')->orwhere('description','like', $key.'%')
+                                ->orwhere('location','like', $key.'%')->get();
+
+        // dd($listings);
        
 
 
 
-        return view('frontpage.pages.search');
+        return view('frontpage.pages.search',[
+            'listings' => $listings
+        ]);
     
     }
 
@@ -103,6 +112,26 @@ class FrontPageController extends Controller
 
 
         return view('frontpage.pages.search');
+    
+    }
+
+    public function all_listings($key)
+    {
+        // # code...
+        // $key = $request->params['key'];
+        // $listings = Listing::where('title','like', $key.'%')->get();
+
+        
+
+        $listing_data = Listing::where('title','like', $key.'%')->orwhere('description','like', $key.'%')
+                                ->orwhere('location','like', $key.'%')->get();
+       
+
+
+
+        return $listing_data;
+
+
     
     }
 }

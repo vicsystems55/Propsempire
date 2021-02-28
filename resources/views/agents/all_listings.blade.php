@@ -83,9 +83,10 @@
 
             <p>
             
-              {{substr($listing->description, 0, 50)}}
+              {{substr($listing->description, 0, 40)}}...
 
             </p>
+            <h6 class="mb-0">{{$listing->created_at->diffForHumans()}}</h6>
             
           </div>
         

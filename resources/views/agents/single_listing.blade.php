@@ -3,11 +3,13 @@
 @section('title','My Listings')
 {{-- vendor css --}}
 @section('vendor-styles')
-<link rel="stylesheet" type="text/css" href="{{asset('vendors/css/charts/apexcharts.css')}}">
+
 <link rel="stylesheet" type="text/css" href="{{asset('vendors/css/extensions/swiper.min.css')}}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/basic.css" integrity="sha512-Ucip2staDcls3OuwEeh5s9rRVYBsCA4HRr18+qd0Iz3nYpnfUeCIMh/82aHKeYgdaXGebmi9vcREw7YePXsutQ==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/dropzone.css" integrity="sha512-CmjeEOiBCtxpzzfuT2remy8NP++fmHRxR3LnsdQhVXzA3QqRMaJ3heF9zOB+c1lCWSwZkzSOWfTn1CdqgkW3EQ==" crossorigin="anonymous" />
-<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/10.15.5/sweetalert2.min.js" integrity="sha512-+uGHdpCaEymD6EqvUR4H/PBuwqm3JTZmRh3gT0Lq52VGDAlywdXPBEiLiZUg6D1ViLonuNSUFdbL2tH9djAP8g==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/10.15.5/sweetalert2.all.min.js" integrity="sha512-TxryOYMwWBRIlZoSkKW+jZvJ834vF3u8mE0jDeTLEDdPplOVNNZfWm9VFtEuW365BFPLK5CEIF/vaHqmAey8XA==" crossorigin="anonymous"></script>
 @endsection
 @section('page-styles')
 <link rel="stylesheet" type="text/css" href="{{asset('css/pages/dashboard-ecommerce.css')}}">
@@ -145,10 +147,10 @@
 
   <h4>Details</h4>
 
-      @if($user_subscription)
+      @if($user_subscription )
 
               
-            @if($single_listing->status != 'published')
+            @if($single_listing->status != 'published' )
 
               <form class="mb-2" method="post" class="text-center" action="{{route('agent.publish')}}">
                   @csrf
@@ -220,13 +222,60 @@
 
     @foreach($images as $image)
 
-    <div class="card">
+    <div id="{{$image->id}}" class="card">
       <div class="card-body">
 
       <div class="d">
       <img style="width: 100px; height:100px;" class="img-thumbnail shadow" src="{{config('app.url')}}listings_images/{{$image->file_path}}" alt="">
 
-      <a href="{{$image->file_path}}" class="btn btn-sm shadow btn-danger float-right">Remove</a>
+      <button onclick="removePix(this.id)" id="{{$image->id}}" class="btn btn-sm shadow btn-danger float-right">Remove</button>
+
+      <script>
+
+
+
+        function removePix(img_id) {
+
+          var url = "/agent/remove_pix/";
+
+        
+
+            console.log(img_id);
+
+            var element = document.getElementById(img_id);
+            element.classList.add("d-none");
+
+          $.ajax({
+          type: "POST",
+          url: url + img_id,
+          headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+          data: {
+            id: img_id
+          },
+          success:  (data) => {
+            console.log(data); 
+            Swal.fire({
+          title: 'Deleted!!',
+          text: 'Image removed!!',
+          icon: 'success',
+          confirmButtonText: 'ok'
+        })
+          },
+
+          error: function(data){
+              console.log(data);
+          },
+          dataType: "json",
+          contentType: 'application/x-www-form-urlencoded',
+         
+        });
+          
+        }
+
+        
+      </script>
 
 
       </div>
@@ -254,12 +303,12 @@
 @endsection
 
 @section('vendor-scripts')
-<script src="{{asset('vendors/js/charts/apexcharts.min.js')}}"></script>
+
 <script src="{{asset('vendors/js/extensions/swiper.min.js')}}"></script>
 @endsection
 
 @section('page-scripts')
-<script src="{{asset('js/scripts/pages/dashboard-ecommerce.js')}}"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/dropzone.js" integrity="sha512-0QMJSMYaer2wnpi+qbJOy4rOAlE6CbYImSlrgQuf2MBBMqTvK/k6ZJV126/EbdKzMAXaB6PHzdYxOX6Qey7WWw==" crossorigin="anonymous"></script>
 <script>
           Dropzone.options.myAwesomeDropzone = {
@@ -309,26 +358,6 @@
   </script> 
 
 
-  <script>
-          $(document).ready(function() {
-	$('.popup-gallery').magnificPopup({
-		delegate: 'a',
-		type: 'image',
-		tLoading: 'Loading image #%curr%...',
-		mainClass: 'mfp-img-mobile',
-		gallery: {
-			enabled: true,
-			navigateByImgClick: true,
-			preload: [0,1] // Will preload 0 - before current, and 1 after the current image
-		},
-		image: {
-			tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
-			titleSrc: function(item) {
-				return item.el.attr('title') + '<small>by Marsel Van Oosten</small>';
-			}
-		}
-	});
-});
 
 </script>
 

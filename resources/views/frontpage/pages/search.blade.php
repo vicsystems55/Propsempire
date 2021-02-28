@@ -122,23 +122,7 @@
 												</div>
 											</div>
 										</li>
-										<li>
-											<div class="search_option_two">
-												<div class="candidate_revew_select">
-													<select class="selectpicker w100 show-tick">
-														<option>Year built</option>
-														<option>2013</option>
-														<option>2014</option>
-														<option>2015</option>
-														<option>2016</option>
-														<option>2017</option>
-														<option>2018</option>
-														<option>2019</option>
-														<option>2020</option>
-													</select>
-												</div>
-											</div>
-										</li>
+										
 										<li class="min_area style2 list-inline-item">
 										    <div class="form-group">
 										    	<input type="text" class="form-control" id="exampleInputName2" placeholder="Min Area">
@@ -405,18 +389,7 @@
 											</div>
 										</div>
 									</li>
-									<li>
-										<div class="search_option_two">
-											<div class="candidate_revew_select">
-												<select class="selectpicker w100 show-tick">
-													<option>Garages</option>
-													<option>Yes</option>
-													<option>No</option>
-													<option>Others</option>
-												</select>
-											</div>
-										</div>
-									</li>
+									
 									<li>
 										<div class="search_option_two">
 											<div class="candidate_revew_select">
@@ -701,7 +674,7 @@
 						<div class="grid_list_search_result">
 							<div class="col-sm-12 col-md-4 col-lg-4 col-xl-5">
 								<div class="left_area tac-xsd">
-									<p>9 Search results</p>
+									<p>{{$listings->count()}} Search results</p>
 								</div>
 							</div>
 							<div class="col-sm-12 col-md-8 col-lg-8 col-xl-7">

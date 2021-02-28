@@ -30,13 +30,13 @@
 </div> -->
 
 
-<div class="row">
+<div class="row ">
 
 @forelse($my_listings as $listing)
 
     <div class="col-md-4">
 
-    <div class="card">
+    <div style="height: 420px;" class="card">
         <div class="card-content">
          
           <div id="carousel-example-card" class="carousel slide" data-ride="carousel">
@@ -46,15 +46,25 @@
               <li data-target="#carousel-example-card" data-slide-to="2"></li>
             </ol>
             <div class="carousel-inner rounded-0" role="listbox">
-              <div class="carousel-item active">
+
+              <!-- <div class="carousel-item active">
                 <img src="{{asset('listings_images')}}/{{$featured_img1??'default.png'}}" class="d-block w-100" alt="First slide">
+              </div> -->
+
+              <div class="carousel-item active">
+                <img style="width: 200px; height:220px;" src="{{asset('listings_images')}}/{{$listing->images[0]->file_path??'default.png'}}" class="d-block w-100" alt="First slide">
               </div>
+
               <div class="carousel-item">
-                <img src="{{asset('listings_images')}}/{{$featured_img1??'default.png'}}" class="d-block w-100" alt="Second slide">
+                <img style="width: 200px; height:220px;" src="{{asset('listings_images')}}/{{$listing->images[1]->file_path??'default.png'}}" class="d-block w-100" alt="Second slide">
               </div>
+
               <div class="carousel-item">
-                <img src="{{asset('listings_images')}}/{{$featured_img1??'default.png'}}" class="d-block w-100" alt="Third slide">
+                <img style="width: 200px; height:220px;" src="{{asset('listings_images')}}/{{$listing->images[2]->file_path??'default.png'}}" class="d-block w-100" alt="Third slide">
               </div>
+
+              
+
             </div>
             <a class="carousel-control-prev" href="#carousel-example-card" role="button" data-slide="prev">
               <span class="bx bx-chevron-left icon-prev" aria-hidden="true"></span>
@@ -72,7 +82,9 @@
             <h4 class="card-title">{{$listing->title}}</h4>
 
             <p>
-              {{$listing->description}}
+            
+              {{substr($listing->description, 0, 50)}}
+
             </p>
             
           </div>

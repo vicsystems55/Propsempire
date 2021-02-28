@@ -56,7 +56,9 @@ class ListingController extends Controller
     {
         # code...
 
-        $my_listings = Listing::where('posted_by', Auth::user()->id)->latest()->paginate(6);
+        $my_listings = Listing::with('images')->where('posted_by', Auth::user()->id)->latest()->paginate(6);
+
+        // dd($my_listings);
 
         return view('agents.all_listings', [
             'my_listings' => $my_listings

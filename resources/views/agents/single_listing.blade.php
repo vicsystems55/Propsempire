@@ -7,7 +7,7 @@
 <link rel="stylesheet" type="text/css" href="{{asset('vendors/css/extensions/swiper.min.css')}}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/basic.css" integrity="sha512-Ucip2staDcls3OuwEeh5s9rRVYBsCA4HRr18+qd0Iz3nYpnfUeCIMh/82aHKeYgdaXGebmi9vcREw7YePXsutQ==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/dropzone.css" integrity="sha512-CmjeEOiBCtxpzzfuT2remy8NP++fmHRxR3LnsdQhVXzA3QqRMaJ3heF9zOB+c1lCWSwZkzSOWfTn1CdqgkW3EQ==" crossorigin="anonymous" />
-
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 @endsection
 @section('page-styles')
 <link rel="stylesheet" type="text/css" href="{{asset('css/pages/dashboard-ecommerce.css')}}">
@@ -124,6 +124,10 @@
           Add Picture
         </button>
 
+
+
+
+
              
 
   
@@ -216,8 +220,22 @@
 
     @foreach($images as $image)
 
+    <div class="card">
+      <div class="card-body">
+
+      <div class="d">
+      <img style="width: 100px; height:100px;" class="img-thumbnail shadow" src="{{config('app.url')}}listings_images/{{$image->file_path}}" alt="">
+
+      <a href="{{$image->file_path}}" class="btn btn-sm shadow btn-danger float-right">Remove</a>
+
+
+      </div>
+
+      </div>
+    </div>
+
     
-    <a class="" target="_blank" href="{{config('app.url')}}listings_images/{{$image->file_path}}" title="{{$image->id}}"><img class="p-1 shadow" src="{{config('app.url')}}listings_images/{{$image->file_path}}" width="200" height="200"></a>
+    <!-- <a class="" target="_blank" href="{{config('app.url')}}listings_images/{{$image->file_path}}" title="{{$image->id}}"><img class="p-1 shadow" src="{{config('app.url')}}listings_images/{{$image->file_path}}" width="200" height="200"></a> -->
     
     @endforeach
 </div>

@@ -6,7 +6,7 @@
 
 <link rel="stylesheet" type="text/css" href="{{asset('vendors/css/forms/spinner/jquery.bootstrap-touchspin.css')}}">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyDOPFlhw8rl4qYiQt2VCkOrjGe3ATsOGr8"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyA5ZHuSPiaMu-k_KyWvGj15UR3JWuHWM9E"></script>
 @section('content')
 <!-- Basic Horizontal form layout section start -->
 
@@ -106,7 +106,7 @@
                   <div class="col-md-12 col-12">
                     <div class="form-group">
                     <label for="city-column">Location</label>
-                      <input type="text" id="location" class="form-control" placeholder="Enter Location" name="location">
+                      <input type="text" id="search_input" class="form-control" placeholder="Enter Location" name="location">
                       @error('description')
                       <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
